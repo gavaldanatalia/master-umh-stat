@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 
 # Leer el archivo Excel en un DataFrame
-path = '/Users/jjmilla/Repositorios/master-umh/Estadistica/'
+path = '/Users/jjmilla/Repositorios/master-umh-stat/master-umh-stat/Estadistica/'
 df = pd.read_excel(path+'regresion.xlsx')
 
 # Mostrar las primeras filas del DataFrame
@@ -32,7 +32,7 @@ Y_pred = X @ beta
 
 # Las añado a df y lo grabo en Excel
 df['Predicciones']=Y_pred
-df.to_excel('predicciones.xlsx')
+df.to_excel(path+'predicciones.xlsx')
 
 # Cálculo de errores
 errores = Y - Y_pred
