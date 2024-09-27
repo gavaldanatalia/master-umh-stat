@@ -4,8 +4,8 @@ import matplotlib.pyplot as plt
 import math
 import scipy.stats as stats
 
-df = pd.read_excel('heterocedasticidad_normalidad.xlsx')
-
+path = '/Users/jjmilla/Repositorios/master-umh-stat/master-umh-stat/Estadistica/'
+df = pd.read_excel(path+'heterocedasticidad_normalidad.xlsx')
 
 ########################################################################
 ## REGRESIÓN ##

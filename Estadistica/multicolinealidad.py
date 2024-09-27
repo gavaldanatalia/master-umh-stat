@@ -3,7 +3,8 @@ import pandas as pd
 
 
 # Leer el archivo Excel en un DataFrame
-df = pd.read_excel('multicolinealidad.xlsx')
+path = '/Users/jjmilla/Repositorios/master-umh-stat/master-umh-stat/Estadistica/'
+df = pd.read_excel(path+'multicolinealidad.xlsx')
 
 # Mostrar las primeras filas del DataFrame
 print("--- Datos:")
