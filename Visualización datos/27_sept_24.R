@@ -42,3 +42,49 @@ barplot(datos,
         beside = TRUE,
         col=rainbow(5),
         legend.text = row.names(datos))
+
+
+#Ejerecicio 5: Construye dos diagramas de sectores como los siguientes (los colores intenta que se parezcan, pero no hace falta que sean exactamente los mismos):
+
+#a
+# Datos
+redes.sociales <- c("instagram", "tiktok", "twitter", "facebook", "otras")
+jovenes <- c(19, 14, 10, 4, 3)
+mayores <- c(4, 2, 16, 25, 3)
+
+# Colores personalizados
+colores <- c("darkgreen", "orange", "blue", "pink", "lightgreen")
+
+# Función para crear diagrama de sectores mejorado
+pie(jovenes, 
+    labels = paste0(redes.sociales, "\n"),
+    col = colores,
+    main = titulo,
+    border = "white",
+    radius = 1,
+    density = 30,
+    cex = 0.8,
+    init.angle = 90)
+
+#b
+# install.packages("plotrix")
+library(plotrix)
+
+# Datos
+redes.sociales <- c("instagram", "tiktok", "twitter", "facebook", "otras")
+jovenes <- c(19, 14, 10, 4, 3)
+mayores <- c(4, 2, 16, 25, 3)
+
+# Colores personalizados
+colores2 <- c("tomato4", "orange", "peachpuff", "turquoise", "blue")
+
+# Función para crear diagrama de sectores mejorado
+pie3D(jovenes, 
+      labels = paste0(redes.sociales, "\n"),
+      col = colores2,
+      border = "white",
+      radius = 1,
+      density = 30,
+      cex = 0.8,
+      init.angle = 90,
+      explode = 0.2)
