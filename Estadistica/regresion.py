@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 
 # Leer el archivo Excel en un DataFrame
-path = '/Users/jjmilla/Repositorios/master-umh-stat/master-umh-stat/Estadistica/'
+path = '/Users/jjmilla/Repositorios/master-umh-stat/master-umh-stat/Estadistica/datos/'
 df = pd.read_excel(path+'regresion.xlsx')
 
 # Mostrar las primeras filas del DataFrame

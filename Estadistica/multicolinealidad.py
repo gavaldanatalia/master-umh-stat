@@ -3,7 +3,7 @@ import pandas as pd
 
 
 # Leer el archivo Excel en un DataFrame
-path = '/Users/jjmilla/Repositorios/master-umh-stat/master-umh-stat/Estadistica/'
+path = '/Users/jjmilla/Repositorios/master-umh-stat/master-umh-stat/Estadistica/datos/'
 df = pd.read_excel(path+'multicolinealidad.xlsx')
 
 # Mostrar las primeras filas del DataFrame
@@ -14,8 +14,12 @@ X= df[['X1', 'X2', 'X3']]
 correlaciones = X.corr()
 
 # Mostrar la matriz de correlación
+# Comentario: Se presenta multicolinealidad entre las variables X1 y X2 porque tienen una correlación alta
+# Ello puede implicar un fallo de cálculo en la estimación de las betas. (el determinante de la inversa puede ser 0 o casi 0)
 print(correlaciones)
 
+# Ante la presencia de la multicolinealidad podemos quitar X1 o X2. 
+# En el momento que quitamos 1 de ellas y volvemos a comprobar las correlaciones.
 X= df[['X2', 'X3']]
 correlaciones = X.corr()
 
@@ -24,7 +28,7 @@ print(correlaciones)
 
 from statsmodels.stats.outliers_influence import variance_inflation_factor
 
-# Calcular el VIF para cada variable independiente
+# Calcular el VIF para cada variable independiente (otro método para ver qué variable quitar del modelo)
 X = df[['X1', 'X2', 'X3']]
 vif_data = pd.DataFrame()
 vif_data["Variable"] = X.columns
@@ -32,11 +36,12 @@ vif_data["VIF"] = [variance_inflation_factor(X.values, i) for i in range(X.shape
 
 print(vif_data)
 
-
 ########################################################################
 ## REGRESIÓN ##
 from sklearn.linear_model import LinearRegression
 import matplotlib.pyplot as plt
+
+print("Regresión con variables correladas")
 
 # Definir las variables independientes (X) y la variable dependiente (Y)
 X = df[['X1', 'X2', 'X3']]
@@ -90,6 +95,8 @@ plt.show()
 #############################################################################
 ## Regresión con variables no correladas ####
 #############################################################################
+
+print("Regresión con variables no correladas")
 
 # Definir las variables independientes (X) y la variable dependiente (Y)
 X = df[[ 'X2', 'X3']]
