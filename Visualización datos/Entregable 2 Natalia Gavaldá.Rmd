@@ -1,0 +1,56 @@
+---
+title: "Entregable 2"
+author: "Natalia Gavaldá"
+date: "2024-11-03"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Base de datos
+
+La base de datos escogida con canciones de spotify donde tenemos variables como el índice de popularidad de una canción o de lo bailable que es una canción. También tenemos variables como es la duració de la canción, los artistas que participan en ella o el álbum al que pertenece la canción.
+
+Utilizaremos esta base de datos para analizar si la popularidad de una canción esta relacionada con lo bailable que es la misma. 
+
+
+
+```{r wooldridge}
+library(datasets)
+
+path = "/Users/jjmilla/Repositorios/master-umh-stat/master-umh-stat/Estadistica/datos/spotify.csv"
+
+data <- read.csv(path)
+
+variables = c("track_genre", "duration_ms", "danceability", "track_id", "artists", "album_name", "track_name", "popularity" )
+track_genre = c("pop", "techno", "reggaeton", "indie")
+
+data <- data[(data$track_genre %in% track_genre), variables]
+
+head(data)
+
+dim(data)
+
+```
+
+
+
+
+```{r wooldridge}
+library(wooldridge)
+data("wage1")
+str(wage1)
+head(wage1)
+```
+
+## Gráfico
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.

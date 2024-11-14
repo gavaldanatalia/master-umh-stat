@@ -1,0 +1,55 @@
+---
+title: "Entregable - Names - Natalia"
+author: "Natalia Gavaldá"
+date: "2024-11-03"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Gráficos de líneas 
+
+El conjunto de datos babynames contiene información sobre nombres de niños y niñas y sus frecuencias de uso. Se eligen los nombre Mary y James para la elaboración del ejercicio.
+
+Además, en el dataset escogido ambos nombres pueden ser escogidos para el sexo femenino y masculino. Para la elaboración del gráfico se escogeran los registros del sexo femenino para Mary y aquellos del sexo masculino para James.
+
+```{r librerias}
+# Librerías
+library(babynames)
+library(ggplot2)
+
+# Nombres elegidos: "Mary" y "James"
+selected_names <- c("Mary", "James")
+data_filtered <- babynames[(babynames$name == "Mary" & babynames$sex == "F") | 
+                             (babynames$name == "James" & babynames$sex == "M"), ]
+
+head(data_filtered)
+```
+
+## Gráfico
+
+Creación  del gráfico de líneas para la evolución en el tiempo de ambos nombres.
+
+```{r James y Mery, warning=FALSE}
+ggplot(data_filtered, aes(x = year, y = n, color=name)) +
+  labs(title = "Evolución de los nombres Mary y James en el tiempo",
+       x = "Año de nacimiento", 
+       y = "Número de bebes") + geom_line(size=1) 
+```
+
+
+## Conclusiones
+
+El gráfico nos muestra la evolución del número de bebes llamados Mary y James. Al superponer ambas series de datos podemos comparar ambas series.
+
+Se observa que el nombre "Mary" fue muy popular entre 1900 y 1950, alcanzando su pico máximo a mediados de ese periodo.A partir de ahí, su uso comenzó a disminuir de forma gradual hasta llegar a niveles muy bajos a partir del año 2000. 
+
+Por otro lado, "James" también creció en popularidad a lo largo del tiempo, con un pico destacado alrededor de los años 1950-1960, seguido de un descenso similar al de "Mary". 
+
+Si comparamos ambos nombres, el nombre de "James", a partir del año 1925 aproximadamente, empieza a superar en popularidad a "Mary" y ambos a partir de 1950 aproximadamente, descienden en popularidad, manteniendose más numeroso, hasta años actuales, el número de bebes que se llaman "James" en comparación con el número de bebes que se llaman "Mary".
+
+
+
+

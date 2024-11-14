@@ -21,6 +21,3 @@ ggplot(data_filtered, aes(x = year, y = n, color = name)) +
        y = "Número de bebes") +
   theme_minimal()
 
-### Explicación del gráfico
-
-### Conclusión del gráfico
