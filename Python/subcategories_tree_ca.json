@@ -4,18 +4,6 @@
         "url": "https://ca.wikipedia.org/wiki/Categoria:Alp",
         "subcategories": [
             {
-                "name": "Pàgina a l'atzar",
-                "url": "https://ca.wikipedia.org/wiki/Especial:RandomInCategory/Alp",
-                "subcategories": [],
-                "articulos": []
-            },
-            {
-                "name": "Cerca interna",
-                "url": "https://ca.wikipedia.org/wiki/Especial:Cerca/incategory:%22Alp%22",
-                "subcategories": [],
-                "articulos": []
-            },
-            {
                 "name": "Edificis d'Alp",
                 "url": "https://ca.wikipedia.org/wiki/Categoria:Edificis_d%27Alp",
                 "subcategories": [],
@@ -23,14 +11,6 @@
                     {
                         "name": "Gràfic",
                         "url": "https://ca.wikipedia.orghttps://iw.toolforge.org/vcat/catgraphRedirect?wiki=cawiki&title=Categoria:Edificis_d%27Alp&links=graph"
-                    },
-                    {
-                        "name": "Pàgina a l'atzar",
-                        "url": "https://ca.wikipedia.org/wiki/Especial:RandomInCategory/Edificis_d%27Alp"
-                    },
-                    {
-                        "name": "Cerca interna",
-                        "url": "https://ca.wikipedia.org/wiki/Especial:Cerca/incategory:%22Edificis_d%27Alp%22"
                     },
                     {
                         "name": "Capella de la Mare de Déu de les Neus (la Molina)",
@@ -99,75 +79,6 @@
                 "url": "https://ca.wikipedia.org/wiki/Categoria:Geografia_d%27Alp",
                 "subcategories": [
                     {
-                        "name": "Pàgina a l'atzar",
-                        "url": "https://ca.wikipedia.org/wiki/Especial:RandomInCategory/Geografia_d%27Alp",
-                        "subcategories": [],
-                        "articulos": [
-                            {
-                                "name": "Gràfic",
-                                "url": "https://ca.wikipedia.orghttps://iw.toolforge.org/vcat/catgraphRedirect?wiki=cawiki&title=Categoria:Muntanyes_d%27Alp&links=graph"
-                            },
-                            {
-                                "name": "Pàgina a l'atzar",
-                                "url": "https://ca.wikipedia.org/wiki/Especial:RandomInCategory/Muntanyes_d%27Alp"
-                            },
-                            {
-                                "name": "Cerca interna",
-                                "url": "https://ca.wikipedia.org/wiki/Especial:Cerca/incategory:%22Muntanyes_d%27Alp%22"
-                            },
-                            {
-                                "name": "La Tosa",
-                                "url": "https://ca.wikipedia.org/wiki/La_Tosa"
-                            },
-                            {
-                                "name": "Roca d'Alp",
-                                "url": "https://ca.wikipedia.org/wiki/Roca_d%27Alp"
-                            },
-                            {
-                                "name": "Cap de les Costes de l'Huguet",
-                                "url": "https://ca.wikipedia.org/wiki/Cap_de_les_Costes_de_l%27Huguet"
-                            },
-                            {
-                                "name": "Roca Castellana (Alp)",
-                                "url": "https://ca.wikipedia.org/wiki/Roca_Castellana_(Alp)"
-                            },
-                            {
-                                "name": "Muntanya de Saltèguet",
-                                "url": "https://ca.wikipedia.org/wiki/Muntanya_de_Salt%C3%A8guet"
-                            },
-                            {
-                                "name": "Turó de la Perdiu",
-                                "url": "https://ca.wikipedia.org/wiki/Tur%C3%B3_de_la_Perdiu"
-                            },
-                            {
-                                "name": "Tossal de la Pia",
-                                "url": "https://ca.wikipedia.org/wiki/Tossal_de_la_Pia"
-                            },
-                            {
-                                "name": "Pla de la Bassa (Alp)",
-                                "url": "https://ca.wikipedia.org/wiki/Pla_de_la_Bassa_(Alp)"
-                            },
-                            {
-                                "name": "Puig d'Alp",
-                                "url": "https://ca.wikipedia.org/wiki/Puig_d%27Alp"
-                            },
-                            {
-                                "name": "Roc Blanc (Alp)",
-                                "url": "https://ca.wikipedia.org/wiki/Roc_Blanc_(Alp)"
-                            },
-                            {
-                                "name": "Turó Rodó (Alp)",
-                                "url": "https://ca.wikipedia.org/wiki/Tur%C3%B3_Rod%C3%B3_(Alp)"
-                            }
-                        ]
-                    },
-                    {
-                        "name": "Cerca interna",
-                        "url": "https://ca.wikipedia.org/wiki/Especial:Cerca/incategory:%22Geografia_d%27Alp%22",
-                        "subcategories": [],
-                        "articulos": []
-                    },
-                    {
                         "name": "Muntanyes d'Alp",
                         "url": "https://ca.wikipedia.org/wiki/Categoria:Muntanyes_d%27Alp",
                         "subcategories": [],
@@ -175,14 +86,6 @@
                             {
                                 "name": "Gràfic",
                                 "url": "https://ca.wikipedia.orghttps://iw.toolforge.org/vcat/catgraphRedirect?wiki=cawiki&title=Categoria:Muntanyes_d%27Alp&links=graph"
-                            },
-                            {
-                                "name": "Pàgina a l'atzar",
-                                "url": "https://ca.wikipedia.org/wiki/Especial:RandomInCategory/Muntanyes_d%27Alp"
-                            },
-                            {
-                                "name": "Cerca interna",
-                                "url": "https://ca.wikipedia.org/wiki/Especial:Cerca/incategory:%22Muntanyes_d%27Alp%22"
                             },
                             {
                                 "name": "La Tosa",
@@ -266,14 +169,6 @@
                     {
                         "name": "Gràfic",
                         "url": "https://ca.wikipedia.orghttps://iw.toolforge.org/vcat/catgraphRedirect?wiki=cawiki&title=Categoria:Patrimoni_monumental_d%27Alp&links=graph"
-                    },
-                    {
-                        "name": "Pàgina a l'atzar",
-                        "url": "https://ca.wikipedia.org/wiki/Especial:RandomInCategory/Patrimoni_monumental_d%27Alp"
-                    },
-                    {
-                        "name": "Cerca interna",
-                        "url": "https://ca.wikipedia.org/wiki/Especial:Cerca/incategory:%22Patrimoni_monumental_d%27Alp%22"
                     },
                     {
                         "name": "Capella de la Mare de Déu de les Neus (la Molina)",
@@ -362,33 +257,9 @@
         "url": "https://ca.wikipedia.org/wiki/Categoria:Bellver_de_Cerdanya",
         "subcategories": [
             {
-                "name": "Pàgina a l'atzar",
-                "url": "https://ca.wikipedia.org/wiki/Especial:RandomInCategory/Bellver_de_Cerdanya",
-                "subcategories": [],
-                "articulos": []
-            },
-            {
-                "name": "Cerca interna",
-                "url": "https://ca.wikipedia.org/wiki/Especial:Cerca/incategory:%22Bellver_de_Cerdanya%22",
-                "subcategories": [],
-                "articulos": []
-            },
-            {
                 "name": "Edificis de Bellver de Cerdanya",
                 "url": "https://ca.wikipedia.org/wiki/Categoria:Edificis_de_Bellver_de_Cerdanya",
                 "subcategories": [
-                    {
-                        "name": "Pàgina a l'atzar",
-                        "url": "https://ca.wikipedia.org/wiki/Especial:RandomInCategory/Edificis_de_Bellver_de_Cerdanya",
-                        "subcategories": [],
-                        "articulos": []
-                    },
-                    {
-                        "name": "Cerca interna",
-                        "url": "https://ca.wikipedia.org/wiki/Especial:Cerca/incategory:%22Edificis_de_Bellver_de_Cerdanya%22",
-                        "subcategories": [],
-                        "articulos": []
-                    },
                     {
                         "name": "Esglésies romàniques de Bellver de Cerdanya",
                         "url": "https://ca.wikipedia.org/wiki/Categoria:Esgl%C3%A9sies_rom%C3%A0niques_de_Bellver_de_Cerdanya",
@@ -397,14 +268,6 @@
                             {
                                 "name": "Gràfic",
                                 "url": "https://ca.wikipedia.orghttps://iw.toolforge.org/vcat/catgraphRedirect?wiki=cawiki&title=Categoria:Esgl%C3%A9sies_rom%C3%A0niques_de_Bellver_de_Cerdanya&links=graph"
-                            },
-                            {
-                                "name": "Pàgina a l'atzar",
-                                "url": "https://ca.wikipedia.org/wiki/Especial:RandomInCategory/Esgl%C3%A9sies_rom%C3%A0niques_de_Bellver_de_Cerdanya"
-                            },
-                            {
-                                "name": "Cerca interna",
-                                "url": "https://ca.wikipedia.org/wiki/Especial:Cerca/incategory:%22Esgl%C3%A9sies_rom%C3%A0niques_de_Bellver_de_Cerdanya%22"
                             },
                             {
                                 "name": "Sant Andreu de Baltarga",
@@ -468,14 +331,6 @@
                             {
                                 "name": "Gràfic",
                                 "url": "https://ca.wikipedia.orghttps://iw.toolforge.org/vcat/catgraphRedirect?wiki=cawiki&title=Categoria:Forns_de_cal%C3%A7_de_Bellver_de_Cerdanya&links=graph"
-                            },
-                            {
-                                "name": "Pàgina a l'atzar",
-                                "url": "https://ca.wikipedia.org/wiki/Especial:RandomInCategory/Forns_de_cal%C3%A7_de_Bellver_de_Cerdanya"
-                            },
-                            {
-                                "name": "Cerca interna",
-                                "url": "https://ca.wikipedia.org/wiki/Especial:Cerca/incategory:%22Forns_de_cal%C3%A7_de_Bellver_de_Cerdanya%22"
                             },
                             {
                                 "name": "Forn de calç de Cal Guix",
@@ -596,33 +451,9 @@
                 "url": "https://ca.wikipedia.org/wiki/Categoria:Geografia_de_Bellver_de_Cerdanya",
                 "subcategories": [
                     {
-                        "name": "Pàgina a l'atzar",
-                        "url": "https://ca.wikipedia.org/wiki/Especial:RandomInCategory/Geografia_de_Bellver_de_Cerdanya",
-                        "subcategories": [],
-                        "articulos": []
-                    },
-                    {
-                        "name": "Cerca interna",
-                        "url": "https://ca.wikipedia.org/wiki/Especial:Cerca/incategory:%22Geografia_de_Bellver_de_Cerdanya%22",
-                        "subcategories": [],
-                        "articulos": []
-                    },
-                    {
                         "name": "Entitats de població de Bellver de Cerdanya",
                         "url": "https://ca.wikipedia.org/wiki/Categoria:Entitats_de_poblaci%C3%B3_de_Bellver_de_Cerdanya",
                         "subcategories": [
-                            {
-                                "name": "Pàgina a l'atzar",
-                                "url": "https://ca.wikipedia.org/wiki/Especial:RandomInCategory/Entitats_de_poblaci%C3%B3_de_Bellver_de_Cerdanya",
-                                "subcategories": [],
-                                "articulos": []
-                            },
-                            {
-                                "name": "Cerca interna",
-                                "url": "https://ca.wikipedia.org/wiki/Especial:Cerca/incategory:%22Entitats_de_poblaci%C3%B3_de_Bellver_de_Cerdanya%22",
-                                "subcategories": [],
-                                "articulos": []
-                            },
                             {
                                 "name": "Olià",
                                 "url": "https://ca.wikipedia.org/wiki/Categoria:Oli%C3%A0",
@@ -631,14 +462,6 @@
                                     {
                                         "name": "Gràfic",
                                         "url": "https://ca.wikipedia.orghttps://iw.toolforge.org/vcat/catgraphRedirect?wiki=cawiki&title=Categoria:Oli%C3%A0&links=graph"
-                                    },
-                                    {
-                                        "name": "Pàgina a l'atzar",
-                                        "url": "https://ca.wikipedia.org/wiki/Especial:RandomInCategory/Oli%C3%A0"
-                                    },
-                                    {
-                                        "name": "Cerca interna",
-                                        "url": "https://ca.wikipedia.org/wiki/Especial:Cerca/incategory:%22Oli%C3%A0%22"
                                     },
                                     {
                                         "name": "Olià",
@@ -768,14 +591,6 @@
                                 "url": "https://ca.wikipedia.orghttps://iw.toolforge.org/vcat/catgraphRedirect?wiki=cawiki&title=Categoria:Muntanyes_de_Bellver_de_Cerdanya&links=graph"
                             },
                             {
-                                "name": "Pàgina a l'atzar",
-                                "url": "https://ca.wikipedia.org/wiki/Especial:RandomInCategory/Muntanyes_de_Bellver_de_Cerdanya"
-                            },
-                            {
-                                "name": "Cerca interna",
-                                "url": "https://ca.wikipedia.org/wiki/Especial:Cerca/incategory:%22Muntanyes_de_Bellver_de_Cerdanya%22"
-                            },
-                            {
                                 "name": "Tossal de l'Amorriador",
                                 "url": "https://ca.wikipedia.org/wiki/Tossal_de_l%27Amorriador"
                             },
@@ -873,14 +688,6 @@
                             {
                                 "name": "Gràfic",
                                 "url": "https://ca.wikipedia.orghttps://iw.toolforge.org/vcat/catgraphRedirect?wiki=cawiki&title=Categoria:Serres_de_Bellver_de_Cerdanya&links=graph"
-                            },
-                            {
-                                "name": "Pàgina a l'atzar",
-                                "url": "https://ca.wikipedia.org/wiki/Especial:RandomInCategory/Serres_de_Bellver_de_Cerdanya"
-                            },
-                            {
-                                "name": "Cerca interna",
-                                "url": "https://ca.wikipedia.org/wiki/Especial:Cerca/incategory:%22Serres_de_Bellver_de_Cerdanya%22"
                             },
                             {
                                 "name": "Serra de l'Artic",
@@ -985,18 +792,6 @@
                 "url": "https://ca.wikipedia.org/wiki/Categoria:Patrimoni_monumental_de_Bellver_de_Cerdanya",
                 "subcategories": [
                     {
-                        "name": "Pàgina a l'atzar",
-                        "url": "https://ca.wikipedia.org/wiki/Especial:RandomInCategory/Patrimoni_monumental_de_Bellver_de_Cerdanya",
-                        "subcategories": [],
-                        "articulos": []
-                    },
-                    {
-                        "name": "Cerca interna",
-                        "url": "https://ca.wikipedia.org/wiki/Especial:Cerca/incategory:%22Patrimoni_monumental_de_Bellver_de_Cerdanya%22",
-                        "subcategories": [],
-                        "articulos": []
-                    },
-                    {
                         "name": "Monuments històrics de Bellver de Cerdanya",
                         "url": "https://ca.wikipedia.org/wiki/Categoria:Monuments_hist%C3%B2rics_de_Bellver_de_Cerdanya",
                         "subcategories": [],
@@ -1004,14 +799,6 @@
                             {
                                 "name": "Gràfic",
                                 "url": "https://ca.wikipedia.orghttps://iw.toolforge.org/vcat/catgraphRedirect?wiki=cawiki&title=Categoria:Monuments_hist%C3%B2rics_de_Bellver_de_Cerdanya&links=graph"
-                            },
-                            {
-                                "name": "Pàgina a l'atzar",
-                                "url": "https://ca.wikipedia.org/wiki/Especial:RandomInCategory/Monuments_hist%C3%B2rics_de_Bellver_de_Cerdanya"
-                            },
-                            {
-                                "name": "Cerca interna",
-                                "url": "https://ca.wikipedia.org/wiki/Especial:Cerca/incategory:%22Monuments_hist%C3%B2rics_de_Bellver_de_Cerdanya%22"
                             },
                             {
                                 "name": "Castell de Sant Martí dels Castells",
@@ -1248,33 +1035,9 @@
         "url": "https://ca.wikipedia.org/wiki/Categoria:Bolvir",
         "subcategories": [
             {
-                "name": "Pàgina a l'atzar",
-                "url": "https://ca.wikipedia.org/wiki/Especial:RandomInCategory/Bolvir",
-                "subcategories": [],
-                "articulos": []
-            },
-            {
-                "name": "Cerca interna",
-                "url": "https://ca.wikipedia.org/wiki/Especial:Cerca/incategory:%22Bolvir%22",
-                "subcategories": [],
-                "articulos": []
-            },
-            {
                 "name": "Edificis de Bolvir",
                 "url": "https://ca.wikipedia.org/wiki/Categoria:Edificis_de_Bolvir",
                 "subcategories": [
-                    {
-                        "name": "Pàgina a l'atzar",
-                        "url": "https://ca.wikipedia.org/wiki/Especial:RandomInCategory/Edificis_de_Bolvir",
-                        "subcategories": [],
-                        "articulos": []
-                    },
-                    {
-                        "name": "Cerca interna",
-                        "url": "https://ca.wikipedia.org/wiki/Especial:Cerca/incategory:%22Edificis_de_Bolvir%22",
-                        "subcategories": [],
-                        "articulos": []
-                    },
                     {
                         "name": "Esglésies de Bolvir",
                         "url": "https://ca.wikipedia.org/wiki/Categoria:Esgl%C3%A9sies_de_Bolvir",
@@ -1283,14 +1046,6 @@
                             {
                                 "name": "Gràfic",
                                 "url": "https://ca.wikipedia.orghttps://iw.toolforge.org/vcat/catgraphRedirect?wiki=cawiki&title=Categoria:Esgl%C3%A9sies_de_Bolvir&links=graph"
-                            },
-                            {
-                                "name": "Pàgina a l'atzar",
-                                "url": "https://ca.wikipedia.org/wiki/Especial:RandomInCategory/Esgl%C3%A9sies_de_Bolvir"
-                            },
-                            {
-                                "name": "Cerca interna",
-                                "url": "https://ca.wikipedia.org/wiki/Especial:Cerca/incategory:%22Esgl%C3%A9sies_de_Bolvir%22"
                             },
                             {
                                 "name": "Mare de Déu de l'Esperança (Bolvir)",
@@ -1356,14 +1111,6 @@
                         "url": "https://ca.wikipedia.orghttps://iw.toolforge.org/vcat/catgraphRedirect?wiki=cawiki&title=Categoria:Geografia_de_Bolvir&links=graph"
                     },
                     {
-                        "name": "Pàgina a l'atzar",
-                        "url": "https://ca.wikipedia.org/wiki/Especial:RandomInCategory/Geografia_de_Bolvir"
-                    },
-                    {
-                        "name": "Cerca interna",
-                        "url": "https://ca.wikipedia.org/wiki/Especial:Cerca/incategory:%22Geografia_de_Bolvir%22"
-                    },
-                    {
                         "name": "Llista de topònims de Bolvir",
                         "url": "https://ca.wikipedia.org/wiki/Llista_de_top%C3%B2nims_de_Bolvir"
                     },
@@ -1393,14 +1140,6 @@
                     {
                         "name": "Gràfic",
                         "url": "https://ca.wikipedia.orghttps://iw.toolforge.org/vcat/catgraphRedirect?wiki=cawiki&title=Categoria:Patrimoni_monumental_de_Bolvir&links=graph"
-                    },
-                    {
-                        "name": "Pàgina a l'atzar",
-                        "url": "https://ca.wikipedia.org/wiki/Especial:RandomInCategory/Patrimoni_monumental_de_Bolvir"
-                    },
-                    {
-                        "name": "Cerca interna",
-                        "url": "https://ca.wikipedia.org/wiki/Especial:Cerca/incategory:%22Patrimoni_monumental_de_Bolvir%22"
                     },
                     {
                         "name": "Antic Molí de Bolvir",
@@ -1481,71 +1220,6 @@
         "url": "https://ca.wikipedia.org/wiki/Categoria:Das",
         "subcategories": [
             {
-                "name": "Pàgina a l'atzar",
-                "url": "https://ca.wikipedia.org/wiki/Especial:RandomInCategory/Das",
-                "subcategories": [],
-                "articulos": [
-                    {
-                        "name": "Gràfic",
-                        "url": "https://ca.wikipedia.orghttps://iw.toolforge.org/vcat/catgraphRedirect?wiki=cawiki&title=Categoria:Edificis_de_Das&links=graph"
-                    },
-                    {
-                        "name": "Pàgina a l'atzar",
-                        "url": "https://ca.wikipedia.org/wiki/Especial:RandomInCategory/Edificis_de_Das"
-                    },
-                    {
-                        "name": "Cerca interna",
-                        "url": "https://ca.wikipedia.org/wiki/Especial:Cerca/incategory:%22Edificis_de_Das%22"
-                    },
-                    {
-                        "name": "Cal Ferrer de Das",
-                        "url": "https://ca.wikipedia.org/wiki/Cal_Ferrer_de_Das"
-                    },
-                    {
-                        "name": "Casa del Comú de Das",
-                        "url": "https://ca.wikipedia.org/wiki/Casa_del_Com%C3%BA_de_Das"
-                    },
-                    {
-                        "name": "Casa Martínez Guarro",
-                        "url": "https://ca.wikipedia.org/wiki/Casa_Mart%C3%ADnez_Guarro"
-                    },
-                    {
-                        "name": "Conjunt d'habitatges Vidal i Arderiu",
-                        "url": "https://ca.wikipedia.org/wiki/Conjunt_d%27habitatges_Vidal_i_Arderiu"
-                    },
-                    {
-                        "name": "Sant Iscle i Santa Victòria de Sanavastre",
-                        "url": "https://ca.wikipedia.org/wiki/Sant_Iscle_i_Santa_Vict%C3%B2ria_de_Sanavastre"
-                    },
-                    {
-                        "name": "Sant Julià de Tartera",
-                        "url": "https://ca.wikipedia.org/wiki/Sant_Juli%C3%A0_de_Tartera"
-                    },
-                    {
-                        "name": "Sant Llorenç de Das",
-                        "url": "https://ca.wikipedia.org/wiki/Sant_Lloren%C3%A7_de_Das"
-                    },
-                    {
-                        "name": "Santa Bàrbara de Das",
-                        "url": "https://ca.wikipedia.org/wiki/Santa_B%C3%A0rbara_de_Das"
-                    },
-                    {
-                        "name": "Santa Maria de Mosoll",
-                        "url": "https://ca.wikipedia.org/wiki/Santa_Maria_de_Mosoll"
-                    },
-                    {
-                        "name": "Torre de Das",
-                        "url": "https://ca.wikipedia.org/wiki/Torre_de_Das"
-                    }
-                ]
-            },
-            {
-                "name": "Cerca interna",
-                "url": "https://ca.wikipedia.org/wiki/Especial:Cerca/incategory:%22Das%22",
-                "subcategories": [],
-                "articulos": []
-            },
-            {
                 "name": "Edificis de Das",
                 "url": "https://ca.wikipedia.org/wiki/Categoria:Edificis_de_Das",
                 "subcategories": [],
@@ -1553,14 +1227,6 @@
                     {
                         "name": "Gràfic",
                         "url": "https://ca.wikipedia.orghttps://iw.toolforge.org/vcat/catgraphRedirect?wiki=cawiki&title=Categoria:Edificis_de_Das&links=graph"
-                    },
-                    {
-                        "name": "Pàgina a l'atzar",
-                        "url": "https://ca.wikipedia.org/wiki/Especial:RandomInCategory/Edificis_de_Das"
-                    },
-                    {
-                        "name": "Cerca interna",
-                        "url": "https://ca.wikipedia.org/wiki/Especial:Cerca/incategory:%22Edificis_de_Das%22"
                     },
                     {
                         "name": "Cal Ferrer de Das",
@@ -1614,14 +1280,6 @@
                         "url": "https://ca.wikipedia.orghttps://iw.toolforge.org/vcat/catgraphRedirect?wiki=cawiki&title=Categoria:Geografia_de_Das&links=graph"
                     },
                     {
-                        "name": "Pàgina a l'atzar",
-                        "url": "https://ca.wikipedia.org/wiki/Especial:RandomInCategory/Geografia_de_Das"
-                    },
-                    {
-                        "name": "Cerca interna",
-                        "url": "https://ca.wikipedia.org/wiki/Especial:Cerca/incategory:%22Geografia_de_Das%22"
-                    },
-                    {
                         "name": "Llista de topònims de Das",
                         "url": "https://ca.wikipedia.org/wiki/Llista_de_top%C3%B2nims_de_Das"
                     },
@@ -1667,14 +1325,6 @@
                     {
                         "name": "Gràfic",
                         "url": "https://ca.wikipedia.orghttps://iw.toolforge.org/vcat/catgraphRedirect?wiki=cawiki&title=Categoria:Patrimoni_monumental_de_Das&links=graph"
-                    },
-                    {
-                        "name": "Pàgina a l'atzar",
-                        "url": "https://ca.wikipedia.org/wiki/Especial:RandomInCategory/Patrimoni_monumental_de_Das"
-                    },
-                    {
-                        "name": "Cerca interna",
-                        "url": "https://ca.wikipedia.org/wiki/Especial:Cerca/incategory:%22Patrimoni_monumental_de_Das%22"
                     },
                     {
                         "name": "Cal Ferrer de Das",
@@ -1735,50 +1385,9 @@
         "url": "https://ca.wikipedia.org/wiki/Categoria:Fontanals_de_Cerdanya",
         "subcategories": [
             {
-                "name": "Pàgina a l'atzar",
-                "url": "https://ca.wikipedia.org/wiki/Especial:RandomInCategory/Fontanals_de_Cerdanya",
-                "subcategories": [],
-                "articulos": [
-                    {
-                        "name": "Estació d'Urtx-Alp",
-                        "url": "https://ca.wikipedia.org/wiki/Estaci%C3%B3_d%27Urtx-Alp"
-                    },
-                    {
-                        "name": "Estació de Queixans",
-                        "url": "https://ca.wikipedia.org/wiki/Estaci%C3%B3_de_Queixans"
-                    },
-                    {
-                        "name": "Mas Montagut (Fontanals de Cerdanya)",
-                        "url": "https://ca.wikipedia.org/wiki/Mas_Montagut_(Fontanals_de_Cerdanya)"
-                    },
-                    {
-                        "name": "Mas Soriguera",
-                        "url": "https://ca.wikipedia.org/wiki/Mas_Soriguera"
-                    }
-                ]
-            },
-            {
-                "name": "Cerca interna",
-                "url": "https://ca.wikipedia.org/wiki/Especial:Cerca/incategory:%22Fontanals_de_Cerdanya%22",
-                "subcategories": [],
-                "articulos": []
-            },
-            {
                 "name": "Edificis de Fontanals de Cerdanya",
                 "url": "https://ca.wikipedia.org/wiki/Categoria:Edificis_de_Fontanals_de_Cerdanya",
                 "subcategories": [
-                    {
-                        "name": "Pàgina a l'atzar",
-                        "url": "https://ca.wikipedia.org/wiki/Especial:RandomInCategory/Edificis_de_Fontanals_de_Cerdanya",
-                        "subcategories": [],
-                        "articulos": []
-                    },
-                    {
-                        "name": "Cerca interna",
-                        "url": "https://ca.wikipedia.org/wiki/Especial:Cerca/incategory:%22Edificis_de_Fontanals_de_Cerdanya%22",
-                        "subcategories": [],
-                        "articulos": []
-                    },
                     {
                         "name": "Esglésies de Fontanals de Cerdanya",
                         "url": "https://ca.wikipedia.org/wiki/Categoria:Esgl%C3%A9sies_de_Fontanals_de_Cerdanya",
@@ -1787,14 +1396,6 @@
                             {
                                 "name": "Gràfic",
                                 "url": "https://ca.wikipedia.orghttps://iw.toolforge.org/vcat/catgraphRedirect?wiki=cawiki&title=Categoria:Esgl%C3%A9sies_de_Fontanals_de_Cerdanya&links=graph"
-                            },
-                            {
-                                "name": "Pàgina a l'atzar",
-                                "url": "https://ca.wikipedia.org/wiki/Especial:RandomInCategory/Esgl%C3%A9sies_de_Fontanals_de_Cerdanya"
-                            },
-                            {
-                                "name": "Cerca interna",
-                                "url": "https://ca.wikipedia.org/wiki/Especial:Cerca/incategory:%22Esgl%C3%A9sies_de_Fontanals_de_Cerdanya%22"
                             },
                             {
                                 "name": "Sant Cosme i Sant Damià de Queixans",
@@ -1843,59 +1444,6 @@
                 "url": "https://ca.wikipedia.org/wiki/Categoria:Geografia_de_Fontanals_de_Cerdanya",
                 "subcategories": [
                     {
-                        "name": "Pàgina a l'atzar",
-                        "url": "https://ca.wikipedia.org/wiki/Especial:RandomInCategory/Geografia_de_Fontanals_de_Cerdanya",
-                        "subcategories": [],
-                        "articulos": [
-                            {
-                                "name": "Gràfic",
-                                "url": "https://ca.wikipedia.orghttps://iw.toolforge.org/vcat/catgraphRedirect?wiki=cawiki&title=Categoria:Entitats_de_poblaci%C3%B3_de_Fontanals_de_Cerdanya&links=graph"
-                            },
-                            {
-                                "name": "Pàgina a l'atzar",
-                                "url": "https://ca.wikipedia.org/wiki/Especial:RandomInCategory/Entitats_de_poblaci%C3%B3_de_Fontanals_de_Cerdanya"
-                            },
-                            {
-                                "name": "Cerca interna",
-                                "url": "https://ca.wikipedia.org/wiki/Especial:Cerca/incategory:%22Entitats_de_poblaci%C3%B3_de_Fontanals_de_Cerdanya%22"
-                            },
-                            {
-                                "name": "El Vilar d'Urtx",
-                                "url": "https://ca.wikipedia.org/wiki/El_Vilar_d%27Urtx"
-                            },
-                            {
-                                "name": "Escadarcs",
-                                "url": "https://ca.wikipedia.org/wiki/Escadarcs"
-                            },
-                            {
-                                "name": "Estoll",
-                                "url": "https://ca.wikipedia.org/wiki/Estoll"
-                            },
-                            {
-                                "name": "Les Pereres",
-                                "url": "https://ca.wikipedia.org/wiki/Les_Pereres"
-                            },
-                            {
-                                "name": "Queixans",
-                                "url": "https://ca.wikipedia.org/wiki/Queixans"
-                            },
-                            {
-                                "name": "Soriguerola",
-                                "url": "https://ca.wikipedia.org/wiki/Soriguerola"
-                            },
-                            {
-                                "name": "Urtx (Cerdanya)",
-                                "url": "https://ca.wikipedia.org/wiki/Urtx_(Cerdanya)"
-                            }
-                        ]
-                    },
-                    {
-                        "name": "Cerca interna",
-                        "url": "https://ca.wikipedia.org/wiki/Especial:Cerca/incategory:%22Geografia_de_Fontanals_de_Cerdanya%22",
-                        "subcategories": [],
-                        "articulos": []
-                    },
-                    {
                         "name": "Entitats de població de Fontanals de Cerdanya",
                         "url": "https://ca.wikipedia.org/wiki/Categoria:Entitats_de_poblaci%C3%B3_de_Fontanals_de_Cerdanya",
                         "subcategories": [],
@@ -1903,14 +1451,6 @@
                             {
                                 "name": "Gràfic",
                                 "url": "https://ca.wikipedia.orghttps://iw.toolforge.org/vcat/catgraphRedirect?wiki=cawiki&title=Categoria:Entitats_de_poblaci%C3%B3_de_Fontanals_de_Cerdanya&links=graph"
-                            },
-                            {
-                                "name": "Pàgina a l'atzar",
-                                "url": "https://ca.wikipedia.org/wiki/Especial:RandomInCategory/Entitats_de_poblaci%C3%B3_de_Fontanals_de_Cerdanya"
-                            },
-                            {
-                                "name": "Cerca interna",
-                                "url": "https://ca.wikipedia.org/wiki/Especial:Cerca/incategory:%22Entitats_de_poblaci%C3%B3_de_Fontanals_de_Cerdanya%22"
                             },
                             {
                                 "name": "El Vilar d'Urtx",
@@ -1952,14 +1492,6 @@
                                 "url": "https://ca.wikipedia.orghttps://iw.toolforge.org/vcat/catgraphRedirect?wiki=cawiki&title=Categoria:Muntanyes_de_Fontanals_de_Cerdanya&links=graph"
                             },
                             {
-                                "name": "Pàgina a l'atzar",
-                                "url": "https://ca.wikipedia.org/wiki/Especial:RandomInCategory/Muntanyes_de_Fontanals_de_Cerdanya"
-                            },
-                            {
-                                "name": "Cerca interna",
-                                "url": "https://ca.wikipedia.org/wiki/Especial:Cerca/incategory:%22Muntanyes_de_Fontanals_de_Cerdanya%22"
-                            },
-                            {
                                 "name": "Puig de les Forques (Fontanals de Cerdanya)",
                                 "url": "https://ca.wikipedia.org/wiki/Puig_de_les_Forques_(Fontanals_de_Cerdanya)"
                             },
@@ -1989,14 +1521,6 @@
                             {
                                 "name": "Gràfic",
                                 "url": "https://ca.wikipedia.orghttps://iw.toolforge.org/vcat/catgraphRedirect?wiki=cawiki&title=Categoria:Serres_de_Fontanals_de_Cerdanya&links=graph"
-                            },
-                            {
-                                "name": "Pàgina a l'atzar",
-                                "url": "https://ca.wikipedia.org/wiki/Especial:RandomInCategory/Serres_de_Fontanals_de_Cerdanya"
-                            },
-                            {
-                                "name": "Cerca interna",
-                                "url": "https://ca.wikipedia.org/wiki/Especial:Cerca/incategory:%22Serres_de_Fontanals_de_Cerdanya%22"
                             },
                             {
                                 "name": "Serrat de Cuiràs",
@@ -2048,14 +1572,6 @@
                     {
                         "name": "Gràfic",
                         "url": "https://ca.wikipedia.orghttps://iw.toolforge.org/vcat/catgraphRedirect?wiki=cawiki&title=Categoria:Patrimoni_monumental_de_Fontanals_de_Cerdanya&links=graph"
-                    },
-                    {
-                        "name": "Pàgina a l'atzar",
-                        "url": "https://ca.wikipedia.org/wiki/Especial:RandomInCategory/Patrimoni_monumental_de_Fontanals_de_Cerdanya"
-                    },
-                    {
-                        "name": "Cerca interna",
-                        "url": "https://ca.wikipedia.org/wiki/Especial:Cerca/incategory:%22Patrimoni_monumental_de_Fontanals_de_Cerdanya%22"
                     },
                     {
                         "name": "Estació d'Urtx-Alp",
@@ -2124,66 +1640,9 @@
         "url": "https://ca.wikipedia.org/wiki/Categoria:Ger",
         "subcategories": [
             {
-                "name": "Pàgina a l'atzar",
-                "url": "https://ca.wikipedia.org/wiki/Especial:RandomInCategory/Ger",
-                "subcategories": [],
-                "articulos": []
-            },
-            {
-                "name": "Cerca interna",
-                "url": "https://ca.wikipedia.org/wiki/Especial:Cerca/incategory:%22Ger%22",
-                "subcategories": [],
-                "articulos": []
-            },
-            {
                 "name": "Edificis de Ger",
                 "url": "https://ca.wikipedia.org/wiki/Categoria:Edificis_de_Ger",
                 "subcategories": [
-                    {
-                        "name": "Pàgina a l'atzar",
-                        "url": "https://ca.wikipedia.org/wiki/Especial:RandomInCategory/Edificis_de_Ger",
-                        "subcategories": [],
-                        "articulos": [
-                            {
-                                "name": "Gràfic",
-                                "url": "https://ca.wikipedia.orghttps://iw.toolforge.org/vcat/catgraphRedirect?wiki=cawiki&title=Categoria:Esgl%C3%A9sies_de_Ger&links=graph"
-                            },
-                            {
-                                "name": "Pàgina a l'atzar",
-                                "url": "https://ca.wikipedia.org/wiki/Especial:RandomInCategory/Esgl%C3%A9sies_de_Ger"
-                            },
-                            {
-                                "name": "Cerca interna",
-                                "url": "https://ca.wikipedia.org/wiki/Especial:Cerca/incategory:%22Esgl%C3%A9sies_de_Ger%22"
-                            },
-                            {
-                                "name": "Sant Climent de Gréixer",
-                                "url": "https://ca.wikipedia.org/wiki/Sant_Climent_de_Gr%C3%A9ixer"
-                            },
-                            {
-                                "name": "Sant Joan de Saga",
-                                "url": "https://ca.wikipedia.org/wiki/Sant_Joan_de_Saga"
-                            },
-                            {
-                                "name": "Sant Pere de Ger",
-                                "url": "https://ca.wikipedia.org/wiki/Sant_Pere_de_Ger"
-                            },
-                            {
-                                "name": "Santa Coloma de Ger",
-                                "url": "https://ca.wikipedia.org/wiki/Santa_Coloma_de_Ger"
-                            },
-                            {
-                                "name": "Santa Eugènia de Saga",
-                                "url": "https://ca.wikipedia.org/wiki/Santa_Eug%C3%A8nia_de_Saga"
-                            }
-                        ]
-                    },
-                    {
-                        "name": "Cerca interna",
-                        "url": "https://ca.wikipedia.org/wiki/Especial:Cerca/incategory:%22Edificis_de_Ger%22",
-                        "subcategories": [],
-                        "articulos": []
-                    },
                     {
                         "name": "Esglésies de Ger",
                         "url": "https://ca.wikipedia.org/wiki/Categoria:Esgl%C3%A9sies_de_Ger",
@@ -2192,14 +1651,6 @@
                             {
                                 "name": "Gràfic",
                                 "url": "https://ca.wikipedia.orghttps://iw.toolforge.org/vcat/catgraphRedirect?wiki=cawiki&title=Categoria:Esgl%C3%A9sies_de_Ger&links=graph"
-                            },
-                            {
-                                "name": "Pàgina a l'atzar",
-                                "url": "https://ca.wikipedia.org/wiki/Especial:RandomInCategory/Esgl%C3%A9sies_de_Ger"
-                            },
-                            {
-                                "name": "Cerca interna",
-                                "url": "https://ca.wikipedia.org/wiki/Especial:Cerca/incategory:%22Esgl%C3%A9sies_de_Ger%22"
                             },
                             {
                                 "name": "Sant Climent de Gréixer",
@@ -2236,67 +1687,6 @@
                 "url": "https://ca.wikipedia.org/wiki/Categoria:Geografia_de_Ger",
                 "subcategories": [
                     {
-                        "name": "Pàgina a l'atzar",
-                        "url": "https://ca.wikipedia.org/wiki/Especial:RandomInCategory/Geografia_de_Ger",
-                        "subcategories": [],
-                        "articulos": [
-                            {
-                                "name": "Gràfic",
-                                "url": "https://ca.wikipedia.orghttps://iw.toolforge.org/vcat/catgraphRedirect?wiki=cawiki&title=Categoria:Serres_de_Ger&links=graph"
-                            },
-                            {
-                                "name": "Pàgina a l'atzar",
-                                "url": "https://ca.wikipedia.org/wiki/Especial:RandomInCategory/Serres_de_Ger"
-                            },
-                            {
-                                "name": "Cerca interna",
-                                "url": "https://ca.wikipedia.org/wiki/Especial:Cerca/incategory:%22Serres_de_Ger%22"
-                            },
-                            {
-                                "name": "Serra d'All",
-                                "url": "https://ca.wikipedia.org/wiki/Serra_d%27All"
-                            },
-                            {
-                                "name": "Serra del Bac",
-                                "url": "https://ca.wikipedia.org/wiki/Serra_del_Bac"
-                            },
-                            {
-                                "name": "Serra Cabanella",
-                                "url": "https://ca.wikipedia.org/wiki/Serra_Cabanella"
-                            },
-                            {
-                                "name": "Serrat Castellar",
-                                "url": "https://ca.wikipedia.org/wiki/Serrat_Castellar"
-                            },
-                            {
-                                "name": "Serra dels Corrals Blancs",
-                                "url": "https://ca.wikipedia.org/wiki/Serra_dels_Corrals_Blancs"
-                            },
-                            {
-                                "name": "Serrat de la Ginebreda",
-                                "url": "https://ca.wikipedia.org/wiki/Serrat_de_la_Ginebreda"
-                            },
-                            {
-                                "name": "Serrat de les Llebres",
-                                "url": "https://ca.wikipedia.org/wiki/Serrat_de_les_Llebres"
-                            },
-                            {
-                                "name": "Serra de la Mata de l'Ós",
-                                "url": "https://ca.wikipedia.org/wiki/Serra_de_la_Mata_de_l%27%C3%93s"
-                            },
-                            {
-                                "name": "Planell de Puig Farinós",
-                                "url": "https://ca.wikipedia.org/wiki/Planell_de_Puig_Farin%C3%B3s"
-                            }
-                        ]
-                    },
-                    {
-                        "name": "Cerca interna",
-                        "url": "https://ca.wikipedia.org/wiki/Especial:Cerca/incategory:%22Geografia_de_Ger%22",
-                        "subcategories": [],
-                        "articulos": []
-                    },
-                    {
                         "name": "Muntanyes de Ger",
                         "url": "https://ca.wikipedia.org/wiki/Categoria:Muntanyes_de_Ger",
                         "subcategories": [],
@@ -2304,14 +1694,6 @@
                             {
                                 "name": "Gràfic",
                                 "url": "https://ca.wikipedia.orghttps://iw.toolforge.org/vcat/catgraphRedirect?wiki=cawiki&title=Categoria:Muntanyes_de_Ger&links=graph"
-                            },
-                            {
-                                "name": "Pàgina a l'atzar",
-                                "url": "https://ca.wikipedia.org/wiki/Especial:RandomInCategory/Muntanyes_de_Ger"
-                            },
-                            {
-                                "name": "Cerca interna",
-                                "url": "https://ca.wikipedia.org/wiki/Especial:Cerca/incategory:%22Muntanyes_de_Ger%22"
                             },
                             {
                                 "name": "Serra del Burgar",
@@ -2343,14 +1725,6 @@
                             {
                                 "name": "Gràfic",
                                 "url": "https://ca.wikipedia.orghttps://iw.toolforge.org/vcat/catgraphRedirect?wiki=cawiki&title=Categoria:Serres_de_Ger&links=graph"
-                            },
-                            {
-                                "name": "Pàgina a l'atzar",
-                                "url": "https://ca.wikipedia.org/wiki/Especial:RandomInCategory/Serres_de_Ger"
-                            },
-                            {
-                                "name": "Cerca interna",
-                                "url": "https://ca.wikipedia.org/wiki/Especial:Cerca/incategory:%22Serres_de_Ger%22"
                             },
                             {
                                 "name": "Serra d'All",
@@ -2424,14 +1798,6 @@
                         "url": "https://ca.wikipedia.orghttps://iw.toolforge.org/vcat/catgraphRedirect?wiki=cawiki&title=Categoria:Patrimoni_monumental_de_Ger&links=graph"
                     },
                     {
-                        "name": "Pàgina a l'atzar",
-                        "url": "https://ca.wikipedia.org/wiki/Especial:RandomInCategory/Patrimoni_monumental_de_Ger"
-                    },
-                    {
-                        "name": "Cerca interna",
-                        "url": "https://ca.wikipedia.org/wiki/Especial:Cerca/incategory:%22Patrimoni_monumental_de_Ger%22"
-                    },
-                    {
                         "name": "Molí de Ger",
                         "url": "https://ca.wikipedia.org/wiki/Mol%C3%AD_de_Ger"
                     },
@@ -2478,51 +1844,6 @@
         "url": "https://ca.wikipedia.org/wiki/Categoria:Guils_de_Cerdanya",
         "subcategories": [
             {
-                "name": "Pàgina a l'atzar",
-                "url": "https://ca.wikipedia.org/wiki/Especial:RandomInCategory/Guils_de_Cerdanya",
-                "subcategories": [],
-                "articulos": [
-                    {
-                        "name": "Gràfic",
-                        "url": "https://ca.wikipedia.orghttps://iw.toolforge.org/vcat/catgraphRedirect?wiki=cawiki&title=Categoria:Edificis_de_Guils_de_Cerdanya&links=graph"
-                    },
-                    {
-                        "name": "Pàgina a l'atzar",
-                        "url": "https://ca.wikipedia.org/wiki/Especial:RandomInCategory/Edificis_de_Guils_de_Cerdanya"
-                    },
-                    {
-                        "name": "Cerca interna",
-                        "url": "https://ca.wikipedia.org/wiki/Especial:Cerca/incategory:%22Edificis_de_Guils_de_Cerdanya%22"
-                    },
-                    {
-                        "name": "Barraca Pleta de les Cases",
-                        "url": "https://ca.wikipedia.org/wiki/Barraca_Pleta_de_les_Cases"
-                    },
-                    {
-                        "name": "Capella de Sant Martí d'Aravó",
-                        "url": "https://ca.wikipedia.org/wiki/Capella_de_Sant_Mart%C3%AD_d%27Arav%C3%B3"
-                    },
-                    {
-                        "name": "Pont de Sant Martí d'Aravó",
-                        "url": "https://ca.wikipedia.org/wiki/Pont_de_Sant_Mart%C3%AD_d%27Arav%C3%B3"
-                    },
-                    {
-                        "name": "Sant Esteve de Guils",
-                        "url": "https://ca.wikipedia.org/wiki/Sant_Esteve_de_Guils"
-                    },
-                    {
-                        "name": "Sant Vicenç de Saneja",
-                        "url": "https://ca.wikipedia.org/wiki/Sant_Vicen%C3%A7_de_Saneja"
-                    }
-                ]
-            },
-            {
-                "name": "Cerca interna",
-                "url": "https://ca.wikipedia.org/wiki/Especial:Cerca/incategory:%22Guils_de_Cerdanya%22",
-                "subcategories": [],
-                "articulos": []
-            },
-            {
                 "name": "Edificis de Guils de Cerdanya",
                 "url": "https://ca.wikipedia.org/wiki/Categoria:Edificis_de_Guils_de_Cerdanya",
                 "subcategories": [],
@@ -2530,14 +1851,6 @@
                     {
                         "name": "Gràfic",
                         "url": "https://ca.wikipedia.orghttps://iw.toolforge.org/vcat/catgraphRedirect?wiki=cawiki&title=Categoria:Edificis_de_Guils_de_Cerdanya&links=graph"
-                    },
-                    {
-                        "name": "Pàgina a l'atzar",
-                        "url": "https://ca.wikipedia.org/wiki/Especial:RandomInCategory/Edificis_de_Guils_de_Cerdanya"
-                    },
-                    {
-                        "name": "Cerca interna",
-                        "url": "https://ca.wikipedia.org/wiki/Especial:Cerca/incategory:%22Edificis_de_Guils_de_Cerdanya%22"
                     },
                     {
                         "name": "Barraca Pleta de les Cases",
@@ -2566,18 +1879,6 @@
                 "url": "https://ca.wikipedia.org/wiki/Categoria:Geografia_de_Guils_de_Cerdanya",
                 "subcategories": [
                     {
-                        "name": "Pàgina a l'atzar",
-                        "url": "https://ca.wikipedia.org/wiki/Especial:RandomInCategory/Geografia_de_Guils_de_Cerdanya",
-                        "subcategories": [],
-                        "articulos": []
-                    },
-                    {
-                        "name": "Cerca interna",
-                        "url": "https://ca.wikipedia.org/wiki/Especial:Cerca/incategory:%22Geografia_de_Guils_de_Cerdanya%22",
-                        "subcategories": [],
-                        "articulos": []
-                    },
-                    {
                         "name": "Muntanyes de Guils de Cerdanya",
                         "url": "https://ca.wikipedia.org/wiki/Categoria:Muntanyes_de_Guils_de_Cerdanya",
                         "subcategories": [],
@@ -2585,14 +1886,6 @@
                             {
                                 "name": "Gràfic",
                                 "url": "https://ca.wikipedia.orghttps://iw.toolforge.org/vcat/catgraphRedirect?wiki=cawiki&title=Categoria:Muntanyes_de_Guils_de_Cerdanya&links=graph"
-                            },
-                            {
-                                "name": "Pàgina a l'atzar",
-                                "url": "https://ca.wikipedia.org/wiki/Especial:RandomInCategory/Muntanyes_de_Guils_de_Cerdanya"
-                            },
-                            {
-                                "name": "Cerca interna",
-                                "url": "https://ca.wikipedia.org/wiki/Especial:Cerca/incategory:%22Muntanyes_de_Guils_de_Cerdanya%22"
                             },
                             {
                                 "name": "Roc de l'Àliga (Guils de Cerdanya)",
@@ -2666,14 +1959,6 @@
                         "url": "https://ca.wikipedia.orghttps://iw.toolforge.org/vcat/catgraphRedirect?wiki=cawiki&title=Categoria:Patrimoni_monumental_de_Guils_de_Cerdanya&links=graph"
                     },
                     {
-                        "name": "Pàgina a l'atzar",
-                        "url": "https://ca.wikipedia.org/wiki/Especial:RandomInCategory/Patrimoni_monumental_de_Guils_de_Cerdanya"
-                    },
-                    {
-                        "name": "Cerca interna",
-                        "url": "https://ca.wikipedia.org/wiki/Especial:Cerca/incategory:%22Patrimoni_monumental_de_Guils_de_Cerdanya%22"
-                    },
-                    {
                         "name": "Barraca Pleta de les Cases",
                         "url": "https://ca.wikipedia.org/wiki/Barraca_Pleta_de_les_Cases"
                     },
@@ -2720,18 +2005,6 @@
         "url": "https://ca.wikipedia.org/wiki/Categoria:Is%C3%B2vol",
         "subcategories": [
             {
-                "name": "Pàgina a l'atzar",
-                "url": "https://ca.wikipedia.org/wiki/Especial:RandomInCategory/Is%C3%B2vol",
-                "subcategories": [],
-                "articulos": []
-            },
-            {
-                "name": "Cerca interna",
-                "url": "https://ca.wikipedia.org/wiki/Especial:Cerca/incategory:%22Is%C3%B2vol%22",
-                "subcategories": [],
-                "articulos": []
-            },
-            {
                 "name": "Edificis d'Isòvol",
                 "url": "https://ca.wikipedia.org/wiki/Categoria:Edificis_d%27Is%C3%B2vol",
                 "subcategories": [],
@@ -2739,14 +2012,6 @@
                     {
                         "name": "Gràfic",
                         "url": "https://ca.wikipedia.orghttps://iw.toolforge.org/vcat/catgraphRedirect?wiki=cawiki&title=Categoria:Edificis_d%27Is%C3%B2vol&links=graph"
-                    },
-                    {
-                        "name": "Pàgina a l'atzar",
-                        "url": "https://ca.wikipedia.org/wiki/Especial:RandomInCategory/Edificis_d%27Is%C3%B2vol"
-                    },
-                    {
-                        "name": "Cerca interna",
-                        "url": "https://ca.wikipedia.org/wiki/Especial:Cerca/incategory:%22Edificis_d%27Is%C3%B2vol%22"
                     },
                     {
                         "name": "La Barraca (Isòvol)",
@@ -2788,14 +2053,6 @@
                         "url": "https://ca.wikipedia.orghttps://iw.toolforge.org/vcat/catgraphRedirect?wiki=cawiki&title=Categoria:Geografia_d%27Is%C3%B2vol&links=graph"
                     },
                     {
-                        "name": "Pàgina a l'atzar",
-                        "url": "https://ca.wikipedia.org/wiki/Especial:RandomInCategory/Geografia_d%27Is%C3%B2vol"
-                    },
-                    {
-                        "name": "Cerca interna",
-                        "url": "https://ca.wikipedia.org/wiki/Especial:Cerca/incategory:%22Geografia_d%27Is%C3%B2vol%22"
-                    },
-                    {
                         "name": "Llista de topònims d'Isòvol",
                         "url": "https://ca.wikipedia.org/wiki/Llista_de_top%C3%B2nims_d%27Is%C3%B2vol"
                     },
@@ -2833,14 +2090,6 @@
                     {
                         "name": "Gràfic",
                         "url": "https://ca.wikipedia.orghttps://iw.toolforge.org/vcat/catgraphRedirect?wiki=cawiki&title=Categoria:Patrimoni_monumental_d%27Is%C3%B2vol&links=graph"
-                    },
-                    {
-                        "name": "Pàgina a l'atzar",
-                        "url": "https://ca.wikipedia.org/wiki/Especial:RandomInCategory/Patrimoni_monumental_d%27Is%C3%B2vol"
-                    },
-                    {
-                        "name": "Cerca interna",
-                        "url": "https://ca.wikipedia.org/wiki/Especial:Cerca/incategory:%22Patrimoni_monumental_d%27Is%C3%B2vol%22"
                     },
                     {
                         "name": "Forn de calç d'Isòvol",
@@ -2909,33 +2158,9 @@
         "url": "https://ca.wikipedia.org/wiki/Categoria:Lles_de_Cerdanya",
         "subcategories": [
             {
-                "name": "Pàgina a l'atzar",
-                "url": "https://ca.wikipedia.org/wiki/Especial:RandomInCategory/Lles_de_Cerdanya",
-                "subcategories": [],
-                "articulos": []
-            },
-            {
-                "name": "Cerca interna",
-                "url": "https://ca.wikipedia.org/wiki/Especial:Cerca/incategory:%22Lles_de_Cerdanya%22",
-                "subcategories": [],
-                "articulos": []
-            },
-            {
                 "name": "Edificis de Lles de Cerdanya",
                 "url": "https://ca.wikipedia.org/wiki/Categoria:Edificis_de_Lles_de_Cerdanya",
                 "subcategories": [
-                    {
-                        "name": "Pàgina a l'atzar",
-                        "url": "https://ca.wikipedia.org/wiki/Especial:RandomInCategory/Edificis_de_Lles_de_Cerdanya",
-                        "subcategories": [],
-                        "articulos": []
-                    },
-                    {
-                        "name": "Cerca interna",
-                        "url": "https://ca.wikipedia.org/wiki/Especial:Cerca/incategory:%22Edificis_de_Lles_de_Cerdanya%22",
-                        "subcategories": [],
-                        "articulos": []
-                    },
                     {
                         "name": "Esglésies de Lles de Cerdanya",
                         "url": "https://ca.wikipedia.org/wiki/Categoria:Esgl%C3%A9sies_de_Lles_de_Cerdanya",
@@ -2944,14 +2169,6 @@
                             {
                                 "name": "Gràfic",
                                 "url": "https://ca.wikipedia.orghttps://iw.toolforge.org/vcat/catgraphRedirect?wiki=cawiki&title=Categoria:Esgl%C3%A9sies_de_Lles_de_Cerdanya&links=graph"
-                            },
-                            {
-                                "name": "Pàgina a l'atzar",
-                                "url": "https://ca.wikipedia.org/wiki/Especial:RandomInCategory/Esgl%C3%A9sies_de_Lles_de_Cerdanya"
-                            },
-                            {
-                                "name": "Cerca interna",
-                                "url": "https://ca.wikipedia.org/wiki/Especial:Cerca/incategory:%22Esgl%C3%A9sies_de_Lles_de_Cerdanya%22"
                             },
                             {
                                 "name": "Mare de Déu del Roser de Lles",
@@ -3056,18 +2273,6 @@
                 "url": "https://ca.wikipedia.org/wiki/Categoria:Geografia_de_Lles_de_Cerdanya",
                 "subcategories": [
                     {
-                        "name": "Pàgina a l'atzar",
-                        "url": "https://ca.wikipedia.org/wiki/Especial:RandomInCategory/Geografia_de_Lles_de_Cerdanya",
-                        "subcategories": [],
-                        "articulos": []
-                    },
-                    {
-                        "name": "Cerca interna",
-                        "url": "https://ca.wikipedia.org/wiki/Especial:Cerca/incategory:%22Geografia_de_Lles_de_Cerdanya%22",
-                        "subcategories": [],
-                        "articulos": []
-                    },
-                    {
                         "name": "Entitats de població de Lles de Cerdanya",
                         "url": "https://ca.wikipedia.org/wiki/Categoria:Entitats_de_poblaci%C3%B3_de_Lles_de_Cerdanya",
                         "subcategories": [],
@@ -3075,14 +2280,6 @@
                             {
                                 "name": "Gràfic",
                                 "url": "https://ca.wikipedia.orghttps://iw.toolforge.org/vcat/catgraphRedirect?wiki=cawiki&title=Categoria:Entitats_de_poblaci%C3%B3_de_Lles_de_Cerdanya&links=graph"
-                            },
-                            {
-                                "name": "Pàgina a l'atzar",
-                                "url": "https://ca.wikipedia.org/wiki/Especial:RandomInCategory/Entitats_de_poblaci%C3%B3_de_Lles_de_Cerdanya"
-                            },
-                            {
-                                "name": "Cerca interna",
-                                "url": "https://ca.wikipedia.org/wiki/Especial:Cerca/incategory:%22Entitats_de_poblaci%C3%B3_de_Lles_de_Cerdanya%22"
                             },
                             {
                                 "name": "Arànser",
@@ -3114,14 +2311,6 @@
                             {
                                 "name": "Gràfic",
                                 "url": "https://ca.wikipedia.orghttps://iw.toolforge.org/vcat/catgraphRedirect?wiki=cawiki&title=Categoria:Muntanyes_de_Lles_de_Cerdanya&links=graph"
-                            },
-                            {
-                                "name": "Pàgina a l'atzar",
-                                "url": "https://ca.wikipedia.org/wiki/Especial:RandomInCategory/Muntanyes_de_Lles_de_Cerdanya"
-                            },
-                            {
-                                "name": "Cerca interna",
-                                "url": "https://ca.wikipedia.org/wiki/Especial:Cerca/incategory:%22Muntanyes_de_Lles_de_Cerdanya%22"
                             },
                             {
                                 "name": "Roc de l'Àliga (Lles de Cerdanya)",
@@ -3235,14 +2424,6 @@
                                 "url": "https://ca.wikipedia.orghttps://iw.toolforge.org/vcat/catgraphRedirect?wiki=cawiki&title=Categoria:Serres_de_Lles_de_Cerdanya&links=graph"
                             },
                             {
-                                "name": "Pàgina a l'atzar",
-                                "url": "https://ca.wikipedia.org/wiki/Especial:RandomInCategory/Serres_de_Lles_de_Cerdanya"
-                            },
-                            {
-                                "name": "Cerca interna",
-                                "url": "https://ca.wikipedia.org/wiki/Especial:Cerca/incategory:%22Serres_de_Lles_de_Cerdanya%22"
-                            },
-                            {
                                 "name": "Serra Airosa",
                                 "url": "https://ca.wikipedia.org/wiki/Serra_Airosa"
                             },
@@ -3284,14 +2465,6 @@
                             {
                                 "name": "Gràfic",
                                 "url": "https://ca.wikipedia.orghttps://iw.toolforge.org/vcat/catgraphRedirect?wiki=cawiki&title=Categoria:Vall_de_la_Llosa&links=graph"
-                            },
-                            {
-                                "name": "Pàgina a l'atzar",
-                                "url": "https://ca.wikipedia.org/wiki/Especial:RandomInCategory/Vall_de_la_Llosa"
-                            },
-                            {
-                                "name": "Cerca interna",
-                                "url": "https://ca.wikipedia.org/wiki/Especial:Cerca/incategory:%22Vall_de_la_Llosa%22"
                             },
                             {
                                 "name": "Vall de la Llosa",
@@ -3359,14 +2532,6 @@
                     {
                         "name": "Gràfic",
                         "url": "https://ca.wikipedia.orghttps://iw.toolforge.org/vcat/catgraphRedirect?wiki=cawiki&title=Categoria:Patrimoni_monumental_de_Lles_de_Cerdanya&links=graph"
-                    },
-                    {
-                        "name": "Pàgina a l'atzar",
-                        "url": "https://ca.wikipedia.org/wiki/Especial:RandomInCategory/Patrimoni_monumental_de_Lles_de_Cerdanya"
-                    },
-                    {
-                        "name": "Cerca interna",
-                        "url": "https://ca.wikipedia.org/wiki/Especial:Cerca/incategory:%22Patrimoni_monumental_de_Lles_de_Cerdanya%22"
                     },
                     {
                         "name": "Balneari de Senillers",
@@ -3519,18 +2684,6 @@
         "url": "https://ca.wikipedia.org/wiki/Categoria:Ll%C3%ADvia",
         "subcategories": [
             {
-                "name": "Pàgina a l'atzar",
-                "url": "https://ca.wikipedia.org/wiki/Especial:RandomInCategory/Ll%C3%ADvia",
-                "subcategories": [],
-                "articulos": []
-            },
-            {
-                "name": "Cerca interna",
-                "url": "https://ca.wikipedia.org/wiki/Especial:Cerca/incategory:%22Ll%C3%ADvia%22",
-                "subcategories": [],
-                "articulos": []
-            },
-            {
                 "name": "Edificis de Llívia",
                 "url": "https://ca.wikipedia.org/wiki/Categoria:Edificis_de_Ll%C3%ADvia",
                 "subcategories": [],
@@ -3538,14 +2691,6 @@
                     {
                         "name": "Gràfic",
                         "url": "https://ca.wikipedia.orghttps://iw.toolforge.org/vcat/catgraphRedirect?wiki=cawiki&title=Categoria:Edificis_de_Ll%C3%ADvia&links=graph"
-                    },
-                    {
-                        "name": "Pàgina a l'atzar",
-                        "url": "https://ca.wikipedia.org/wiki/Especial:RandomInCategory/Edificis_de_Ll%C3%ADvia"
-                    },
-                    {
-                        "name": "Cerca interna",
-                        "url": "https://ca.wikipedia.org/wiki/Especial:Cerca/incategory:%22Edificis_de_Ll%C3%ADvia%22"
                     },
                     {
                         "name": "Can Carbonell (Llívia)",
@@ -3639,14 +2784,6 @@
                         "url": "https://ca.wikipedia.orghttps://iw.toolforge.org/vcat/catgraphRedirect?wiki=cawiki&title=Categoria:Geografia_de_Ll%C3%ADvia&links=graph"
                     },
                     {
-                        "name": "Pàgina a l'atzar",
-                        "url": "https://ca.wikipedia.org/wiki/Especial:RandomInCategory/Geografia_de_Ll%C3%ADvia"
-                    },
-                    {
-                        "name": "Cerca interna",
-                        "url": "https://ca.wikipedia.org/wiki/Especial:Cerca/incategory:%22Geografia_de_Ll%C3%ADvia%22"
-                    },
-                    {
                         "name": "Llista de topònims de Llívia",
                         "url": "https://ca.wikipedia.org/wiki/Llista_de_top%C3%B2nims_de_Ll%C3%ADvia"
                     },
@@ -3688,14 +2825,6 @@
                     {
                         "name": "Gràfic",
                         "url": "https://ca.wikipedia.orghttps://iw.toolforge.org/vcat/catgraphRedirect?wiki=cawiki&title=Categoria:Patrimoni_monumental_de_Ll%C3%ADvia&links=graph"
-                    },
-                    {
-                        "name": "Pàgina a l'atzar",
-                        "url": "https://ca.wikipedia.org/wiki/Especial:RandomInCategory/Patrimoni_monumental_de_Ll%C3%ADvia"
-                    },
-                    {
-                        "name": "Cerca interna",
-                        "url": "https://ca.wikipedia.org/wiki/Especial:Cerca/incategory:%22Patrimoni_monumental_de_Ll%C3%ADvia%22"
                     },
                     {
                         "name": "Barraca del castell de Llívia",
@@ -3793,14 +2922,6 @@
                         "url": "https://ca.wikipedia.orghttps://iw.toolforge.org/vcat/catgraphRedirect?wiki=cawiki&title=Categoria:Persones_de_Ll%C3%ADvia&links=graph"
                     },
                     {
-                        "name": "Pàgina a l'atzar",
-                        "url": "https://ca.wikipedia.org/wiki/Especial:RandomInCategory/Persones_de_Ll%C3%ADvia"
-                    },
-                    {
-                        "name": "Cerca interna",
-                        "url": "https://ca.wikipedia.org/wiki/Especial:Cerca/incategory:%22Persones_de_Ll%C3%ADvia%22"
-                    },
-                    {
                         "name": "Lluís Cutchet i Font",
                         "url": "https://ca.wikipedia.org/wiki/Llu%C3%ADs_Cutchet_i_Font"
                     },
@@ -3855,18 +2976,6 @@
         "url": "https://ca.wikipedia.org/wiki/Categoria:Meranges",
         "subcategories": [
             {
-                "name": "Pàgina a l'atzar",
-                "url": "https://ca.wikipedia.org/wiki/Especial:RandomInCategory/Meranges",
-                "subcategories": [],
-                "articulos": []
-            },
-            {
-                "name": "Cerca interna",
-                "url": "https://ca.wikipedia.org/wiki/Especial:Cerca/incategory:%22Meranges%22",
-                "subcategories": [],
-                "articulos": []
-            },
-            {
                 "name": "Edificis de Meranges",
                 "url": "https://ca.wikipedia.org/wiki/Categoria:Edificis_de_Meranges",
                 "subcategories": [],
@@ -3874,14 +2983,6 @@
                     {
                         "name": "Gràfic",
                         "url": "https://ca.wikipedia.orghttps://iw.toolforge.org/vcat/catgraphRedirect?wiki=cawiki&title=Categoria:Edificis_de_Meranges&links=graph"
-                    },
-                    {
-                        "name": "Pàgina a l'atzar",
-                        "url": "https://ca.wikipedia.org/wiki/Especial:RandomInCategory/Edificis_de_Meranges"
-                    },
-                    {
-                        "name": "Cerca interna",
-                        "url": "https://ca.wikipedia.org/wiki/Especial:Cerca/incategory:%22Edificis_de_Meranges%22"
                     },
                     {
                         "name": "Ajuntament de Meranges",
@@ -3910,18 +3011,6 @@
                 "url": "https://ca.wikipedia.org/wiki/Categoria:Geografia_de_Meranges",
                 "subcategories": [
                     {
-                        "name": "Pàgina a l'atzar",
-                        "url": "https://ca.wikipedia.org/wiki/Especial:RandomInCategory/Geografia_de_Meranges",
-                        "subcategories": [],
-                        "articulos": []
-                    },
-                    {
-                        "name": "Cerca interna",
-                        "url": "https://ca.wikipedia.org/wiki/Especial:Cerca/incategory:%22Geografia_de_Meranges%22",
-                        "subcategories": [],
-                        "articulos": []
-                    },
-                    {
                         "name": "Muntanyes de Meranges",
                         "url": "https://ca.wikipedia.org/wiki/Categoria:Muntanyes_de_Meranges",
                         "subcategories": [],
@@ -3929,14 +3018,6 @@
                             {
                                 "name": "Gràfic",
                                 "url": "https://ca.wikipedia.orghttps://iw.toolforge.org/vcat/catgraphRedirect?wiki=cawiki&title=Categoria:Muntanyes_de_Meranges&links=graph"
-                            },
-                            {
-                                "name": "Pàgina a l'atzar",
-                                "url": "https://ca.wikipedia.org/wiki/Especial:RandomInCategory/Muntanyes_de_Meranges"
-                            },
-                            {
-                                "name": "Cerca interna",
-                                "url": "https://ca.wikipedia.org/wiki/Especial:Cerca/incategory:%22Muntanyes_de_Meranges%22"
                             },
                             {
                                 "name": "Bony del Manyer",
@@ -3980,14 +3061,6 @@
                             {
                                 "name": "Gràfic",
                                 "url": "https://ca.wikipedia.orghttps://iw.toolforge.org/vcat/catgraphRedirect?wiki=cawiki&title=Categoria:Serres_de_Meranges&links=graph"
-                            },
-                            {
-                                "name": "Pàgina a l'atzar",
-                                "url": "https://ca.wikipedia.org/wiki/Especial:RandomInCategory/Serres_de_Meranges"
-                            },
-                            {
-                                "name": "Cerca interna",
-                                "url": "https://ca.wikipedia.org/wiki/Especial:Cerca/incategory:%22Serres_de_Meranges%22"
                             },
                             {
                                 "name": "Serrat de l'Agulló",
@@ -4053,14 +3126,6 @@
                         "url": "https://ca.wikipedia.orghttps://iw.toolforge.org/vcat/catgraphRedirect?wiki=cawiki&title=Categoria:Patrimoni_monumental_de_Meranges&links=graph"
                     },
                     {
-                        "name": "Pàgina a l'atzar",
-                        "url": "https://ca.wikipedia.org/wiki/Especial:RandomInCategory/Patrimoni_monumental_de_Meranges"
-                    },
-                    {
-                        "name": "Cerca interna",
-                        "url": "https://ca.wikipedia.org/wiki/Especial:Cerca/incategory:%22Patrimoni_monumental_de_Meranges%22"
-                    },
-                    {
                         "name": "Ajuntament de Meranges",
                         "url": "https://ca.wikipedia.org/wiki/Ajuntament_de_Meranges"
                     },
@@ -4103,18 +3168,6 @@
         "url": "https://ca.wikipedia.org/wiki/Categoria:Montell%C3%A0_i_Martinet",
         "subcategories": [
             {
-                "name": "Pàgina a l'atzar",
-                "url": "https://ca.wikipedia.org/wiki/Especial:RandomInCategory/Montell%C3%A0_i_Martinet",
-                "subcategories": [],
-                "articulos": []
-            },
-            {
-                "name": "Cerca interna",
-                "url": "https://ca.wikipedia.org/wiki/Especial:Cerca/incategory:%22Montell%C3%A0_i_Martinet%22",
-                "subcategories": [],
-                "articulos": []
-            },
-            {
                 "name": "Edificis de Montellà i Martinet",
                 "url": "https://ca.wikipedia.org/wiki/Categoria:Edificis_de_Montell%C3%A0_i_Martinet",
                 "subcategories": [],
@@ -4122,14 +3175,6 @@
                     {
                         "name": "Gràfic",
                         "url": "https://ca.wikipedia.orghttps://iw.toolforge.org/vcat/catgraphRedirect?wiki=cawiki&title=Categoria:Edificis_de_Montell%C3%A0_i_Martinet&links=graph"
-                    },
-                    {
-                        "name": "Pàgina a l'atzar",
-                        "url": "https://ca.wikipedia.org/wiki/Especial:RandomInCategory/Edificis_de_Montell%C3%A0_i_Martinet"
-                    },
-                    {
-                        "name": "Cerca interna",
-                        "url": "https://ca.wikipedia.org/wiki/Especial:Cerca/incategory:%22Edificis_de_Montell%C3%A0_i_Martinet%22"
                     },
                     {
                         "name": "Cal Calsot",
@@ -4202,63 +3247,6 @@
                 "url": "https://ca.wikipedia.org/wiki/Categoria:Geografia_de_Montell%C3%A0_i_Martinet",
                 "subcategories": [
                     {
-                        "name": "Pàgina a l'atzar",
-                        "url": "https://ca.wikipedia.org/wiki/Especial:RandomInCategory/Geografia_de_Montell%C3%A0_i_Martinet",
-                        "subcategories": [],
-                        "articulos": [
-                            {
-                                "name": "Gràfic",
-                                "url": "https://ca.wikipedia.orghttps://iw.toolforge.org/vcat/catgraphRedirect?wiki=cawiki&title=Categoria:Serres_de_Montell%C3%A0_i_Martinet&links=graph"
-                            },
-                            {
-                                "name": "Pàgina a l'atzar",
-                                "url": "https://ca.wikipedia.org/wiki/Especial:RandomInCategory/Serres_de_Montell%C3%A0_i_Martinet"
-                            },
-                            {
-                                "name": "Cerca interna",
-                                "url": "https://ca.wikipedia.org/wiki/Especial:Cerca/incategory:%22Serres_de_Montell%C3%A0_i_Martinet%22"
-                            },
-                            {
-                                "name": "Serra dels Cortils",
-                                "url": "https://ca.wikipedia.org/wiki/Serra_dels_Cortils"
-                            },
-                            {
-                                "name": "Serrat de la Font",
-                                "url": "https://ca.wikipedia.org/wiki/Serrat_de_la_Font"
-                            },
-                            {
-                                "name": "Serra de Mataplana",
-                                "url": "https://ca.wikipedia.org/wiki/Serra_de_Mataplana"
-                            },
-                            {
-                                "name": "Montsec de Béixec",
-                                "url": "https://ca.wikipedia.org/wiki/Montsec_de_B%C3%A9ixec"
-                            },
-                            {
-                                "name": "Serrat Moster",
-                                "url": "https://ca.wikipedia.org/wiki/Serrat_Moster"
-                            },
-                            {
-                                "name": "Serrat de l'Obaga",
-                                "url": "https://ca.wikipedia.org/wiki/Serrat_de_l%27Obaga"
-                            },
-                            {
-                                "name": "Serra Cabirolera",
-                                "url": "https://ca.wikipedia.org/wiki/Serra_Cabirolera"
-                            },
-                            {
-                                "name": "Serrat de la Vinya (Montellà i Martinet)",
-                                "url": "https://ca.wikipedia.org/wiki/Serrat_de_la_Vinya_(Montell%C3%A0_i_Martinet)"
-                            }
-                        ]
-                    },
-                    {
-                        "name": "Cerca interna",
-                        "url": "https://ca.wikipedia.org/wiki/Especial:Cerca/incategory:%22Geografia_de_Montell%C3%A0_i_Martinet%22",
-                        "subcategories": [],
-                        "articulos": []
-                    },
-                    {
                         "name": "Entitats de població de Montellà i Martinet",
                         "url": "https://ca.wikipedia.org/wiki/Categoria:Entitats_de_poblaci%C3%B3_de_Montell%C3%A0_i_Martinet",
                         "subcategories": [],
@@ -4266,14 +3254,6 @@
                             {
                                 "name": "Gràfic",
                                 "url": "https://ca.wikipedia.orghttps://iw.toolforge.org/vcat/catgraphRedirect?wiki=cawiki&title=Categoria:Entitats_de_poblaci%C3%B3_de_Montell%C3%A0_i_Martinet&links=graph"
-                            },
-                            {
-                                "name": "Pàgina a l'atzar",
-                                "url": "https://ca.wikipedia.org/wiki/Especial:RandomInCategory/Entitats_de_poblaci%C3%B3_de_Montell%C3%A0_i_Martinet"
-                            },
-                            {
-                                "name": "Cerca interna",
-                                "url": "https://ca.wikipedia.org/wiki/Especial:Cerca/incategory:%22Entitats_de_poblaci%C3%B3_de_Montell%C3%A0_i_Martinet%22"
                             },
                             {
                                 "name": "Béixec",
@@ -4305,14 +3285,6 @@
                             {
                                 "name": "Gràfic",
                                 "url": "https://ca.wikipedia.orghttps://iw.toolforge.org/vcat/catgraphRedirect?wiki=cawiki&title=Categoria:Muntanyes_de_Montell%C3%A0_i_Martinet&links=graph"
-                            },
-                            {
-                                "name": "Pàgina a l'atzar",
-                                "url": "https://ca.wikipedia.org/wiki/Especial:RandomInCategory/Muntanyes_de_Montell%C3%A0_i_Martinet"
-                            },
-                            {
-                                "name": "Cerca interna",
-                                "url": "https://ca.wikipedia.org/wiki/Especial:Cerca/incategory:%22Muntanyes_de_Montell%C3%A0_i_Martinet%22"
                             },
                             {
                                 "name": "Turó del Batlle",
@@ -4398,14 +3370,6 @@
                                 "url": "https://ca.wikipedia.orghttps://iw.toolforge.org/vcat/catgraphRedirect?wiki=cawiki&title=Categoria:Serres_de_Montell%C3%A0_i_Martinet&links=graph"
                             },
                             {
-                                "name": "Pàgina a l'atzar",
-                                "url": "https://ca.wikipedia.org/wiki/Especial:RandomInCategory/Serres_de_Montell%C3%A0_i_Martinet"
-                            },
-                            {
-                                "name": "Cerca interna",
-                                "url": "https://ca.wikipedia.org/wiki/Especial:Cerca/incategory:%22Serres_de_Montell%C3%A0_i_Martinet%22"
-                            },
-                            {
                                 "name": "Serra dels Cortils",
                                 "url": "https://ca.wikipedia.org/wiki/Serra_dels_Cortils"
                             },
@@ -4455,14 +3419,6 @@
                     {
                         "name": "Gràfic",
                         "url": "https://ca.wikipedia.orghttps://iw.toolforge.org/vcat/catgraphRedirect?wiki=cawiki&title=Categoria:Patrimoni_monumental_de_Montell%C3%A0_i_Martinet&links=graph"
-                    },
-                    {
-                        "name": "Pàgina a l'atzar",
-                        "url": "https://ca.wikipedia.org/wiki/Especial:RandomInCategory/Patrimoni_monumental_de_Montell%C3%A0_i_Martinet"
-                    },
-                    {
-                        "name": "Cerca interna",
-                        "url": "https://ca.wikipedia.org/wiki/Especial:Cerca/incategory:%22Patrimoni_monumental_de_Montell%C3%A0_i_Martinet%22"
                     },
                     {
                         "name": "Cal Calsot",
@@ -4567,59 +3523,6 @@
         "url": "https://ca.wikipedia.org/wiki/Categoria:Prats_i_Sansor",
         "subcategories": [
             {
-                "name": "Pàgina a l'atzar",
-                "url": "https://ca.wikipedia.org/wiki/Especial:RandomInCategory/Prats_i_Sansor",
-                "subcategories": [],
-                "articulos": [
-                    {
-                        "name": "Gràfic",
-                        "url": "https://ca.wikipedia.orghttps://iw.toolforge.org/vcat/catgraphRedirect?wiki=cawiki&title=Categoria:Patrimoni_monumental_de_Prats_i_Sansor&links=graph"
-                    },
-                    {
-                        "name": "Pàgina a l'atzar",
-                        "url": "https://ca.wikipedia.org/wiki/Especial:RandomInCategory/Patrimoni_monumental_de_Prats_i_Sansor"
-                    },
-                    {
-                        "name": "Cerca interna",
-                        "url": "https://ca.wikipedia.org/wiki/Especial:Cerca/incategory:%22Patrimoni_monumental_de_Prats_i_Sansor%22"
-                    },
-                    {
-                        "name": "Capella de la Immaculada (Prats i Sansor)",
-                        "url": "https://ca.wikipedia.org/wiki/Capella_de_la_Immaculada_(Prats_i_Sansor)"
-                    },
-                    {
-                        "name": "Força de Prats",
-                        "url": "https://ca.wikipedia.org/wiki/For%C3%A7a_de_Prats"
-                    },
-                    {
-                        "name": "Molí de Prats",
-                        "url": "https://ca.wikipedia.org/wiki/Mol%C3%AD_de_Prats"
-                    },
-                    {
-                        "name": "Rajoleria de Prats",
-                        "url": "https://ca.wikipedia.org/wiki/Rajoleria_de_Prats"
-                    },
-                    {
-                        "name": "Sant Miquel de Sansor",
-                        "url": "https://ca.wikipedia.org/wiki/Sant_Miquel_de_Sansor"
-                    },
-                    {
-                        "name": "Sant Salvador de Predanies",
-                        "url": "https://ca.wikipedia.org/wiki/Sant_Salvador_de_Predanies"
-                    },
-                    {
-                        "name": "Sant Serni de Prats",
-                        "url": "https://ca.wikipedia.org/wiki/Sant_Serni_de_Prats"
-                    }
-                ]
-            },
-            {
-                "name": "Cerca interna",
-                "url": "https://ca.wikipedia.org/wiki/Especial:Cerca/incategory:%22Prats_i_Sansor%22",
-                "subcategories": [],
-                "articulos": []
-            },
-            {
                 "name": "Edificis de Prats i Sansor",
                 "url": "https://ca.wikipedia.org/wiki/Categoria:Edificis_de_Prats_i_Sansor",
                 "subcategories": [],
@@ -4627,14 +3530,6 @@
                     {
                         "name": "Gràfic",
                         "url": "https://ca.wikipedia.orghttps://iw.toolforge.org/vcat/catgraphRedirect?wiki=cawiki&title=Categoria:Edificis_de_Prats_i_Sansor&links=graph"
-                    },
-                    {
-                        "name": "Pàgina a l'atzar",
-                        "url": "https://ca.wikipedia.org/wiki/Especial:RandomInCategory/Edificis_de_Prats_i_Sansor"
-                    },
-                    {
-                        "name": "Cerca interna",
-                        "url": "https://ca.wikipedia.org/wiki/Especial:Cerca/incategory:%22Edificis_de_Prats_i_Sansor%22"
                     },
                     {
                         "name": "Capella de la Immaculada (Prats i Sansor)",
@@ -4674,14 +3569,6 @@
                     {
                         "name": "Gràfic",
                         "url": "https://ca.wikipedia.orghttps://iw.toolforge.org/vcat/catgraphRedirect?wiki=cawiki&title=Categoria:Patrimoni_monumental_de_Prats_i_Sansor&links=graph"
-                    },
-                    {
-                        "name": "Pàgina a l'atzar",
-                        "url": "https://ca.wikipedia.org/wiki/Especial:RandomInCategory/Patrimoni_monumental_de_Prats_i_Sansor"
-                    },
-                    {
-                        "name": "Cerca interna",
-                        "url": "https://ca.wikipedia.org/wiki/Especial:Cerca/incategory:%22Patrimoni_monumental_de_Prats_i_Sansor%22"
                     },
                     {
                         "name": "Capella de la Immaculada (Prats i Sansor)",
@@ -4750,63 +3637,6 @@
         "url": "https://ca.wikipedia.org/wiki/Categoria:Prullans",
         "subcategories": [
             {
-                "name": "Pàgina a l'atzar",
-                "url": "https://ca.wikipedia.org/wiki/Especial:RandomInCategory/Prullans",
-                "subcategories": [],
-                "articulos": [
-                    {
-                        "name": "Gràfic",
-                        "url": "https://ca.wikipedia.orghttps://iw.toolforge.org/vcat/catgraphRedirect?wiki=cawiki&title=Categoria:Patrimoni_monumental_de_Prullans&links=graph"
-                    },
-                    {
-                        "name": "Pàgina a l'atzar",
-                        "url": "https://ca.wikipedia.org/wiki/Especial:RandomInCategory/Patrimoni_monumental_de_Prullans"
-                    },
-                    {
-                        "name": "Cerca interna",
-                        "url": "https://ca.wikipedia.org/wiki/Especial:Cerca/incategory:%22Patrimoni_monumental_de_Prullans%22"
-                    },
-                    {
-                        "name": "Ca l'Auren",
-                        "url": "https://ca.wikipedia.org/wiki/Ca_l%27Auren"
-                    },
-                    {
-                        "name": "Casa dels Barons (Prullans)",
-                        "url": "https://ca.wikipedia.org/wiki/Casa_dels_Barons_(Prullans)"
-                    },
-                    {
-                        "name": "Fornàs de Prullans",
-                        "url": "https://ca.wikipedia.org/wiki/Forn%C3%A0s_de_Prullans"
-                    },
-                    {
-                        "name": "La Bastida (Prullans)",
-                        "url": "https://ca.wikipedia.org/wiki/La_Bastida_(Prullans)"
-                    },
-                    {
-                        "name": "Molí de la Clota",
-                        "url": "https://ca.wikipedia.org/wiki/Mol%C3%AD_de_la_Clota"
-                    },
-                    {
-                        "name": "Sant Climent d'Ardòvol",
-                        "url": "https://ca.wikipedia.org/wiki/Sant_Climent_d%27Ard%C3%B2vol"
-                    },
-                    {
-                        "name": "Sant Esteve de Prullans",
-                        "url": "https://ca.wikipedia.org/wiki/Sant_Esteve_de_Prullans"
-                    },
-                    {
-                        "name": "Sant Quintí d'Ardòvol",
-                        "url": "https://ca.wikipedia.org/wiki/Sant_Quint%C3%AD_d%27Ard%C3%B2vol"
-                    }
-                ]
-            },
-            {
-                "name": "Cerca interna",
-                "url": "https://ca.wikipedia.org/wiki/Especial:Cerca/incategory:%22Prullans%22",
-                "subcategories": [],
-                "articulos": []
-            },
-            {
                 "name": "Edificis de Prullans",
                 "url": "https://ca.wikipedia.org/wiki/Categoria:Edificis_de_Prullans",
                 "subcategories": [],
@@ -4814,14 +3644,6 @@
                     {
                         "name": "Gràfic",
                         "url": "https://ca.wikipedia.orghttps://iw.toolforge.org/vcat/catgraphRedirect?wiki=cawiki&title=Categoria:Edificis_de_Prullans&links=graph"
-                    },
-                    {
-                        "name": "Pàgina a l'atzar",
-                        "url": "https://ca.wikipedia.org/wiki/Especial:RandomInCategory/Edificis_de_Prullans"
-                    },
-                    {
-                        "name": "Cerca interna",
-                        "url": "https://ca.wikipedia.org/wiki/Especial:Cerca/incategory:%22Edificis_de_Prullans%22"
                     },
                     {
                         "name": "Casa dels Barons (Prullans)",
@@ -4870,18 +3692,6 @@
                 "url": "https://ca.wikipedia.org/wiki/Categoria:Geografia_de_Prullans",
                 "subcategories": [
                     {
-                        "name": "Pàgina a l'atzar",
-                        "url": "https://ca.wikipedia.org/wiki/Especial:RandomInCategory/Geografia_de_Prullans",
-                        "subcategories": [],
-                        "articulos": []
-                    },
-                    {
-                        "name": "Cerca interna",
-                        "url": "https://ca.wikipedia.org/wiki/Especial:Cerca/incategory:%22Geografia_de_Prullans%22",
-                        "subcategories": [],
-                        "articulos": []
-                    },
-                    {
                         "name": "Vall de la Llosa",
                         "url": "https://ca.wikipedia.org/wiki/Categoria:Vall_de_la_Llosa",
                         "subcategories": [],
@@ -4889,14 +3699,6 @@
                             {
                                 "name": "Gràfic",
                                 "url": "https://ca.wikipedia.orghttps://iw.toolforge.org/vcat/catgraphRedirect?wiki=cawiki&title=Categoria:Vall_de_la_Llosa&links=graph"
-                            },
-                            {
-                                "name": "Pàgina a l'atzar",
-                                "url": "https://ca.wikipedia.org/wiki/Especial:RandomInCategory/Vall_de_la_Llosa"
-                            },
-                            {
-                                "name": "Cerca interna",
-                                "url": "https://ca.wikipedia.org/wiki/Especial:Cerca/incategory:%22Vall_de_la_Llosa%22"
                             },
                             {
                                 "name": "Vall de la Llosa",
@@ -4982,14 +3784,6 @@
                         "url": "https://ca.wikipedia.orghttps://iw.toolforge.org/vcat/catgraphRedirect?wiki=cawiki&title=Categoria:Patrimoni_monumental_de_Prullans&links=graph"
                     },
                     {
-                        "name": "Pàgina a l'atzar",
-                        "url": "https://ca.wikipedia.org/wiki/Especial:RandomInCategory/Patrimoni_monumental_de_Prullans"
-                    },
-                    {
-                        "name": "Cerca interna",
-                        "url": "https://ca.wikipedia.org/wiki/Especial:Cerca/incategory:%22Patrimoni_monumental_de_Prullans%22"
-                    },
-                    {
                         "name": "Ca l'Auren",
                         "url": "https://ca.wikipedia.org/wiki/Ca_l%27Auren"
                     },
@@ -5048,18 +3842,6 @@
         "url": "https://ca.wikipedia.org/wiki/Categoria:Puigcerd%C3%A0",
         "subcategories": [
             {
-                "name": "Pàgina a l'atzar",
-                "url": "https://ca.wikipedia.org/wiki/Especial:RandomInCategory/Puigcerd%C3%A0",
-                "subcategories": [],
-                "articulos": []
-            },
-            {
-                "name": "Cerca interna",
-                "url": "https://ca.wikipedia.org/wiki/Especial:Cerca/incategory:%22Puigcerd%C3%A0%22",
-                "subcategories": [],
-                "articulos": []
-            },
-            {
                 "name": "Cultura de Puigcerdà",
                 "url": "https://ca.wikipedia.org/wiki/Categoria:Cultura_de_Puigcerd%C3%A0",
                 "subcategories": [],
@@ -5067,14 +3849,6 @@
                     {
                         "name": "Gràfic",
                         "url": "https://ca.wikipedia.orghttps://iw.toolforge.org/vcat/catgraphRedirect?wiki=cawiki&title=Categoria:Cultura_de_Puigcerd%C3%A0&links=graph"
-                    },
-                    {
-                        "name": "Pàgina a l'atzar",
-                        "url": "https://ca.wikipedia.org/wiki/Especial:RandomInCategory/Cultura_de_Puigcerd%C3%A0"
-                    },
-                    {
-                        "name": "Cerca interna",
-                        "url": "https://ca.wikipedia.org/wiki/Especial:Cerca/incategory:%22Cultura_de_Puigcerd%C3%A0%22"
                     },
                     {
                         "name": "Arxiu Comarcal de la Cerdanya",
@@ -5122,14 +3896,6 @@
                     {
                         "name": "Gràfic",
                         "url": "https://ca.wikipedia.orghttps://iw.toolforge.org/vcat/catgraphRedirect?wiki=cawiki&title=Categoria:Edificis_de_Puigcerd%C3%A0&links=graph"
-                    },
-                    {
-                        "name": "Pàgina a l'atzar",
-                        "url": "https://ca.wikipedia.org/wiki/Especial:RandomInCategory/Edificis_de_Puigcerd%C3%A0"
-                    },
-                    {
-                        "name": "Cerca interna",
-                        "url": "https://ca.wikipedia.org/wiki/Especial:Cerca/incategory:%22Edificis_de_Puigcerd%C3%A0%22"
                     },
                     {
                         "name": "Arxiu Comarcal de la Cerdanya",
@@ -5323,14 +4089,6 @@
                         "url": "https://ca.wikipedia.orghttps://iw.toolforge.org/vcat/catgraphRedirect?wiki=cawiki&title=Categoria:Entitats_de_Puigcerd%C3%A0&links=graph"
                     },
                     {
-                        "name": "Pàgina a l'atzar",
-                        "url": "https://ca.wikipedia.org/wiki/Especial:RandomInCategory/Entitats_de_Puigcerd%C3%A0"
-                    },
-                    {
-                        "name": "Cerca interna",
-                        "url": "https://ca.wikipedia.org/wiki/Especial:Cerca/incategory:%22Entitats_de_Puigcerd%C3%A0%22"
-                    },
-                    {
                         "name": "Associació de Bombers Voluntaris de la Generalitat de Puigcerdà",
                         "url": "https://ca.wikipedia.org/wiki/Associaci%C3%B3_de_Bombers_Voluntaris_de_la_Generalitat_de_Puigcerd%C3%A0"
                     },
@@ -5372,14 +4130,6 @@
                     {
                         "name": "Gràfic",
                         "url": "https://ca.wikipedia.orghttps://iw.toolforge.org/vcat/catgraphRedirect?wiki=cawiki&title=Categoria:Geografia_de_Puigcerd%C3%A0&links=graph"
-                    },
-                    {
-                        "name": "Pàgina a l'atzar",
-                        "url": "https://ca.wikipedia.org/wiki/Especial:RandomInCategory/Geografia_de_Puigcerd%C3%A0"
-                    },
-                    {
-                        "name": "Cerca interna",
-                        "url": "https://ca.wikipedia.org/wiki/Especial:Cerca/incategory:%22Geografia_de_Puigcerd%C3%A0%22"
                     },
                     {
                         "name": "Llista de topònims de Puigcerdà",
@@ -5448,91 +4198,6 @@
                 "url": "https://ca.wikipedia.org/wiki/Categoria:Hist%C3%B2ria_de_Puigcerd%C3%A0",
                 "subcategories": [
                     {
-                        "name": "Pàgina a l'atzar",
-                        "url": "https://ca.wikipedia.org/wiki/Especial:RandomInCategory/Hist%C3%B2ria_de_Puigcerd%C3%A0",
-                        "subcategories": [],
-                        "articulos": [
-                            {
-                                "name": "Gràfic",
-                                "url": "https://ca.wikipedia.orghttps://iw.toolforge.org/vcat/catgraphRedirect?wiki=cawiki&title=Categoria:Morts_a_Puigcerd%C3%A0&links=graph"
-                            },
-                            {
-                                "name": "Pàgina a l'atzar",
-                                "url": "https://ca.wikipedia.org/wiki/Especial:RandomInCategory/Morts_a_Puigcerd%C3%A0"
-                            },
-                            {
-                                "name": "Cerca interna",
-                                "url": "https://ca.wikipedia.org/wiki/Especial:Cerca/incategory:%22Morts_a_Puigcerd%C3%A0%22"
-                            },
-                            {
-                                "name": "Francesc Albó i Martí",
-                                "url": "https://ca.wikipedia.org/wiki/Francesc_Alb%C3%B3_i_Mart%C3%AD"
-                            },
-                            {
-                                "name": "Rafael Degollada i Guitart",
-                                "url": "https://ca.wikipedia.org/wiki/Rafael_Degollada_i_Guitart"
-                            },
-                            {
-                                "name": "Pere Dosta i Anglada",
-                                "url": "https://ca.wikipedia.org/wiki/Pere_Dosta_i_Anglada"
-                            },
-                            {
-                                "name": "Miquel Ferrer i Ramonatxo",
-                                "url": "https://ca.wikipedia.org/wiki/Miquel_Ferrer_i_Ramonatxo"
-                            },
-                            {
-                                "name": "Salvador Galceran i Vigué",
-                                "url": "https://ca.wikipedia.org/wiki/Salvador_Galceran_i_Vigu%C3%A9"
-                            },
-                            {
-                                "name": "Emili Giménez Garcia",
-                                "url": "https://ca.wikipedia.org/wiki/Emili_Gim%C3%A9nez_Garcia"
-                            },
-                            {
-                                "name": "Amador Guerra i Gifre-Trobat",
-                                "url": "https://ca.wikipedia.org/wiki/Amador_Guerra_i_Gifre-Trobat"
-                            },
-                            {
-                                "name": "Gabriel Marie",
-                                "url": "https://ca.wikipedia.org/wiki/Gabriel_Marie"
-                            },
-                            {
-                                "name": "Antoni Monsó i Lledós",
-                                "url": "https://ca.wikipedia.org/wiki/Antoni_Mons%C3%B3_i_Lled%C3%B3s"
-                            },
-                            {
-                                "name": "Francesc Piguillem i Verdacer",
-                                "url": "https://ca.wikipedia.org/wiki/Francesc_Piguillem_i_Verdacer"
-                            },
-                            {
-                                "name": "Josep Pons i Gasch",
-                                "url": "https://ca.wikipedia.org/wiki/Josep_Pons_i_Gasch"
-                            },
-                            {
-                                "name": "Francesc de Paula Ponsà i Cantí",
-                                "url": "https://ca.wikipedia.org/wiki/Francesc_de_Paula_Pons%C3%A0_i_Cant%C3%AD"
-                            },
-                            {
-                                "name": "Juan Bautista Sánchez González",
-                                "url": "https://ca.wikipedia.org/wiki/Juan_Bautista_S%C3%A1nchez_Gonz%C3%A1lez"
-                            },
-                            {
-                                "name": "Josep Antoni Trabal i Sans",
-                                "url": "https://ca.wikipedia.org/wiki/Josep_Antoni_Trabal_i_Sans"
-                            },
-                            {
-                                "name": "Ramon d'Urtx",
-                                "url": "https://ca.wikipedia.org/wiki/Ramon_d%27Urtx"
-                            }
-                        ]
-                    },
-                    {
-                        "name": "Cerca interna",
-                        "url": "https://ca.wikipedia.org/wiki/Especial:Cerca/incategory:%22Hist%C3%B2ria_de_Puigcerd%C3%A0%22",
-                        "subcategories": [],
-                        "articulos": []
-                    },
-                    {
                         "name": "Morts a Puigcerdà",
                         "url": "https://ca.wikipedia.org/wiki/Categoria:Morts_a_Puigcerd%C3%A0",
                         "subcategories": [],
@@ -5540,14 +4205,6 @@
                             {
                                 "name": "Gràfic",
                                 "url": "https://ca.wikipedia.orghttps://iw.toolforge.org/vcat/catgraphRedirect?wiki=cawiki&title=Categoria:Morts_a_Puigcerd%C3%A0&links=graph"
-                            },
-                            {
-                                "name": "Pàgina a l'atzar",
-                                "url": "https://ca.wikipedia.org/wiki/Especial:RandomInCategory/Morts_a_Puigcerd%C3%A0"
-                            },
-                            {
-                                "name": "Cerca interna",
-                                "url": "https://ca.wikipedia.org/wiki/Especial:Cerca/incategory:%22Morts_a_Puigcerd%C3%A0%22"
                             },
                             {
                                 "name": "Francesc Albó i Martí",
@@ -5639,14 +4296,6 @@
                     {
                         "name": "Gràfic",
                         "url": "https://ca.wikipedia.orghttps://iw.toolforge.org/vcat/catgraphRedirect?wiki=cawiki&title=Categoria:Patrimoni_monumental_de_Puigcerd%C3%A0&links=graph"
-                    },
-                    {
-                        "name": "Pàgina a l'atzar",
-                        "url": "https://ca.wikipedia.org/wiki/Especial:RandomInCategory/Patrimoni_monumental_de_Puigcerd%C3%A0"
-                    },
-                    {
-                        "name": "Cerca interna",
-                        "url": "https://ca.wikipedia.org/wiki/Especial:Cerca/incategory:%22Patrimoni_monumental_de_Puigcerd%C3%A0%22"
                     },
                     {
                         "name": "Llista de monuments de Puigcerdà",
@@ -5839,33 +4488,9 @@
                 "url": "https://ca.wikipedia.org/wiki/Categoria:Puigcerdanencs",
                 "subcategories": [
                     {
-                        "name": "Pàgina a l'atzar",
-                        "url": "https://ca.wikipedia.org/wiki/Especial:RandomInCategory/Puigcerdanencs",
-                        "subcategories": [],
-                        "articulos": []
-                    },
-                    {
-                        "name": "Cerca interna",
-                        "url": "https://ca.wikipedia.org/wiki/Especial:Cerca/incategory:%22Puigcerdanencs%22",
-                        "subcategories": [],
-                        "articulos": []
-                    },
-                    {
                         "name": "Artistes puigcerdanencs",
                         "url": "https://ca.wikipedia.org/wiki/Categoria:Artistes_puigcerdanencs",
                         "subcategories": [
-                            {
-                                "name": "Pàgina a l'atzar",
-                                "url": "https://ca.wikipedia.org/wiki/Especial:RandomInCategory/Artistes_puigcerdanencs",
-                                "subcategories": [],
-                                "articulos": []
-                            },
-                            {
-                                "name": "Cerca interna",
-                                "url": "https://ca.wikipedia.org/wiki/Especial:Cerca/incategory:%22Artistes_puigcerdanencs%22",
-                                "subcategories": [],
-                                "articulos": []
-                            },
                             {
                                 "name": "Músics puigcerdanencs",
                                 "url": "https://ca.wikipedia.org/wiki/Categoria:M%C3%BAsics_puigcerdanencs",
@@ -5874,14 +4499,6 @@
                                     {
                                         "name": "Gràfic",
                                         "url": "https://ca.wikipedia.orghttps://iw.toolforge.org/vcat/catgraphRedirect?wiki=cawiki&title=Categoria:M%C3%BAsics_puigcerdanencs&links=graph"
-                                    },
-                                    {
-                                        "name": "Pàgina a l'atzar",
-                                        "url": "https://ca.wikipedia.org/wiki/Especial:RandomInCategory/M%C3%BAsics_puigcerdanencs"
-                                    },
-                                    {
-                                        "name": "Cerca interna",
-                                        "url": "https://ca.wikipedia.org/wiki/Especial:Cerca/incategory:%22M%C3%BAsics_puigcerdanencs%22"
                                     },
                                     {
                                         "name": "Lleó Borrell i Gambús",
@@ -5962,18 +4579,6 @@
                         "url": "https://ca.wikipedia.org/wiki/Categoria:Pol%C3%ADtics_puigcerdanencs",
                         "subcategories": [
                             {
-                                "name": "Pàgina a l'atzar",
-                                "url": "https://ca.wikipedia.org/wiki/Especial:RandomInCategory/Pol%C3%ADtics_puigcerdanencs",
-                                "subcategories": [],
-                                "articulos": []
-                            },
-                            {
-                                "name": "Cerca interna",
-                                "url": "https://ca.wikipedia.org/wiki/Especial:Cerca/incategory:%22Pol%C3%ADtics_puigcerdanencs%22",
-                                "subcategories": [],
-                                "articulos": []
-                            },
-                            {
                                 "name": "Alcaldes de Puigcerdà",
                                 "url": "https://ca.wikipedia.org/wiki/Categoria:Alcaldes_de_Puigcerd%C3%A0",
                                 "subcategories": [],
@@ -5981,14 +4586,6 @@
                                     {
                                         "name": "Gràfic",
                                         "url": "https://ca.wikipedia.orghttps://iw.toolforge.org/vcat/catgraphRedirect?wiki=cawiki&title=Categoria:Alcaldes_de_Puigcerd%C3%A0&links=graph"
-                                    },
-                                    {
-                                        "name": "Pàgina a l'atzar",
-                                        "url": "https://ca.wikipedia.org/wiki/Especial:RandomInCategory/Alcaldes_de_Puigcerd%C3%A0"
-                                    },
-                                    {
-                                        "name": "Cerca interna",
-                                        "url": "https://ca.wikipedia.org/wiki/Especial:Cerca/incategory:%22Alcaldes_de_Puigcerd%C3%A0%22"
                                     },
                                     {
                                         "name": "Joan Carretero i Grau",
@@ -6141,18 +4738,6 @@
         "url": "https://ca.wikipedia.org/wiki/Categoria:Riu_de_Cerdanya",
         "subcategories": [
             {
-                "name": "Pàgina a l'atzar",
-                "url": "https://ca.wikipedia.org/wiki/Especial:RandomInCategory/Riu_de_Cerdanya",
-                "subcategories": [],
-                "articulos": []
-            },
-            {
-                "name": "Cerca interna",
-                "url": "https://ca.wikipedia.org/wiki/Especial:Cerca/incategory:%22Riu_de_Cerdanya%22",
-                "subcategories": [],
-                "articulos": []
-            },
-            {
                 "name": "Geografia de Riu de Cerdanya",
                 "url": "https://ca.wikipedia.org/wiki/Categoria:Geografia_de_Riu_de_Cerdanya",
                 "subcategories": [],
@@ -6160,14 +4745,6 @@
                     {
                         "name": "Gràfic",
                         "url": "https://ca.wikipedia.orghttps://iw.toolforge.org/vcat/catgraphRedirect?wiki=cawiki&title=Categoria:Geografia_de_Riu_de_Cerdanya&links=graph"
-                    },
-                    {
-                        "name": "Pàgina a l'atzar",
-                        "url": "https://ca.wikipedia.org/wiki/Especial:RandomInCategory/Geografia_de_Riu_de_Cerdanya"
-                    },
-                    {
-                        "name": "Cerca interna",
-                        "url": "https://ca.wikipedia.org/wiki/Especial:Cerca/incategory:%22Geografia_de_Riu_de_Cerdanya%22"
                     },
                     {
                         "name": "Llista de topònims de Riu de Cerdanya",
@@ -6224,38 +4801,9 @@
         "url": "https://ca.wikipedia.org/wiki/Categoria:Ur%C3%BAs",
         "subcategories": [
             {
-                "name": "Pàgina a l'atzar",
-                "url": "https://ca.wikipedia.org/wiki/Especial:RandomInCategory/Ur%C3%BAs",
-                "subcategories": [],
-                "articulos": [
-                    {
-                        "name": "Llista de topònims d'Urús",
-                        "url": "https://ca.wikipedia.org/wiki/Llista_de_top%C3%B2nims_d%27Ur%C3%BAs"
-                    }
-                ]
-            },
-            {
-                "name": "Cerca interna",
-                "url": "https://ca.wikipedia.org/wiki/Especial:Cerca/incategory:%22Ur%C3%BAs%22",
-                "subcategories": [],
-                "articulos": []
-            },
-            {
                 "name": "Geografia d'Urús",
                 "url": "https://ca.wikipedia.org/wiki/Categoria:Geografia_d%27Ur%C3%BAs",
                 "subcategories": [
-                    {
-                        "name": "Pàgina a l'atzar",
-                        "url": "https://ca.wikipedia.org/wiki/Especial:RandomInCategory/Geografia_d%27Ur%C3%BAs",
-                        "subcategories": [],
-                        "articulos": []
-                    },
-                    {
-                        "name": "Cerca interna",
-                        "url": "https://ca.wikipedia.org/wiki/Especial:Cerca/incategory:%22Geografia_d%27Ur%C3%BAs%22",
-                        "subcategories": [],
-                        "articulos": []
-                    },
                     {
                         "name": "Muntanyes d'Urús",
                         "url": "https://ca.wikipedia.org/wiki/Categoria:Muntanyes_d%27Ur%C3%BAs",
@@ -6264,14 +4812,6 @@
                             {
                                 "name": "Gràfic",
                                 "url": "https://ca.wikipedia.orghttps://iw.toolforge.org/vcat/catgraphRedirect?wiki=cawiki&title=Categoria:Muntanyes_d%27Ur%C3%BAs&links=graph"
-                            },
-                            {
-                                "name": "Pàgina a l'atzar",
-                                "url": "https://ca.wikipedia.org/wiki/Especial:RandomInCategory/Muntanyes_d%27Ur%C3%BAs"
-                            },
-                            {
-                                "name": "Cerca interna",
-                                "url": "https://ca.wikipedia.org/wiki/Especial:Cerca/incategory:%22Muntanyes_d%27Ur%C3%BAs%22"
                             },
                             {
                                 "name": "La Tosa",
@@ -6307,14 +4847,6 @@
                             {
                                 "name": "Gràfic",
                                 "url": "https://ca.wikipedia.orghttps://iw.toolforge.org/vcat/catgraphRedirect?wiki=cawiki&title=Categoria:Serres_d%27Ur%C3%BAs&links=graph"
-                            },
-                            {
-                                "name": "Pàgina a l'atzar",
-                                "url": "https://ca.wikipedia.org/wiki/Especial:RandomInCategory/Serres_d%27Ur%C3%BAs"
-                            },
-                            {
-                                "name": "Cerca interna",
-                                "url": "https://ca.wikipedia.org/wiki/Especial:Cerca/incategory:%22Serres_d%27Ur%C3%BAs%22"
                             },
                             {
                                 "name": "Serrat de les Boïgues",
