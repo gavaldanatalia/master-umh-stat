@@ -16,7 +16,6 @@ La base de datos escogida con canciones de spotify donde tenemos variables como 
 Utilizaremos esta base de datos para analizar si la popularidad de una canción esta relacionada con lo bailable que es la misma. 
 
 
-
 ```{r wooldridge}
 library(datasets)
 

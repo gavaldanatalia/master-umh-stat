@@ -1,0 +1,110 @@
+---
+title: "Funciones_practica"
+author: "Natalia Gavaldá"
+date: "2024-11-25"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Funciones
+
+```{r libraries}
+library(ggplot2)
+```
+
+# Ejercicio 2.
+Dibuja tres distribuciones normales con la misma media y distintas desviaciones en tres colores y formatos diferentes. Algo similar a la siguiente visualización
+
+## Definición de funciones
+
+```{r cars}
+normal_1 <- function(x) { dnorm(x, mean = 1.5, sd = 0.8) }
+normal_2 <- function(x) { dnorm(x, mean = 1.5, sd = 1.5) }
+normal_3 <- function(x) { dnorm(x, mean = 1.5, sd = 0.5) }
+```
+
+## Gráfico
+
+- Utilizamos `stat_function` para definir cada una de las distribuciones
+- Escogemos `scale_color_manual` para asignar un color a cada distribución
+- `labs` se utiliza para poner nombre a los ejes
+- `theme` se utiliza para personalizar y añadir la leyenda
+
+
+```{r grafico, warning=FALSE}
+ggplot(data = data.frame(x = c(-4, 4)), aes(x = x)) +
+  stat_function(fun = normal_1, aes(color = "N(μ=1.5, σ=0.8)"), linetype = "dotdash", size = 1) +
+  stat_function(fun = normal_2, aes(color = "N(μ=1.5, σ=1.5)"), linetype = "dashed", size = 1) +
+  stat_function(fun = normal_3, aes(color = "N(μ=1.5, σ=0.5)"), linetype = "dotted", size = 1) +
+  scale_color_manual(name = "", 
+                     values = c("N(μ=1.5, σ=0.8)" = "red", 
+                                "N(μ=1.5, σ=1.5)" = "orange", 
+                                "N(μ=1.5, σ=0.5)" = "blue")) +
+  labs(x = "x", y = "y") +
+  theme(legend.position = "right",
+        legend.title = element_blank(),
+        legend.text = element_text(size = 8))
+```
+
+# Ejercicio 3.
+
+## Definición de funciones
+
+```{r funciones 2}
+normal_1 <- function(x) { dnorm(x, mean = 0, sd = 1) }
+normal_2 <- function(x) { dnorm(x, mean = 1, sd = 1) }
+```
+
+
+```{r}
+# Crear el rango de datos
+x_vals <- seq(-3, 4, by = 0.01)
+
+# Crear un dataframe para las áreas destacadas
+areas <- data.frame(
+  x = c(seq(-0.5, 0, by = 0.01), seq(0.5, 1, by = 0.01)),
+  group = c(rep("area1", length(seq(-0.5, 0, by = 0.01))), 
+            rep("area2", length(seq(0.5, 1, by = 0.01))))
+)
+```
+
+
+## Gráfico
+
+- Utilizamos `stat_function` para definir cada una de las distribuciones
+- Escogemos `scale_color_manual` para asignar un color a cada distribución
+- `labs` se utiliza para poner nombre a los ejes
+- `theme` se utiliza para personalizar y añadir la leyenda
+- `geom_area` nos colorea una parte concreta de cada uno de las distribuciones con una personalización
+- `annotate` nos permite añadir texto u otros elementos gráficos como las curvas
+
+
+```{r grafico 2, warning=FALSE}
+ggplot(data = data.frame(x = c(-4, 4)), aes(x = x)) +
+  stat_function(fun = normal_1, aes(color = "N(μ=0, σ=1)"), linetype = "dotdash", size = 1) +
+  stat_function(fun = normal_2, aes(color = "N(μ=1, σ=1)"), linetype = "dashed", size = 1) +
+  scale_color_manual(name = "Legend", 
+                     values = c("N(μ=0, σ=1)" = "red", 
+                                "N(μ=1, σ=1)" = "orange")) +
+  geom_area(data = subset(areas, group == "area1"), aes(x = x, y = normal_1(x)), fill = "pink", alpha = 0.5) +
+  geom_area(data = subset(areas, group == "area2"), aes(x = x, y = normal_2(x)), fill = "orange", alpha = 0.5) +
+  labs(x = "Valores de x", y = "Probabilidad") +
+  annotate("text", x = 0.5, y = 0.42, label = "P(-0.5<X<0) = P(0.5<X<0)", size = 3) +
+  annotate("curve", 
+           x = -1, y = 0.42, xend = -1, yend = 0.35, curvature = 0.8,
+           arrow = arrow(length = unit(0.2, "cm"), type = "closed"), 
+           color = "red", size = 1) +
+  annotate("curve", 
+           x = 2, y = 0.42, xend = 1.2, yend = 0.35, curvature = -0.8,
+           arrow = arrow(length = unit(0.2, "cm"), type = "closed"), 
+           color = "orange", size = 1, linetype = "dotdash") +
+  theme(legend.position = "right",
+        plot.title = element_text(hjust = 0.5, size = 16),
+        legend.title = element_blank(),
+        legend.text = element_text(size = 8))
+```
+
+
