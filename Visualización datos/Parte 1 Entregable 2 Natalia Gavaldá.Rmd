@@ -1,0 +1,96 @@
+---
+title: "Entregable 2"
+author: "Natalia Gavaldá"
+date: "2024-11-03"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+library(ggplot2)
+library(RColorBrewer)
+library(wordcloud)
+```
+
+## Base de datos
+
+La base de datos escogida con canciones de spotify donde tenemos variables como el índice de popularidad de una canción o de lo bailable que es una canción. También tenemos variables como es la duració de la canción, los artistas que participan en ella o el álbum al que pertenece la canción.
+
+Utilizaremos esta base de datos para analizar si la popularidad de una canción esta relacionada con lo bailable que es la misma. 
+
+Caracteristicas de nuestra base de datos: 
+
+- **Numero de observaciones 4000**
+- **Número de columnas 8**
+
+
+```{r spotify.csv}
+
+path = "/Users/jjmilla/Repositorios/master-umh-stat/master-umh-stat/Estadistica/datos/spotify.csv"
+
+data_spotify <- read.csv(path)
+
+variables = c("track_genre", "duration_ms", "danceability", "track_id", "artists", "album_name", "track_name", "popularity" )
+track_genre = c("pop", "techno", "reggaeton", "indie")
+
+data <- data_spotify[(data_spotify$track_genre %in% track_genre), variables]
+
+```
+
+
+
+## Gráfico
+
+
+```{r pressure, warning=FALSE}
+# Crear el gráfico de dispersión
+ggplot(data, aes(x = danceability, y = popularity, color = track_genre)) +
+  geom_point(alpha = 0.7) + # Puntos transparentes para evitar saturación
+  labs(
+    title = "Relación entre popularity y danceability de los géneros",
+    x = "Índice de danceability",
+    y = "Índice de popularity",
+    color = "Género"
+  ) +
+  theme_minimal() + # Tema limpio y profesional
+  theme(
+    plot.title = element_text(hjust = 0.5) # Centrar el título
+  )
+```
+
+## Conclusiones:
+- **Reggaeton** (color azul): Tiende a ocupar valores altos de bailabilidad (entre 0.6 y 0.8) y de popularidad. Esto es esperado con la percepción social de que el reggaeton se enfoca en canciones muy bailables y muchas salas de baile utilizan este género.
+
+- **Techno** (violeta): Aunque tiene alta bailabilidad, sus canciones parecen tener menor popularidad en general. Esto puede debese a que el Techno es un género que no es tan popular en toda la sociedad, si no que puede gustar únicamente a un nicho de la misma.
+
+- **Pop** (verde): Se encuentra en todos los rangos de popularidad y bailabilidad, cosa que encaja con que las listas más escuchadas a nivel nacional están compuestas por canciones de este género.
+
+- **Indie** (rojo): Su popularidad parece estar concentrada en valores más bajos y su bailabilidad tiene una distribución más amplia, lo que podría reflejar que este género no prioriza que las canciones son bailables como otros géneros.
+
+## Worldcloud
+
+```{r preparacion_datos}
+# Agrupar por género y calcular la media de popularidad
+wordcloud_genre_data <- aggregate(popularity ~ track_genre, data = data_spotify, FUN = mean)
+
+# Seleccionar únicamente 20 géneros
+#wordcloud_genre_data <- wordcloud_genre_data[1:15, ]
+
+# Renombrar las columnas para que sean compatibles con el Wordcloud
+colnames(wordcloud_genre_data) <- c("word", "mean_popularity")
+```
+
+
+```{r Wordcloud, warning=FALSE}
+# Generar el Wordcloud
+wordcloud(
+  words = wordcloud_genre_data$word, 
+  freq = wordcloud_genre_data$mean_popularity, 
+  random.order = FALSE,
+  colors = rainbow(24),
+  max.words = 20 # Limitar el número máximo de palabras
+)
+
+# Título opcional
+title(main = "Wordcloud de canciones de Spotify")
+```
+
