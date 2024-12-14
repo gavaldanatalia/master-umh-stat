@@ -1,0 +1,48 @@
+---
+title: "1_entregable_natalia_gavalda_arbol_decision"
+author: "Natalia Gavaldá"
+date: "2024-12-10"
+output: html_document
+---
+
+```{r setup, warning=FALSE, message=FALSE}
+library(rpart)
+library(rpart.plot)
+library(dplyr)
+```
+
+## Datos
+
+El árbol de decisión muestra cómo las variables "danceability," "energy," y "popularity" ayudan a clasificar las canciones en dos géneros: "reggaeton" e "indie".
+
+Ambas clases están igual de balanceadas, tenemos 1000 canciones de cada uno de los géneros.
+
+```{r datos}
+path = "/Users/jjmilla/Repositorios/master-umh-stat/master-umh-stat/Estadistica/datos/spotify.csv"
+
+data_spotify <- read.csv(path)
+
+variables = c("track_genre", "danceability", "energy", "popularity" )
+track_genre = c("reggaeton", "indie")
+
+data <- data_spotify[(data_spotify$track_genre %in% track_genre), variables]
+
+data %>%
+  group_by(track_genre) %>%
+    count()
+```
+
+## Árbol e interpretación
+
+
+```{r arbol}
+arbol <- rpart( formula = track_genre ~ danceability + popularity + energy, 
+                data = data, method = 'class')
+rpart.plot(arbol)
+```
+
+**Primer nodo (arriba del todo):**
+
+ - La clasificación inicial es "indie" con una proporción de 0.50 (50%). Si la bailabilidad de una canción es menor a 0.63, el 33% de las canciones será clasificada como indie. Si no, pasamos al segundo nivel de nodo.
+ - El total de datos está en este nodo (100%).
+
