@@ -2,8 +2,8 @@
 library(psych)
 library(corrplot)
 
-
-estudiantes <- read.csv("estudiantes.csv", header = T, sep = ";")
+path="/Users/jjmilla/Repositorios/master-umh-stat/master-umh-stat/Estadistica I/Parte 3 - Scripts docente/11_AnalisisFactorial/Ejemplos/EjemploSatisfaccion/satisfaccion.csv"
+estudiantes <- read.csv(path, header = T, sep = ";")
 
 #1 .estructura de la base de datos y resumen descriptivo
 str(estudiantes)
@@ -43,13 +43,34 @@ eigen(R);cumsum(eigen(R)$values)/sum(diag(R))
 # minchi: minimizará el chi cuadrado ponderado del tamaño de la muestra cuando se traten correlaciones por pares con diferente número de sujetos por par
 # minrak: análisis factorial de rango mínimo
 
+# prepocesamiento de variables
+estudiantes$S <- ifelse(estudiantes$S == "h", 1, 
+                             ifelse(estudiantes$S == "m", 2, estudiantes$S))
+estudiantes$S <- as.numeric(estudiantes$S)
+
+estudiantes$C <- ifelse(estudiantes$C == "SI", 1, 
+                               ifelse(estudiantes$C == "NO", 0, estudiantes$C))
+estudiantes$C <- as.numeric(estudiantes$C)
+
+estudiantes$P8 <- ifelse(estudiantes$P8 == "SI", 1, 
+                        ifelse(estudiantes$P8 == "NO", 0, estudiantes$P8))
+estudiantes$P8 <- as.numeric(estudiantes$P8)
+
+# Si no queremos utilizar las variables de texto
+estudiantes <- estudiantes[, sapply(estudiantes, is.numeric)]
+
+# Modelos
 modelo1 <- fa(estudiantes, rotate = "none", nfactors = 2, fm="minres")
 
-modelo1$e.values #Valores propios de la matriz de correlaciones
+modelo1$e.values # Valores propios de la matriz de correlaciones
 
-modelo1$values #Valores propios de la solución de los factores comunes
+modelo1$values # Valores propios de la solución de los factores comunes
 
-modelo1$communality#comunalidades
+# Si alguna comunalidad es muy baja (< 0.40), esa variable no está bien explicada por los factores.
+# Variables con comunalidades bajas (< 0.40):
+# Estas variables pueden eliminarse del modelo o 
+# evaluarse si se agrupan con otras variables.
+modelo1$communality # comunalidades
 
 modelo1
 
@@ -61,7 +82,7 @@ modelo1
 # el 95.4% de Francés
 # la mejor explicada es Matemáticas y la peor Ciencias Naturales
 
-modelo1$uniquenesses#unicidades, el porcentaje que queda por explicar
+modelo1$uniquenesses # unicidades, el porcentaje que queda por explicar
 
 modelo1$loadings
 
@@ -69,32 +90,37 @@ biplot.psych(fa(estudiantes,nfactors = 2,fm="minres",rotate = "none"),pch = c(21
 
 fa.diagram(modelo1)
 
-#La matriz de correlaciones residuales después de aplicar el modelo factorial.
+# La matriz de correlaciones residuales después de aplicar el modelo factorial.
 modelo1$residual 
-
-#más cómodo
+# Matriz triangulada y redondeada
 residuals(modelo1) #cuanto más cerca de cero mejor es el AF
 
 
-#observamos que hay alguna variable que no está bien explicada por los factores, hacemos una 
-#rotación varimax
+# Observamos que hay alguna variable que no está bien explicada por los factores, hacemos una 
+# Rotación Varimax
 
 biplot.psych(fa(estudiantes,nfactors = 2,fm="minres",rotate = "varimax"),pch = c(21,18))  
 
-#estimamos de nuevo el modelo
+# Estimamos de nuevo el modelo
 modelo2 <- fa(estudiantes,nfactors = 2, fm="minres",rotate = "varimax")
 
-modelo2$communalities#comunalidades
-modelo2$uniquenesses#unicidades
+modelo2$communalities # comunalidades
+modelo2$uniquenesses # unicidades
 
+# Cargas bajas
+# Variables con cargas bajas (< 0.30):
+# Estas variables no contribuyen significativamente a ningún factor 
+# y podrían eliminarse.
 modelo2$loadings
 
+# P6 y P7 tienen valores muy bajos de carga 
+# y no aparecen en el diagrama.
 fa.diagram(modelo2)
 
+# No llega a la solución, subimos el número de iteraciones
+modelo3 <- fa(estudiantes, nfactors = 2, fm="pa",rotate = "none")
 
-modelo3 <- fa(estudiantes,nfactors = 2, fm="pa",rotate = "noe")#no llega a la solución, subimos el número de iteraciones
-
-modelo3 <- fa(estudiantes,nfactors = 2, fm="pa",rotate = "none", max.iter=100)
+modelo3 <- fa(estudiantes, nfactors = 2, fm="pa", rotate = "none", max.iter=100)
 
 biplot.psych(modelo3)
 
@@ -107,7 +133,7 @@ fa.diagram(modelo3)
 
 residuals(modelo3)
 
-#Realizamos una rotación ortogonal
+# Realizamos una rotación ortogonal
 
 modelo4 <- fa(estudiantes,rotate = "Varimax",nfactors = 2,fm="pa",max.iter=100)
 
@@ -117,30 +143,36 @@ modelo4$loadings
 
 fa.diagram(modelo4)
 
-#Realizamos una rotación oblimin
+# Realizamos una rotación oblimin
 
 modelo5<-fa(estudiantes,rotate = "oblimin",nfactors = 2,fm="pa",max.iter=100)
 
 biplot.psych(modelo5)
 
-#Al hacer rotación oblicua se analiza la matriz estructura
+modelo5$loadings
+
+fa.diagram(modelo5)
+
+# Al hacer rotación oblicua se analiza la matriz estructura
 
 modelo5$Structure
-
 
 #Soluciones adecuadas:
 ## Modelo 2, 4 y 5
 
 
+# 5. Una vez elegido el método y rotación más adecuado, calcula las puntuaciones de los sujetos
+# con el modelo factorial estimado.
 
-#5. Una vez elegido el método y rotación más adecuado, calcula las puntuaciones de los sujetos
-#con el modelo factorial estimado.
-
-#Podemos calcular las puntuaciones de los sujetos en los factores.
+# Podemos calcular las puntuaciones de los sujetos en los factores.
 modelo2$scores
 modelo4$scores
 modelo5$scores
 
+# Ver las puntuaciones de 5 sujetos
+head(modelo2$scores)
+length(modelo2$scores)/2 # Sujetos totales entre numero de factores
+dim(estudiantes)[1] # Sujetos totales en df original
 
 
 
@@ -148,19 +180,39 @@ modelo5$scores
 
 
 ############################################################################
-#library("factoextra")
+library("factoextra")
+library("ggplot2")
+library(corrplot)
+library(psych)
+library(corrplot)
 
+# otra forma de hacer el ejemplo
 
-#otra forma de hacer el ejemplo
+estudiantes<-read.csv(path, header = T, sep = ";")
 
-estudiantes<-read.csv("estudiantes.csv", header = T, sep = ";")
+# prepocesamiento de variables
+estudiantes$S <- ifelse(estudiantes$S == "h", 1, 
+                        ifelse(estudiantes$S == "m", 2, estudiantes$S))
+estudiantes$S <- as.numeric(estudiantes$S)
+
+estudiantes$C <- ifelse(estudiantes$C == "SI", 1, 
+                        ifelse(estudiantes$C == "NO", 0, estudiantes$C))
+estudiantes$C <- as.numeric(estudiantes$C)
+
+estudiantes$P8 <- ifelse(estudiantes$P8 == "SI", 1, 
+                         ifelse(estudiantes$P8 == "NO", 0, estudiantes$P8))
+estudiantes$P8 <- as.numeric(estudiantes$P8)
+
+# Si no queremos utilizar las variables de texto
+estudiantes <- estudiantes[, sapply(estudiantes, is.numeric)]
 
 str(estudiantes)
 summary(estudiantes)
+dim(estudiantes)
 
-R <- cor(estudiantes);R
+R <- cor(estudiantes); R
 
-library(corrplot)
+
 corrplot(R, method = "square")
 
 ###KMO Y BARLETT TEST
@@ -168,32 +220,50 @@ corrplot(R, method = "square")
 KMO(R)
 cortest.bartlett(R, n = 20)
 
-factanal(estudiantes, factors = 2, rotation = "none") #es de la librer?a stats, al final de los resultados
-#incluye una prueba chi para determinar el n?mero de factores adecuado. 
-#esta prueba estad?stica me determinar? si son suficientes o no el n?mero de factores.
+factanal(estudiantes, factors = 2, rotation = "none") 
+factanal(estudiantes, factors = 2, fm="minres", rotation = "varimax") 
 
-# UNICIDAD (Uniquenesses): Es el porcentaje de varianza que no ha sido explicada por el Factor y es igual a: 1 - Comunalidad.
-# 
+# es de la libreria stats, al final de los resultados
+# incluye una prueba chi para determinar el número de factores adecuado. 
+# esta prueba estadistica me determinará si son suficientes o no el número de factores.
+
+# UNICIDAD (Uniquenesses): Es el porcentaje de varianza que NO ha sido explicada por el Factor y es igual a: 1 - Comunalidad.
+ 
 # COMUNALIDAD (Loadings-Saturaciones): Porcentaje de la variabilidad de la variable explicada por ese Factor.
-# 
-# FACTOR1 - FACTOR2: Algebraicamente, un factor se estima mediante una combinaci?n lineal de variables observadas. Cuando se encuentran los factores de "mejor ajuste", 
-# debe recordarse que estos factores no son ?nicos. Se puede demostrar que cualquier rotaci?n de los factores que mejor se ajuste es tambi?n el mejor factor. 
-# La rotaci?n de factores se utiliza para ajustar la varianza que explicar? el Factor.
-# 
-# Si todos los factores explican conjuntamente un gran porcentaje de varianza en una variable dada, esa variable tiene una alta comunalidad (y por lo tanto una singularidad baja)
-# 
-# SS loadings: La saturaci?n acumulada
-# 
-# Proportion Var: Proporci?n de la varianza
 
+# FACTOR1 - FACTOR2: 
+# Algebraicamente, un factor se estima mediante una combinación lineal de variables observadas. 
+# Cuando se encuentran los factores de "mejor ajuste", 
+# debe recordarse que estos factores no son únicos. 
+# Se puede demostrar que cualquier rotación de los factores que mejor se ajuste es también el mejor factor. 
+# La rotación de factores se utiliza para ajustar la varianza que explicar el Factor.
+
+# Si todos los factores explican conjuntamente un gran porcentaje de varianza en una variable dada, 
+# esa variable tiene una alta comunalidad (y por lo tanto una singularidad baja)
+
+# SS loadings: La saturación acumulada
+# Proportion Var: Proporción de la varianza
 # Cumulative Var: Varianza acumulada
 
-#puntuaciones o pesos que son considerados como las saturaciones por cada observaci?n de las variables ingresadas al c?lculo del AF:
+# Puntuaciones o pesos que son considerados como las saturaciones por cada observación de las variables ingresadas al cálculo del AF:
 
-factanal(estudiantes, factors = 2, rotation = "none", scores = "regression")$scores
+factanal_scores = factanal(estudiantes, factors = 2, rotation = "none", scores = "regression")$scores
 
-#library(nFactors)
-#fa.parallel(R,n.obs=20,fa="fa",fm="mle")
+# Crear un gráfico de dispersión de los factores 1 y 2
+plot(
+  factanal_scores[, 1],  # Puntuaciones del Factor 1
+  factanal_scores[, 2],  # Puntuaciones del Factor 2
+  xlab = "Factor 1",
+  ylab = "Factor 2",
+  main = "Representación de los estudiantes en los ejes factoriales",
+  pch = 19, col = "blue"
+)
+
+# Agregar una cuadrícula
+grid()
+
+# library(nFactors)
+# fa.parallel(R,n.obs=20,fa="fa",fm="mle")
 
 # ev <- eigen(R)
 # ap <- parallel(subject=nrow(estudiantes),var=ncol(estudiantes), rep=100,cent=.05)

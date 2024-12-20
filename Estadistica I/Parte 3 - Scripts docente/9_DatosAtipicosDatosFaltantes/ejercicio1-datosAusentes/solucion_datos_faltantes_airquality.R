@@ -32,6 +32,11 @@ gg_miss_var(airquality)
 
 gg_miss_case(airquality)
 
+# Cada barra representa una combinación única de variables (columnas) con valores faltantes.
+# Los puntos conectados debajo de las barras indican qué columnas tienen valores faltantes simultáneamente en las filas. Por ejemplo:
+# Un punto único en una columna significa que solo esa columna tiene valores faltantes.
+# Puntos conectados entre varias columnas indican que esas columnas tienen valores faltantes al mismo tiempo para ciertas filas.
+
 gg_miss_upset(airquality)
 
 
@@ -39,18 +44,20 @@ gg_miss_upset(airquality)
 # 3.	Visualiza los valores faltantes facetada por la variable "Month". 
 # ¿En qué meses se concentran los valores faltantes? ¿Podría haber alguna razón
 # estacional para esta distribución?
-gg_miss_var(airquality, facet = Month) # visualización faceteada por la variable "Month"
-gg_miss_fct(x = airquality, fct = Month) # explorar cómo cambian los valores faltantes en cada variable en un factor
+
+# visualización faceteada por la variable "Month"
+gg_miss_var(airquality, facet = Month) 
+
+# explorar cómo cambian los valores faltantes en cada variable en un factor
+gg_miss_fct(x = airquality, fct = Month)
 
 
 ### APARTADO 4
 # Genera la matriz sombra de la base de datos
-
 as_shadow(airquality)
 
-# crear datos nabulares uniendo la matriz sombra a los datos con `bind_shadow()`.
+# crear datos tabulares uniendo la matriz sombra a los datos con `bind_shadow()`.
 bind_shadow(airquality)
-
 
 
 ### APARTADO 5
@@ -95,19 +102,37 @@ airquality %>%
 # que puedan estar relacionados con los valores faltantes de Ozone? ¿Qué podría 
 # significar esto?
 
+# visualizar variables Temp y Wind cuando hay datos para Ozone y para cuando no los hay
 airquality %>% 
   bind_shadow() %>% 
   ggplot(aes(x = Temp,
              y = Wind,
              color = Ozone_NA)) +
-  geom_point() # visualizar variables Temp y Wind cuando hay datos para Ozone y para cuando no los hay
+  geom_point() 
 
 ### APARTADO 8
 # Realiza el test de Little y concluye si los datos faltantes son MCAR. 
 # Si el test indica que los datos no son MCAR, ¿qué estrategias considerarías para 
 # tratar los valores faltantes? ¿Cómo cambiaría tu enfoque dependiendo del resultado?
 
+# El test de Little evalúa si los datos faltantes son completamente aleatorios (MCAR, por sus siglas en inglés). 
+# Los datos son MCAR si la ausencia de datos no depende de ningún valor observado ni no observado.
+# MCAR = datos faltantes ALEATORIO
+
 mcar_test(airquality)
+
+# Si los datos son MCAR (p-value > 0.05)
+# Eliminación de filas o columnas:
+# Sustituir los valores faltantes con la media, mediana o moda de la variable.
+
+# Si los datos no son MCAR (p-value ≤ 0.05)
+# Utiliza regresión u otros algoritmos para predecir y rellenar los valores faltantes basándote en otras variables.
+# Imputación basada en supuestos:
+# Haz suposiciones explícitas sobre cómo y por qué faltan los datos y ajusta los modelos en consecuencia.
+
+## Conclusión
+# Si los datos son MCAR, puedes usar imputaciones simples o eliminar las filas/columnas.
+# Si los datos no son MCAR, es preferible usar métodos más robustos como la imputación múltiple o modelos predictivos.
 
 #### APARTADO 9
 # Genera una base de datos a partir de la original que se hayan eliminado los 
@@ -135,6 +160,12 @@ airquality_imputed_mean <-
 head(airquality_imputed_mean)  
 View(airquality_imputed_mean)
 
+# Comparación
+str(airquality_imputed_mean)
+str(airquality)
+
+dim(airquality_imputed_mean)
+dim(airquality)
 
 ### APARTADO 11
 # 11.	Evalúa las imputaciones realizadas en el apartado anterior mediante los 
