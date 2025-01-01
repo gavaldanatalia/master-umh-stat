@@ -15,9 +15,10 @@ library(dplyr)
 
 El árbol de decisión muestra cómo las variables "danceability," "energy," y "popularity" ayudan a clasificar las canciones en dos géneros: "reggaeton" e "indie".
 
-Ambas clases están igual de balanceadas, tenemos 1000 canciones de cada uno de los géneros.
+Ambas clases están igual de balanceadas, tenemos 1000 canciones de cada uno de los géneros, 1000 ejemplos para el género de indie y 1000 ejermplos para el género de reggaeton.
 
-```{r datos}
+
+```{r datos, warning=FALSE, message=FALSE}
 path = "/Users/jjmilla/Repositorios/master-umh-stat/master-umh-stat/Estadistica/datos/spotify.csv"
 
 data_spotify <- read.csv(path)
@@ -32,7 +33,19 @@ data %>%
     count()
 ```
 
+
 ## Árbol e interpretación
+
+El árbol muestra cómo las canciones se dividen en función de las variables explicativas (danceability, popularity, y energy) para predecir si pertenecen al género "indie" o "reggaeton".
+
+**Números grandes (como 0.50, 0.70, etc.):** 
+
+- Indican la probabilidad o proporción del género predominante en ese nodo. Por ejemplo, si en un nodo aparece "indie 0.50", significa que el 50% de las canciones clasificadas en ese nodo pertenecen al género "indie". Si en otro aparece "reggaeton 0.70", el 70% de las canciones en ese nodo son de "reggaeton".
+
+**Porcentajes pequeños (como 100%, 67%, etc.):**
+
+- Representan el porcentaje de todas las canciones de la base de datos que llegan a ese nodo. Por ejemplo, en el nodo raíz con "100%", significa que todas las canciones están siendo evaluadas inicialmente. Si en otro nodo aparece "67%", significa que ese nodo contiene el 67% del total de las canciones de la base de datos.
+
 
 
 ```{r arbol}
@@ -43,6 +56,33 @@ rpart.plot(arbol)
 
 **Primer nodo (arriba del todo):**
 
- - La clasificación inicial es "indie" con una proporción de 0.50 (50%). Si la bailabilidad de una canción es menor a 0.63, el 33% de las canciones será clasificada como indie. Si no, pasamos al segundo nivel de nodo.
- - El total de datos está en este nodo (100%).
+- El 50% de las canciones pertenecen al género "indie" y el 50% al género "reggaeton".Si la bailabilidad (danceability) de una canción es menor que 0.63, se sigue por el lado izquierdo. Si es mayor o igual, se sigue por el lado derecho
+ 
+ **Split 1:**
+ 
+- Si la bailabilidad (danceability) de una canción es menor que 0.63, que supone el 33% de las caciones, únicamente el 9% pertenecen al género "indie". 
+ 
+- Si la bailabilidad (danceability) de una canción es mayor o igual que 0.63, que supone el 67% de las caciones, el 70% son del género "reggaeton".
 
+**Split 2:**
+
+- Si la energía (energy) de una canción es menor que 0.53, que supone el 10% de las caciones, únicamente el 10% pertenecen al género "indie". 
+
+- Si la energía (energy) de una canción es mayor o igual que 0.53, que supone el 57% de las caciones, el 80% pertenecen al género "reggaeton". 
+
+**Split 3:**
+
+- Si la popularidad (popularity) de una canción es mayor o igual a 42, que supone el 36% de las caciones, el 89% pertenecen al género "reggaeton". 
+
+ - Si la popularidad (popularity) de una canción es menor a 42, que supone el 21% de las caciones, el 64% pertenecen al género "indie". 
+ 
+**Split 4:**
+
+- Si la energía (energy) de una canción es menor a 0.69, que supone el 8% de las caciones, el 48% pertenecen al género "indie". 
+- Si la energía (energy) de una canción es mayor o igual a 0.69, que supone el 12% de las caciones, el 89% pertenecen al género "reggaeton". 
+  
+**Split 5:**
+
+ - Si la popularidad (popularity) de una canción es menor a 78, que supone el 6% de las caciones, el 35% pertenecen al género "indie". 
+ 
+- Si la popularidad (popularity) de una canción es mayor o igual a 78, que supone el 2% de las caciones, el 84% pertenecen al género "reggaeton". 
