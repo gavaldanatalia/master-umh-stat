@@ -1,0 +1,149 @@
+---
+title: "examen_parte_1"
+author: "Natalia Gavaldá"
+date: "2025-01-17"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Datos, librerías y directorio
+```{r datos, warning=FALSE, message=FALSE}
+library(ggplot2)
+
+setwd("/Users/jjmilla/Repositorios/master-umh-stat/master-umh-stat/Visualización datos/datos")
+
+spain=read.csv("spain.csv")
+world=read.csv("world2007.csv")
+```
+
+## Ejercicio 1
+
+```{r eje1, warning=FALSE, message=FALSE}
+ggplot(spain, aes(x = year, y = lifeExp)) +
+  geom_line(color = "blue") +
+  labs(title = "Evolución de la Esperanza de Vida en España",
+       x = "Año",
+       y = "Esperanza de Vida") +
+  theme_minimal()
+
+```
+
+## Ejercicio 2
+
+```{r eje2, warning=FALSE, message=FALSE}
+ggplot(spain, aes(x = pop, y = gdp)) +
+  geom_line(color = "blue") +
+  labs(title = "Relación entre PIB y Población en España",
+       x = "Población",
+       y = "PIB") +
+  theme_minimal()
+```
+
+
+**Conclusiones**
+
+- A medida que la población ha ido aumentando también lo ha hecho el PIP.
+- Ahora mismo nos encontramos en un máximo de población y PIB según el histórico del que dispononemos. 
+- Aunque la relación no es completamente lineal, se puede observar que a mayor población mayor PIB.
+
+
+## Ejercicio 3
+
+```{r eje3, warning=FALSE, message=FALSE}
+ggplot(spain, aes(x = year)) +
+  geom_line(aes(y = lifeExp, color = "Esperanza de Vida"), linewidth = 1) +
+  geom_line(aes(y = gdp / 1000, color = "PIB"), linewidth = 1) +
+  scale_y_continuous(
+    name = "Esperanza de Vida",
+    sec.axis = sec_axis(~.*1000, name = "PIB")
+  ) +
+  labs(title = "Evolución de la Esperanza de Vida y PIB en España",
+       x = "Año") +
+  scale_color_manual(values = c("blue", "red")) +
+  theme_minimal()
+```
+
+- La tendencia de la esperanza de vida es creciente así como la del PIB.
+
+## Ejercicio 4
+
+```{r eje4, warning=FALSE, message=FALSE}
+ggplot(world, aes(x = continent, y = gdp)) +
+  geom_boxplot(fill = "lightblue", color = "black") +
+  labs(title = "PIB por continente",
+       x = "Continente",
+       y = "PIB") +
+  theme_minimal()
+
+```
+
+- África es el continente con menor PIB con ciertos outliers muy alejados de la mediana. Ello se deberá a que hay mucha dispersión entre los países del continente en cuanto a PIB.
+
+- Europa es el continente con mayor PIB y con una distribución más homogénea. No se aprecian outliers aunque en Europa podemos encontrar ciertos países con un PIB muy bajo respecto a otros.
+
+- Oceanía sería el continente en el que la distribución del PIB es más homogénea y con una mediana más alta de todos los continentes.
+
+- En Asia se observa una distribución heterogenea en la que hay países con un PIB muy bajo y otros con un PIB muy alto. Aún así, supera en mediana a África.
+
+## Ejercicio 5
+
+```{r eje5, warning=FALSE, message=FALSE}
+ggplot(world, aes(x = reorder(country, gdp), y = gdp, fill = continent)) +
+  geom_bar(stat = "identity") +
+  facet_wrap(~ continent, scales = "free_x") +
+  labs(title = "PIB, contiente y pais",
+       x = "País",
+       y = "PIB") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 75, hjust = 1))
+
+```
+
+- Con el grafico 5 se puede apreciar la distribución del propio continente viendo los totales por país como ventaja de uno sobre el otro. En cambio, con el gráfico 4 podemos ver los outliers mucho mejor que con el gráfico de barras por país.
+
+- Conclusón final: Ambos gráficos son complementarios. En uno podemos ver el dato agregado por continente y en el otro desglosado por país. Dependiendo del objeto del análisis puede ser interesante uno u otro.
+
+
+## Ejercicio 6
+
+```{r eje6, warning=FALSE, message=FALSE}
+
+
+# Crear el gráfico con un rectángulo desde 0 a 5000 en PIB
+ggplot(world, aes(x = gdp, y = lifeExp)) +
+  geom_rect(aes(xmin = 0, xmax = 5000, ymin = min(lifeExp), ymax = max(lifeExp)), 
+            fill = "gray", alpha = 0.2) +
+  geom_point(alpha = 0.7) +
+  labs(title = "Esperanza de vida y PIB",
+       x = "PIB",
+       y = "Esperanza de vida") +
+  theme_minimal()
+
+```
+
+Se puede observar que a una menor esperanza de vida, el PIB es más bajo. A medida que la esperanza de vida aumenta, el PIB también lo hace. Aunque no es una relación lineal, se puede observar que a una esperanza de vida de más de 70 años, el PIB es mayor.
+
+## Ejercicio 7
+
+```{r eje7, warning=FALSE, message=FALSE}
+
+ggplot(world, aes(x = gdp, fill = continent)) +
+  geom_density(alpha = 0.5) +
+  labs(title = "Titulo",
+       x = "PIB",
+       y = "Densidad") +
+  theme_minimal()
+
+```
+
+
+
+
+
+
+
+
+

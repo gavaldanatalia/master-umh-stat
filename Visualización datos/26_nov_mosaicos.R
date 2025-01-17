@@ -24,8 +24,8 @@ mosaic(~Dept+Gender+Admit, # Variables
 
 install.packages("devtools")
 devtools::install_github("haleyjeppson/ggmosaic")
-library(ggplot2)
-library(ggmosaic)
+#library(ggplot2)
+#library(ggmosaic)
 
 # Crear el dataframe
 datos <- data.frame(
@@ -48,6 +48,9 @@ ggplot(data = datos) +
   geom_mosaic(aes(x = Edad, conds =Música, fill = Dispositivo)) 
 
 
+#install.packages("ggmosaic")
+#library(ggmosaic)
+
 ggplot(data = datos) +
   geom_mosaic( aes( 
     x = product(Edad, Música, Dispositivo), 
@@ -59,6 +62,15 @@ ggplot(data = datos) +
                    ) +
   scale_fill_manual(values = c("Tablet" = "pink", "Tv" = "darkgreen")) +
   theme_minimal()
+
+
+# Mosaico con colores con un título en medio y con la leyenda que tenga los colores azul y verde
+ggplot(data = datos) +
+  geom_mosaic(aes(x = Edad, conds =Música, fill = Dispositivo)) +
+  geom_mosaic_text(title = "Ejemplo de gráfico de mosaico con ggmosaic") +
+  scale_fill_manual(values = c("Tablet" = "blue", "Tv" = "green")) +
+  theme_minimal()
+
 
 
 
