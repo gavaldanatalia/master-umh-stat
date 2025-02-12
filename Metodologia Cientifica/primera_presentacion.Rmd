@@ -1,0 +1,60 @@
+---
+title: "presentacion_10_feb"
+author: "Natalia Gavaldá"
+date: "2025-02-10"
+output: beamer_presentation
+---
+
+## Mi primer informe
+
+
+## EDA
+
+Esta es la correlación entre la velocidad y la distancia `r cor(cars$speed, cars$dist)`. Además la mediana de la velocidad es `r median(cars$speed)` y la media es `r mean(cars$speed)` y la mediana de la distancia es `r median(cars$dist)` y la media es `r mean(cars$dist)`.
+
+```{r pressure, echo=FALSE}
+
+# grafico de la regresion lineal
+plot(cars$speed, cars$dist)
+
+```
+
+
+
+```{r summary, echo=FALSE}
+
+# Cargamos el dataset cars
+summary(cars)
+
+```
+
+
+
+
+## Regresion Lineal
+
+
+```{r regression_lineal}
+
+# regresion lineal de la velocidad en función de la distancia
+modelo <- lm(dist ~ speed, data = cars)
+summary(modelo)
+
+```
+
+Esta es la ecuación del modelo de regresión lineal: 
+
+```{r regression_lineal_f, echo=FALSE}
+
+equatiomatic :: extract_eq(modelo)
+
+```
+
+
+```{r regression_lineal_grafico}
+
+# hacer un grafico con la regresion lineal
+plot(cars$speed, cars$dist)
+abline(modelo)
+
+```
