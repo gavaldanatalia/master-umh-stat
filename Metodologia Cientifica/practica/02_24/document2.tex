@@ -1,0 +1,64 @@
+\documentclass[a4paper, 10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{lipsum}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage[all]{hypcap}
+\usepackage{color}
+\definecolor{color1}{RGB}{19,120,250}
+\title{Clase de Metodología Científica} %Preámbulo
+\author{Alfonso \and Pepe \thanks{Agradecimiento a Pepe}}
+\begin{document}
+	\tableofcontents
+	\listoffigures
+	\listoftables
+	\maketitle
+	%Texto aleatorio
+	\noindent\today \\
+	\lipsum[1] \\ \\
+	\lipsum[2] \\ \\ \\ \\
+	
+	\begin{table}[h]
+		\label{Tabla 1}
+		\begin{center}
+			\begin{tabular}{c|cc}
+				3 & 1 & 2 \\
+				1 & 2 & 3 \\
+			\end{tabular}
+		\end{center}
+	\end{table}
+
+	\begin{table}[h]
+		\begin{center}
+			\begin{tabular}{c|r|l|c} % 4 columnas centradas %r derecha %l izquierda % center
+				 Alumn@ & Nota & Asignatura & Carrera \\ \hline \hline %barra horizontal	 % vertical vline		
+				 María & 9 & Estadística & \\
+				 Víctor & 7 & Metodología & \\
+				 Laura & 8 & Álgebra & \\ \hline
+			\end{tabular}
+			\caption{Notas del alumnado de primer curso.}
+		\end{center}
+	\end{table}
+	En la Tabla 1 \ref{Tabla 1} se puede ver 
+	
+	\begin{figure}
+		\label{Figura 1}
+		\begin{center}
+			\includegraphics{OIP} %Ruta de la imágen en la misma carpeta
+		\caption{Comandos de Látex para modificar tamaño de texto}
+		\end{center}
+	\end{figure}
+	En la Figura 1 \ref{Figura 1} se puede ver \\
+	\textcolor{red}{Texto rojo}
+	\colorbox{red}{Texto rojo}
+	\fcolorbox{red}{blue}{Texto azul y  rojo}
+	
+	\colorbox{color1}{Texto random}
+	
+	%Texto técnico
+	$\frac{3}{5}$
+	
+	$$\frac{3}{5}$$ %Línea aparte
+	
+\end{document}

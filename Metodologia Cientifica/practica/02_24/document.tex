@@ -1,0 +1,101 @@
+\documentclass[a4paper, 11pt]{article}  % Tipo de documento (report para TFM)
+\usepackage{amsmath, amsthm, amssymb} %Ecuaciones, teoremas y símbolos matemáticos
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{graphicx}
+
+\graphicspath{ {./images/} }
+\title{Mi primer documento} %Preámbulo
+\author{Alfonso \and Pepe \thanks{Agradecimiento}}
+\date{27/02/2021}
+%Cuerpo
+\begin{document}
+	\maketitle
+	\tableofcontents %índices
+	Este es nuestro primer documento. Durante \today \ aprenderemos documentos de Latex.\date{27/02/2021}
+	\textbf{Negrita}
+	\underline{Subrayado}
+	\textbf{\textit{Negrita y cursiva}}	
+	
+	\includegraphics{OIP}
+	
+	
+	{\Huge{Texto grande}}
+	{\tiny{\textit{texto}}}
+	There's a picture of a galaxy above
+	\ %espacio
+	\\ %Salto de línea
+	
+	\begin{center}
+		Texto centrado...
+	\end{center}
+	
+	\begin{flushleft}
+		Texto a la izquierda...
+	\end{flushleft}
+	
+	Hola caracola \hfill texto alineado con espacio a la derecha
+	\footnote{Nota de pie de página}
+	
+	\newpage
+	\setcounter{footnote}{1}
+	\noindent La \textbf{teoría de juegos}\footnote{ver Casas Méndez, B.(2012). Introducción a la teoría de juegos} es un área de las \underline{matemáticas} que utiliza modelos para estidiar interacciones entre \textit{jugadores} en estructuras formalizadas de incentivos. Existen, principalmente, dos tipos de juegos.\\
+	\begin{center}
+		{\large{\textbf{Juegos estratégicos \& cooperativos}}}\\
+	\end{center}
+	
+	\noindent Sus investigadores estudian las \ \ \ \ \ estrategias \\ óptimas de cada jugador.\\
+	Este documento ha sido creado \dotfill \today
+	 
+	%\chapter{Capítulo} no se puede por que estamos en un artículo
+	\section*{Sección} %*para que no salga en el índice
+	\section{Juan Carlos se porta mal}
+	\subsection{Juan Carlos se porta ?}
+	\subsubsection{Clase de Latex}
+	\subsubsection[Cap2]{Subsubsección}
+	
+	%Listas sin numerar
+	\begin{itemize}
+		\item Elemento 1 \begin{itemize}
+			\item Subelemento 1
+			\item Subelemento 2
+		\end{itemize}
+		\item Elemento 2
+	\end{itemize}
+	
+		%Listas sin numerar
+	\begin{enumerate}
+		\item Elemento 1 \begin{enumerate}
+				\item Subelemento 1
+				\item Subelemento 2
+			\end{enumerate}
+		\item Elemento 2
+		\item[4.] Elemento 4
+		\setcounter{enumi}{10}
+		\item Elemento Enum %11
+	\end{enumerate}
+	\newpage
+	%Ejercicio
+	\begin{enumerate}
+		\item Primer punto
+		\item Segundo punto
+		\begin{itemize}
+			\item Primer punto del segundo nivel
+			\begin{description}
+				\item[Tercer nivel 1] Primer punto
+				\item[Tercer nivel 2] Segundo punto
+			\end{description}
+			\item Segundo punto del segundo nivel
+			\item Tercer punto del segundo nivel
+		\end{itemize}
+		\item Tercer punto
+		\begin{itemize}
+			\item Cuarto punto del segundo nivel
+			\item Quinto punto del segundo nivel
+		\end{itemize}
+		\item[6.] Cuarto punto
+		\item[5.] Quinto punto
+	\end{enumerate}
+	
+	
+\end{document}
