@@ -1,0 +1,762 @@
+---
+title: "Práctica 1. Evaluación de la eficiencia con modelos no paramétricos"
+subtitle: "Análisis de la eficiencia y la productividad"
+author: "Introduce tu nombre"
+date: "Curso 2024/2025"
+output:
+  rmdformats::readthedown:
+    embed_resources: true
+    standalone: true
+---
+
+```{r setup, include=FALSE}
+
+knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
+
+```
+
+# Librerías y bases de datos
+
+```{r librerías}
+
+# cargamos librerías adicionales para la realización de la práctica
+library(dplyr)
+library(ggplot2)
+library(readxl)
+library(lpSolveAPI)
+library(knitr)
+library(corrplot)
+
+```
+
+Cargamos la bases de datos `rice` disponible en el campus UMH:
+
+```{r BDs}
+
+#setwd("/Users/jjmilla/Repositorios/master-umh-stat/master-umh-stat/Eficiencia/p1")
+
+rice <- read_excel("/Users/jjmilla/Repositorios/master-umh-stat/master-umh-stat/Eficiencia/p1/rice producers.xlsx")
+
+```
+
+Creamos los *toy datasets*:
+
+```{r toyDatasets}
+
+A <- data.frame (
+  employee = c(2, 3, 3, 4, 5, 5, 6, 8),
+  sale = c(1, 3, 2, 3, 4, 2, 3, 5)
+)
+
+row.names(A) <- c("A", "B", "C", "D", "E", "F", "G", "H")
+
+B <- data.frame (
+  employee = c(4, 7, 8, 4, 2, 5, 6, 5.5, 6),
+  floor.area = c(3, 3, 1, 2, 4, 2, 4, 2.5, 2.5),
+  sale = c(1, 1, 1, 1, 1, 1, 1, 1, 1)
+)
+
+row.names(B) <- c("A", "B", "C", "D", "E", "F", "G", "H", "I")
+
+C <- data.frame (
+  employee = c(1, 1, 1, 1, 1, 1, 1),
+  customers = c(1, 2, 3, 4, 4, 5, 6),
+  sales = c(5, 7, 4, 3, 6, 5, 2)
+)
+
+row.names(C) <- c("A", "B", "C", "D", "E", "F", "G")
+
+```
+
+Creamos una base de datos simulada (`D`):
+
+```{r simulated_data}
+
+# fijamos una semilla
+set.seed(314) 
+
+# input 1
+x1 <- runif(n = 50, min = 1, max = 10)
+
+# frontera teórica
+yD <- log(x1) + 3 
+
+# ineficiencia
+u <- abs(rnorm(n = 50, mean = 1.0, sd = 0.4)) 
+u[sample(1:50, 1)] <- 0 # DMUs eficientes
+
+# output 1
+y1 <- yD - u
+
+# base de datos D
+D <- data.frame(x = x1, y = y1, yD = yD)
+
+```
+
+# Ejercicio 6
+
+La función `get_multipliers()` devuelve los vectores de los multiplicadores (en formato `data.frame`) bajo una tecnología con rendimientos constantes a escala y una medida de eficiencia introducida por el usuario. Los argumentos de la función serán los siguientes:
+
+```{r get_multipliers, echo = TRUE, eval = FALSE}
+
+get_multipliers (
+  tech_xmat,
+  tech_ymat,
+  eval_xmat,
+  eval_ymat,
+  measure = "rad_out",
+  rownames = NULL
+)
+
+```
+
+### Función para obtener los multiplicadores de eficiencia con el modelo DEA-CCR bajo orientación *input*:
+
+```{r radial_input_multipliers}
+
+rad_inp_mult <- function (
+    tech_xmat,
+    tech_ymat,
+    eval_xmat,
+    eval_ymat
+    ) {
+  
+  # número de DMUs a evaluar
+  eval_dmu <- ...
+  
+  # número de DMUs en la tecnología
+  tech_dmu <- ...
+  
+  # número de inputs
+  nX <- ...
+  
+  # número de outputs
+  nY <- ...
+  
+  # inicializamos el vector de multiplicadores
+  mults <- ...
+  
+  for (d in 1:eval_dmu) {
+    
+    # función objetivo
+    objVal <- ...
+    objVal[...] <- ...
+    
+    # estructura para lpSolve
+    lps <- make.lp(nrow = 0, ncol = ...)
+    lp.control(lps, sense = ...)
+    set.objfn(lps, objVal)
+    
+    # vx = 1
+    add.constraint(lps, xt = ..., type = ...,  rhs = ...)
+
+    # -vx + uy <= 0
+    for(k in 1:tech_dmu) {
+      add.constraint(lps, xt = ..., type = ...,  rhs = ...)
+    }
+    
+    # resolvemos el modelo    
+    solve(lps)
+    mults[d, ] <- get.variables(lps)
+    
+  }
+  
+  # renombramos data.frame
+  colnames(mults) <- c(paste("v_x", 1:nX, sep = ""), paste("u_y", 1:nY, sep = ""))
+  
+  # multiplicadores
+  return(as.data.frame(mults))
+  
+}
+
+```
+
+### Función para obtener los multiplicadores de eficiencia con el modelo DEA-CCR bajo orientación *output*:
+
+```{r radial_output_multipliers}
+
+rad_out_mult <- function (
+    tech_xmat,
+    tech_ymat,
+    eval_xmat,
+    eval_ymat
+    ) {
+  
+  ...
+  
+}
+
+```
+
+### *get_multiplier()* :
+
+```{r get_multipliers_function}
+
+get_multipliers <- function (
+  tech_xmat,
+  tech_ymat,
+  eval_xmat,
+  eval_ymat,
+  measure = "rad_out",
+  rownames = NULL
+  ) {
+  
+  # índices de inputs
+  x <- ...
+  
+  # índices de outputs
+  y <- ...
+  
+  if (measure == "rad_inp") {
+    
+    mult <- ...
+    
+    num_out <- ...
+    den_inp <- ...
+    
+    # calculamos el score de eficiencia
+    score <- ...
+    
+  } else if (measure == "rad_out") {
+    
+    mult <- ...
+    
+    num_inp <- ...
+    den_out <- ...
+    
+    # calculamos el score de eficiencia
+    score <- ...
+    
+  } else {
+    
+    stop("measure not available")
+    
+  }
+   
+  # añadimos el score de eficiencia a la matriz de multiplicadores
+  mult$score <- ...
+  
+  # multiplicadores + score de eficiencia
+  return(mult)
+  
+}
+
+```
+
+# Ejercicio 7
+
+```{r exercise_7}
+
+# calculamos los multiplicadores
+mult_inp <- ...
+
+# añadimos una etiqueta para identificar a la DMU
+mult_inp$DMU <- 1:nrow(mult_inp)
+
+```
+
+**Apartado a)**
+
+```{r exercise_7_a1}
+
+# mostramos los multiplicadores de las 5 DMUs con mayor valor para la variable "v_x1".
+top_mul_x1 <- ...
+
+kable(top_mul_x1)
+
+```
+
+```{r exercise_7_a2}
+
+# mostramos los inputs y outputs de esas 5 DMUs
+kable(rice[top_mul_x1$DMU, ])
+
+```
+
+**Apartado b)**
+
+```{r exercise_7_b1}
+
+# calculamos la desviación estándar por fila
+mul_sd <- ...
+
+# añadimos la variable a la base de datos
+mult_inp$mul_sd <- mul_sd
+
+# mostramos los multiplicadores de las 5 DMUs con menor variabilidad en los pesos.
+less_var_mul <- ...
+
+kable(less_var_mul)
+
+```
+
+```{r exercise_7_b2}
+
+# mostramos los inputs y outputs de esas 5 DMUs
+kable(rice[less_var_mul$DMU, ])
+
+```
+
+**Apartado c)**
+
+```{r exercise_7_c}
+
+# matriz de correlaciones
+cor_mat <- ...
+
+# representación gráfica
+corrplot.mixed ( 
+  cor_mat,
+  lower = "number",
+  upper = "pie"
+  )
+
+```
+
+# Ejercicio 8
+
+La función `eff_scores()` devuelve los vectores de *scores* de eficiencia (en formato `data.frame`) bajo ciertas características de la tecnología y una medida de eficiencia introducida por el usuario. Los argumentos de la función son los siguientes:
+
+```{r eff_scores, echo = TRUE, eval = FALSE}
+
+eff_scores (
+  tech_xmat,
+  tech_ymat,
+  eval_xmat,
+  eval_ymat,
+  convexity = TRUE,
+  returns = "variable",
+  measure = "rad_out",
+  direction = NULL,
+  rownames = NULL
+)
+
+```
+
+### Función para calcular los *scores* de eficiencia bajo orientación (radial) *output*:
+
+```{r radial_output}
+
+rad_out <- function (
+    tech_xmat,
+    tech_ymat,
+    eval_xmat,
+    eval_ymat,
+    convexity,
+    returns
+    ) {
+
+  # número de DMUs en la tecnología
+  tech_dmu <- nrow(tech_xmat)
+
+  # número de DMUs a evaluar
+  eval_dmu <- nrow(eval_xmat)
+
+  # inicializamos el vector de scores y de benchmarking
+  scores <- matrix(nrow = eval_dmu, ncol = 1)
+  benchs <- matrix(nrow = eval_dmu, ncol = tech_dmu)
+
+  # número de inputs y de outputs
+  nX <- ncol(tech_xmat)
+  nY <- ncol(tech_ymat)
+
+  for (d in 1:eval_dmu) {
+
+    # función objetivo
+    objVal <- matrix(ncol = 1 + tech_dmu, nrow = 1) # vector fila vacío
+    objVal[1] <- 1
+
+    # estructura de lpSolve
+    lps <- make.lp(nrow = 0, ncol = 1 + tech_dmu)
+    lp.control(lps, sense = "max") # min o max. Max en este caso. Dende del problema.
+    set.objfn(lps, objVal)
+
+    # inputs (m) --> numero de inputs nX 
+    for (xi in 1:nX) {
+      add.constraint(lps, xt = c(0, tech_xmat[,xi]), type = "<=",  rhs = eval_xmat[d, xi]) # tech_xmat inputs de la tecnologia
+    }
+
+    # outputs
+    for (yi in 1:nY) {
+      add.constraint(lps, xt = c(-eval_ymat[d, yi], tech_ymat[,yi]), type = ">=", rhs = 0)
+    }
+
+    # tecnología
+    if (returns == "variable") {
+      if (convexity) {
+        add.constraint(lprec = lps, xt = c(0, rep(1, tech_dmu)), type = "=", rhs = 1)
+      } else {
+        add.constraint(lprec = lps, xt = c(0, rep(1, tech_dmu)), type = "=", rhs = 1)
+        # variables de la 2 a la 11 son binarias, la primera posición es fi
+        set.type(lps, columns = 1:tech_dmu + , type = "binary") 
+      }
+    }
+    
+    # resolvemos el modelo
+    solve(lps)
+    scores[d, ] <- get.objective(lps)
+    
+    # DMUs de referencia
+    benchs[d, ] <- get.variables(lps)[2:(tech_dmu + 1)]
+    
+  }
+
+  # score de eficiencia + lambdas
+  return(list("score" = scores, "bench" = benchs))
+  
+}
+
+```
+
+### Función para calcular los *scores* de eficiencia bajo orientación (radial) *input*:
+
+```{r radial_input}
+
+rad_inp <- function (
+    tech_xmat, 
+    tech_ymat, 
+    eval_xmat, 
+    eval_ymat, 
+    convexity, 
+    returns
+    ) {
+  
+  # número de DMUs en la tecnología
+  tech_dmu <- nrow(tech_xmat)
+
+  # número de DMUs a evaluar
+  eval_dmu <- nrow(eval_xmat)
+
+  # inicializamos el vector de scores y de benchmarking
+  scores <- matrix(nrow = eval_dmu, ncol = 1)
+  benchs <- matrix(nrow = eval_dmu, ncol = tech_dmu)
+
+  # número de inputs y de outputs
+  nX <- ncol(tech_xmat)
+  nY <- ncol(tech_ymat)
+
+  for (d in 1:eval_dmu) {
+
+    # función objetivo
+    objVal <- matrix(ncol = 1 + tech_dmu, nrow = 1) # vector fila vacío
+    objVal[1] <- 1
+
+    # estructura de lpSolve
+    lps <- make.lp(nrow = 0, ncol = 1 + tech_dmu)
+    lp.control(lps, sense = "min") # min o max. Max en este caso. Dende del problema.
+    set.objfn(lps, objVal)
+
+    # inputs (m) --> numero de inputs nX 
+    for (xi in 1:nX) {
+      add.constraint(lps, xt = c(-eval_xmat[d, yi], tech_xmat[,xi]), type = "<=",  rhs = 0) # tech_xmat inputs de la tecnologia
+    }
+
+    # outputs
+    for (yi in 1:nY) {
+      add.constraint(lps, xt = c(0, tech_ymat[, yi], tech_ymat[,yi]), type = ">=", rhs = eval_ymat[d, yi])
+    }
+
+    # tecnología
+    if (returns == "variable") {
+      if (convexity) {
+        add.constraint(lprec = lps, xt = c(0, rep(1, tech_dmu)), type = "=", rhs = 1)
+      } else {
+        add.constraint(lprec = lps, xt = c(0, rep(1, tech_dmu)), type = "=", rhs = 1)
+        # variables de la 2 a la 11 son binarias, la primera posición es fi
+        set.type(lps, columns = 1:tech_dmu + , type = "binary") 
+      }
+    }
+    
+    # resolvemos el modelo
+    solve(lps)
+    scores[d, ] <- get.objective(lps)
+    
+    # DMUs de referencia
+    benchs[d, ] <- get.variables(lps)[2:(tech_dmu + 1)]
+    
+  }
+
+  # score de eficiencia + lambdas
+  return(list("score" = scores, "bench" = benchs))
+  
+}
+
+```
+
+### Función para calcular los *scores* de eficiencia bajo distancia direccional:
+
+```{r directional_distance, echo = TRUE, eval = TRUE}
+
+ddf <- function (
+    tech_xmat, 
+    tech_ymat, 
+    eval_xmat, 
+    eval_ymat, 
+    direction, 
+    convexity, 
+    returns
+    ) {
+
+  # número de DMUs en la tecnología
+  tech_dmu <- ...
+
+  # número de DMUs a evaluar
+  eval_dmu <- ...
+  
+  # inicializamos el vector de scores y de benchmarking
+  scores <- ...
+  benchs <- ...
+
+  # número de inputs y outputs
+  nX <- ...
+  nY <- ...
+
+  for (d in 1:eval_dmu) {
+    
+    # función objetivo
+    objVal <- ...
+    objVal[...] <- ...
+
+    # estructura del lpSolve
+    lps <- make.lp(nrow = 0, ncol = ...)
+    lp.control(lps, sense = ...)
+    set.objfn(lps, objVal)
+
+    # vector de dirección
+    if (direction == "mean") {
+      
+      G_x <- ...
+      G_y <- ...
+      
+    } else {
+      
+      G_x <- ...
+      G_y <- ...
+      
+    }
+
+    # inputs
+    for (xi in 1:nX) {
+      add.constraint(lps, xt = ..., type = ...,  rhs = ...)
+    }
+
+    # outputs
+    for (yi in 1:nY) {
+      add.constraint(lps, xt = ..., type = ...,  rhs = ...)
+    }
+
+    # tecnología
+    if (returns == "variable") {
+      if (convexity) {
+        add.constraint(lprec = lps, xt = ..., type = ..., rhs = ...)
+      } else {
+        add.constraint(lprec = lps, xt = ..., type = ..., rhs = ...)
+        set.type(lps, columns = ..., type = ...)
+      }
+    }
+
+    # resolvemos el modelo
+    solve(lps)
+    scores[d, ] <- ...
+    
+    # DMUs de referencia
+    benchs[d, ] <- ...
+    
+  }
+
+  # score de eficiencia + lambdas
+  return(list("score" = scores, "bench" = benchs))
+  
+}
+
+```
+
+### eff_scores()
+
+```{r eff_scores_function, echo = TRUE, eval = TRUE}
+
+eff_scores <- function (
+    tech_xmat,
+    tech_ymat,
+    eval_xmat,
+    eval_ymat,
+    convexity = TRUE,
+    returns = "variable",
+    measure = "rad_out",
+    direction = NULL,
+    rownames = NULL
+    ) {
+  
+  if (measure == "rad_out") {
+    
+    # radial output
+    model <- ...
+    
+  } else if (measure == "rad_inp") {
+    
+    # radial input
+    model <- ...
+    
+  } else if (measure == "ddf") {
+    
+    # distancia direccional
+    model <- ...
+  
+  } else {
+    
+    stop(print(paste(measure, "no disponible")))
+    
+  }
+  
+  if (!is.null(rownames)) rownames(scores) <- rownames
+
+  return(model)
+  
+}
+
+```
+
+# Ejercicio 9
+
+### Frontera DEA (CCR) para el *toy dataset* A
+
+```{r exercise_9_frontier_1}
+
+# calculamos los scores de eficiencia
+A$scores <- ...
+
+# calculamos los puntos de la frontera
+A$frontier <- ...
+
+# representación gráfica
+ggplot(...) 
+
+```
+
+### Frontera FDH para el *toy dataset* B
+
+```{r exercise_9_frontier_2}
+
+# calculamos los scores de eficiencia
+B$scores <- ...
+
+# calculamos los puntos de la frontera
+B$frontier_x1 <- ...
+B$frontier_x2 <- ...
+
+# representación gráfica
+ggplot(...) 
+
+```
+
+# Ejercicio 10
+
+**Apartado a)**
+
+```{r exercise_10_a}
+
+rice$CCR.I <- ...
+
+rice$BCC.I <- ...
+
+rice$FDH.I <- ...
+
+rice$CCR.O <- ...
+
+rice$BCC.O <- ...
+
+rice$FDH.O <- ...
+
+```
+
+**Apartado b)**
+
+```{r exercise_10_b}
+
+ggplot(...) +
+
+``` 
+
+**Apartado c)**
+
+```{r exercise_10_c_ddf}
+
+rice$DDF.B <- ...
+
+rice$DDF.M <- ...
+
+```
+
+```{r exercise_10_c}
+
+# DMU 4: input
+inp_4 <- ...
+
+# DMU 4: output
+out_4 <- ...
+
+# Proyección radial input: DMU 4
+rad_inp_4 <- ...
+new_inp_4 <- ...
+new_out_4 <- ...
+
+proy_rad_inp <- ...
+
+# Proyección radial output: DMU 4
+rad_out_4 <- ...
+new_inp_4 <- ...
+new_out_4 <- ...
+
+proy_rad_out <- ...
+
+# Directional Distance Function (Briec): DMU 4
+ddf_briec_4 <- ...
+new_inp_4 <- ...
+new_out_4 <- ...
+
+proy_ddf_briec <- ...
+
+# Directional Distance Function (Mean): DMU 4
+ddf_mean_4 <- ...
+new_inp_4 <- ...
+new_out_4 <- ...
+
+proy_ddf_mean <- ...
+
+``` 
+
+# Ejercicio 11
+
+```{r exercise_11}
+
+# DMU verdaderamente eficiente
+D$t_eff <- ...
+
+# DMU relativamente eficiente
+D$bcc <- ...
+  
+D$r_eff <- ...
+
+# frontera estimada mediante DEA.BCC
+D$bcc_frontier <- ...
+
+# datos DMU 23
+x23 <- ...
+y23 <- ...
+
+# score distancia direccional: dirección mean
+D$beta_mean <- ...
+  
+p_xmean <- ...
+p_ymean <- ...
+
+# score distancia direccional: dirección briec
+D$beta_briec <- ...
+
+p_xbriec <- ...
+p_ybriec <- ...
+
+# representación gráfica
+ggplot(...) 
+
+```

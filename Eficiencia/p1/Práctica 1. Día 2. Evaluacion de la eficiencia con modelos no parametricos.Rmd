@@ -1,0 +1,241 @@
+---
+title: "Práctica 1. Evaluación de la eficiencia con modelos no paramétricos"
+subtitle: "Análisis de la eficiencia y la productividad"
+author: "Introduce tu nombre"
+date: "Curso 2024/2025"
+output:
+  rmdformats::readthedown:
+    embed_resources: true
+    standalone: true
+---
+
+```{=html}
+
+<style>
+  body {
+    text-align: justify;
+  }
+</style>
+
+```
+
+```{r setup, include=FALSE}
+
+knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
+
+```
+
+# Librerías y bases de datos
+
+```{r librerías}
+
+# cargamos librerías adicionales para la realización de la práctica
+library(dplyr)
+library(ggplot2)
+library(readxl)
+library(lpSolveAPI)
+library(knitr)
+library(corrplot)
+
+```
+
+Cargamos la bases de datos `rice` disponible en el campus UMH:
+
+```{r BDs}
+
+rice <- read_excel("Datasets/rice producers.xlsx")
+
+```
+
+Creamos los *toy datasets*:
+
+```{r toyDatasets}
+
+A <- data.frame (
+  employee = c(2, 3, 3, 4, 5, 5, 6, 8),
+  sale = c(1, 3, 2, 3, 4, 2, 3, 5)
+)
+
+row.names(A) <- c("A", "B", "C", "D", "E", "F", "G", "H")
+
+B <- data.frame (
+  employee = c(4, 7, 8, 4, 2, 5, 6, 5.5, 6),
+  floor.area = c(3, 3, 1, 2, 4, 2, 4, 2.5, 2.5),
+  sale = c(1, 1, 1, 1, 1, 1, 1, 1, 1)
+)
+
+row.names(B) <- c("A", "B", "C", "D", "E", "F", "G", "H", "I")
+
+C <- data.frame (
+  employee = c(1, 1, 1, 1, 1, 1, 1),
+  customers = c(1, 2, 3, 4, 4, 5, 6),
+  sales = c(5, 7, 4, 3, 6, 5, 2)
+)
+
+row.names(C) <- c("A", "B", "C", "D", "E", "F", "G")
+
+```
+
+Creamos una base de datos simulada (`D`):
+
+```{r simulated_data}
+
+# fijamos una semilla
+set.seed(314) 
+
+# input 1
+x1 <- runif(n = 50, min = 1, max = 10)
+
+# frontera teórica
+yD <- log(x1) + 3 
+
+# ineficiencia
+u <- abs(rnorm(n = 50, mean = 1.0, sd = 0.4)) 
+u[sample(1:50, 1)] <- 0 # DMUs eficientes
+
+# output 1
+y1 <- yD - u
+
+# base de datos D
+D <- data.frame(x = x1, y = y1, yD = yD)
+
+```
+
+# Ejercicio 6
+
+La función `get_multipliers()` devuelve los vectores de los multiplicadores (en formato `data.frame`) bajo una tecnología con rendimientos constantes a escala y una medida de eficiencia introducida por el usuario. Los argumentos de la función serán los siguientes:
+
+```{r get_multipliers, echo = TRUE, eval = FALSE}
+
+get_multipliers (
+  tech_xmat,
+  tech_ymat,
+  eval_xmat,
+  eval_ymat,
+  measure = "rad_out",
+  rownames = NULL
+)
+
+```
+
+### Función para obtener los multiplicadores de eficiencia con el modelo DEA-CCR bajo orientación *input*:
+
+```{r radial_input_multipliers}
+
+rad_inp_mult <- function (
+    tech_xmat,
+    tech_ymat,
+    eval_xmat,
+    eval_ymat
+    ) {
+  
+  # número de DMUs a evaluar
+  eval_dmu <- nrow(eval_xmat)
+  
+  # número de DMUs en la tecnología
+  tech_dmu <- nrow(tech_xmat)
+  
+  # número de inputs
+  nX <- ncol(tech_xmat)
+  
+  # número de outputs
+  nY <- ncol(tech_ymat)
+  
+  # inicializamos el vector de multiplicadores
+  mults <- matrix(nrow = eval_dmu, ncol = nX + nY)
+  
+  for (d in 1:eval_dmu) {
+    
+    # función objetivo: vector fila (lpSolveAPI)
+    objVal <- matrix(ncol = nX + nY, nrow = 1)
+    objVal[(nX + 1):(nX + nY)] <- eval_ymat[d, ]
+    
+    # estructura para lpSolve
+    lps <- make.lp(nrow = 0, ncol = nX + nY)
+    lp.control(lps, sense = 'max')
+    set.objfn(lps, objVal)
+    
+    # vx = 1
+    add.constraint(lps, xt = c(eval_xmat[d, ], rep(0, nY)), type = "=",  rhs = 1)
+
+    # -vx + uy <= 0
+    for(k in 1:tech_dmu) {
+      add.constraint(lps, xt = c(- tech_xmat[k, ], tech_ymat[k, ]), type = "<=",  rhs = 0)
+    }
+    
+    # resolvemos el modelo    
+    solve(lps)
+    mults[d, ] <- get.variables(lps)
+    
+  }
+  
+  # renombramos data.frame
+  colnames(mults) <- c(paste("v_x", 1:nX, sep = ""), paste("u_y", 1:nY, sep = ""))
+  
+  # multiplicadores
+  return(as.data.frame(mults))
+  
+}
+
+```
+
+### Función para obtener los multiplicadores de eficiencia con el modelo DEA-CCR bajo orientación *output*:
+
+```{r radial_output_multipliers}
+
+rad_out_mult <- function (
+    tech_xmat,
+    tech_ymat,
+    eval_xmat,
+    eval_ymat
+    ) {
+  
+  # número de DMUs a evaluar
+  eval_dmu <- nrow(eval_xmat)
+  
+  # número de DMUs en la tecnología
+  tech_dmu <- nrow(tech_xmat)
+  
+  # número de inputs
+  nX <- ncol(tech_xmat)
+  
+  # número de outputs
+  nY <- ncol(tech_ymat)
+  
+  # inicializamos el vector de scores
+  mults <- matrix(nrow = eval_dmu, ncol = nX + nY)
+  
+  for (d in 1:eval_dmu) {
+    
+    # función objetivo: vector fila (lpSolveAPI)
+    objVal <- matrix(ncol = nX + nY, nrow = 1)
+    objVal[1:nX] <- eval_xmat[d, ]
+    
+    # estructura para lpSolve
+    lps <- make.lp(nrow = 0, ncol = nX + nY)
+    lp.control(lps, sense = 'min')
+    set.objfn(lps, objVal)
+    
+    # uy = 1
+    add.constraint(lps, xt = c(rep(0, nX), eval_ymat[d, ]), type = "=",  rhs = 1)
+
+    # vx - uy >= 0
+    for(k in 1:tech_dmu) {
+      add.constraint(lps, xt = c(tech_xmat[k, ], - tech_ymat[k, ]), type = ">=",  rhs = 0)
+    }
+    
+    # resolvemos el modelo  
+    solve(lps)
+    mults[d, ] <- get.variables(lps)
+    
+  }
+  
+  # renombramos data.frame
+  colnames(mults) <- c(paste("v_x", 1:nX, sep = ""), paste("u_y", 1:nY, sep = ""))
+  
+  # multiplicadores
+  return(as.data.frame(mults))
+  
+}
+
+```
