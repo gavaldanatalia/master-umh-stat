@@ -1,0 +1,96 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+
+\title{Práctica 5: Sistemas de Apoyo a la Decisión}
+\author{Natalia Gavaldá Lizán}
+\date{3 de marzo de 2025}
+
+\begin{document}
+	
+	\maketitle
+	
+	\section*{Ejercicio 1: Mejor inversión en términos de utilidad esperada}
+	
+	\subsection*{1) Utilidad esperada de cada alternativa}
+	La función de utilidad es $u(x) = 3\sqrt{x^2} = 3x$, ya que $x \geq 0$.
+	
+	\begin{itemize}
+		\item \textbf{Inversión A (300 M€)}:
+		\[
+		E[u(A)] = 0.25 \cdot 3 \cdot 200 + 0.75 \cdot 3 \cdot 450 = 150 + 1012.5 = 1162.5
+		\]
+		\item \textbf{Inversión B (500 M€)}:
+		\[
+		E[u(B)] = 0.25 \cdot 3 \cdot 200 + 0.5 \cdot 3 \cdot 600 + 0.25 \cdot 3 \cdot 800 = 150 + 900 + 600 = 1650
+		\]
+		\item \textbf{Inversión C (1000 M€)}:
+		\[
+		E[u(C)] = 3 \cdot \left(\frac{400 + 2400}{2}\right) = 3 \cdot 1400 = 4200
+		\]
+	\end{itemize}
+	
+	\textbf{Conclusión}: La mejor inversión es C (utilidad esperada 4200).
+	
+	\subsection*{2) Utilidad por euro invertido}
+	
+	\[
+	A: \frac{1162.5}{300} = 3.875 \quad B: \frac{1650}{500} = 3.3 \quad C: \frac{4200}{1000} = 4.2
+	\]
+	
+	\textbf{Conclusión}: La mejor inversión sigue siendo C (4.2 por euro invertido).
+	
+	\section*{Ejercicio 2: Equivalente de certeza para la lotería}
+	
+	\[
+	L = \left(\frac{1}{4}, \frac{3}{4}, 4, 25\right)
+	\]
+	
+	La función de utilidad es $u(x) = \sqrt{x}$.
+	
+	\textbf{Utilidad esperada}:
+	
+	\[
+	E[u(L)] = \frac{1}{4} \cdot \sqrt{4} + \frac{3}{4} \cdot \sqrt{25} = 0.5 + 3.75 = 4.25
+	\]
+	
+	\textbf{Equivalente de certeza (EC)}:
+	
+	\[
+	\sqrt{EC} = 4.25 \Rightarrow EC = (4.25)^2 = 18.0625
+	\]
+	
+	\section*{Ejercicio 3: Alternativas con múltiples atributos}
+	
+	Las funciones de utilidad para cada atributo son:
+	
+	\[
+	u(x_1) = \frac{x_1}{10}, \quad u(x_2) = \frac{x_2}{10}, \quad u(x_3) = \frac{x_3}{10}
+	\]
+	
+	Y los pesos son: $k_1 = 0.3$, $k_2 = 0.2$, $k_3 = 0.4$.
+	
+	La función de utilidad multiatributo es:
+	
+	\[
+	U(x_1, x_2, x_3) = 0.3 \cdot \frac{x_1}{10} + 0.2 \cdot \frac{x_2}{10} + 0.4 \cdot \frac{x_3}{10}
+	\]
+	
+	\textbf{Cálculo de la utilidad esperada para cada alternativa}
+	
+	\begin{itemize}
+		\item \textbf{Alternativa A1}: $U_1 = 4.07$
+		\item \textbf{Alternativa A2}: $U_2 = 5.38$
+		\item \textbf{Alternativa A3}: $U_3 = 5.49$
+		\item \textbf{Alternativa A4}: $U_4 = 5.63$
+	\end{itemize}
+	
+	\textbf{Conclusión}: La mejor alternativa es A4 con una utilidad esperada de 5.63.
+	
+	\subsection*{Equivalentes de certeza}
+	
+	\[
+	A1: 407 \quad A2: 538 \quad A3: 549 \quad A4: 563
+	\]
+	
+\end{document}
