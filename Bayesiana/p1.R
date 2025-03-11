@@ -4,6 +4,8 @@ library(aida)
 library(tidyverse)
 library(dplyr)
 
+# install.packages("bayesrules")
+
 ################################
 ######### Modelo 1 #############
 ################################
@@ -89,3 +91,46 @@ summary_table <- map_dfr(post_samples_temperature_skeptical,
                           aida::summarize_sample_vector) %>%
      mutate(Parameter = colnames(post_samples_temperature_skeptical))
 summary_table
+
+# Tabla
+kable(summary_table[1:3,], col.names = c("Parameter","P2.5%","Mean","P97.5%"), digits=4)
+
+output3 <- capture.output(fit_temperature_ridiculous <- brm(
+  # specify what to explain in terms of what using the formula syntax
+  formula = avg_temp ~ year,
+  # which data to use
+  data = aida::data_WorldTemp,
+  # hand-craft a very strong prior for slope
+  prior = prior(normal(5, 0.01), coef = year)
+))
+# Usar as_draws_df() (alternativa recomendada a posterior_samples)
+post_samples_temperature_ridiculous <- as_draws_df(fit_temperature_ridiculous) %>%
+  select(-lp__, -lprior)
+
+# Crear el resumen y asignar los nombres correctos (suponiendo que el resumen tiene 4 filas)
+summary_table <- map_dfr(post_samples_temperature_ridiculous, aida::summarize_sample_vector) %>%
+  mutate(Parameter = colnames(post_samples_temperature_ridiculous))
+
+
+# Ver el resumen
+kable(summary_table[1:3,], col.names = c("Parameter","P2.5%","Mean","P97.5%"), digits=4)
+
+samples_post_pred_temperature <- brms::posterior_predict(fit_temperature)
+dim(samples_post_pred_temperature)
+
+# Crear un tibble con nuevos valores de predictores
+X_new <- tribble(
+  ~year,
+  2025,
+  2040
+)
+
+# Obtener predicciones muestrales del modelo bayesiano
+post_pred_new <- brms::posterior_predict(fit_temperature, X_new)
+
+# Obtener un resumen (bayesiano) de estas muestras posteriores
+rbind(
+  aida::summarize_sample_vector(post_pred_new[,1], "2025"),
+  aida::summarize_sample_vector(post_pred_new[,2], "2040")
+)
+

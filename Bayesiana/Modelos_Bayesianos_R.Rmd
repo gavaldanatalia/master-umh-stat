@@ -1,0 +1,249 @@
+
+---
+title: "Modelos de Estadística Bayesiana en R"
+author: "Dámaris"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Introducción
+Este documento presenta el ajuste y análisis de modelos de estadística bayesiana utilizando el paquete `brms` en R.
+
+# Carga de Librerías
+```{r, message=FALSE, warning=FALSE}
+
+
+library(xtable)
+library(knitr)
+library(bayesrules)
+options(width=60)
+library(brms)
+library(bayesrules) # paquete del Libro Bayes rules
+library(tidyverse) 
+library(bayesplot) # para dibujar resultados
+#library(tidybayes) # facilitar el uso de tydy en Bayesiano
+library(janitor) # limpieza de datos
+library(broom.mixed) # adapta modelos al formato "tidy"
+library(ggpubr) # para utilizar ggarrange
+
+```
+
+# Modelo 1: Relación lineal entre la temperatura promedio y el año
+
+```{r, warning=FALSE}
+fit_temperature <- brm(
+  formula = avg_temp ~ year, # relación lineal entre las variables
+  data = aida::data_WorldTemp # datos
+)
+
+summary(fit_temperature)
+```
+
+## Distribuciones posteriores
+```{r, warning=FALSE}
+post_samples_temperature <- as_draws_df(fit_temperature) %>%
+  dplyr::select(-lp__, -lprior)
+
+head(post_samples_temperature)
+dim(post_samples_temperature)
+```
+
+## Estadísticas de las distribuciones
+```{r, warning=FALSE}
+summary_table <- map_dfr(post_samples_temperature,
+                         aida::summarize_sample_vector) %>%
+  mutate(Parameter = colnames(post_samples_temperature))
+summary_table
+```
+
+## Gráficos de distribuciones a posteriori
+```{r, warning=FALSE}
+post_samples_temperature[, 1:3] %>%
+  pivot_longer(cols = everything()) %>%
+  ggplot(aes(x = value)) +
+  geom_density() +
+  facet_wrap(~name, scales = "free")
+```
+
+# Priors del Modelo
+```{r, warning=FALSE}
+brms::prior_summary(fit_temperature)
+```
+
+# Modelo 2: Prior escéptico
+```{r, warning=FALSE}
+fit_temperature_skeptical <- brm(
+  formula = avg_temp ~ year,
+  data = aida::data_WorldTemp,
+  prior = prior(student_t(1, -0.01, 0.001), coef = year)
+)
+```
+
+## Distribuciones posteriores del modelo escéptico
+```{r, warning=FALSE}
+post_samples_temperature_skeptical <-
+   as_draws_df(fit_temperature_skeptical) %>%
+         select(-lp__, -lprior)
+
+summary_table <- map_dfr(post_samples_temperature_skeptical,
+                          aida::summarize_sample_vector) %>%
+     mutate(Parameter = colnames(post_samples_temperature_skeptical))
+summary_table
+```
+
+## Tabla resumen del modelo escéptico
+```{r, warning=FALSE}
+kable(summary_table[1:3,], col.names = c("Parameter","P2.5%","Mean","P97.5%"), digits=4)
+```
+
+# Modelo 3: Prior muy fuerte
+```{r, warning=FALSE}
+output3 <- capture.output(fit_temperature_ridiculous <- brm(
+  formula = avg_temp ~ year,
+  data = aida::data_WorldTemp,
+  prior = prior(normal(5, 0.01), coef = year)
+))
+
+post_samples_temperature_ridiculous <- as_draws_df(fit_temperature_ridiculous) %>%
+  select(-lp__, -lprior)
+
+summary_table <- map_dfr(post_samples_temperature_ridiculous, aida::summarize_sample_vector) %>%
+  mutate(Parameter = colnames(post_samples_temperature_ridiculous))
+
+kable(summary_table[1:3,], col.names = c("Parameter","P2.5%","Mean","P97.5%"), digits=4)
+```
+
+# Predicciones
+```{r, warning=FALSE}
+X_new <- tribble(
+  ~year,
+  2025,
+  2040
+)
+
+post_pred_new <- brms::posterior_predict(fit_temperature, X_new)
+
+rbind(
+  aida::summarize_sample_vector(post_pred_new[,1], "2025"),
+  aida::summarize_sample_vector(post_pred_new[,2], "2040")
+)
+```
+
+# Graficos
+
+```{r, warning=F, message=F}
+library(tidyverse)
+
+# Supongamos que los datos originales son:
+data_original <- aida::data_WorldTemp
+
+# Obtener resumen de la predicción (media y RC al 95%)
+pred_summary <- as_tibble(post_pred_new) %>%  #pred_summary  # post_pred_new
+  pivot_longer(cols = everything(), names_to = "id", values_to = "pred") %>%
+  group_by(id) %>%
+  summarise(
+    avg_temp = mean(pred),
+    lower = quantile(pred, 0.025),
+    upper = quantile(pred, 0.975)
+  ) %>%
+  mutate(year = X_new$year)
+
+# Gráfico con ggplot2
+ggplot(data_original, aes(x = year, y = avg_temp)) +
+  geom_point(color = "black", alpha = 0.7) +  # Datos originales
+  geom_smooth(method = "lm", se = FALSE, color = "blue", linetype = "dashed") +  # Tendencia original
+  geom_line(data = pred_summary, aes(x = year, y = avg_temp), color = "red", linewidth = 1) +  # Predicción media
+  geom_ribbon(data = pred_summary, aes(x = year, ymin = lower, ymax = upper), 
+              fill = "red", alpha = 0.2) +  # Región de credibilidad
+  labs(
+    title = "Predicción Bayesiana con Región de Credibilidad",
+    x = "Año",
+    y = "Temperatura Media"
+  ) +
+  theme_minimal()
+
+
+```
+
+
+```{r, warning=FALSE}
+output <- capture.output(fit_temperature_weakinfo <- brm(
+  # Especificar qué variable explicar en términos de cuál (sintaxis de fórmula)
+  formula = avg_temp ~ year,
+  # Datos a utilizar
+  data = aida::data_WorldTemp,
+  # Prior poco informativo para la pendiente
+  prior = prior(student_t(1, 0, 1), coef = year),
+  # Obtener muestras de la prior
+  sample_prior = "yes",
+  # Aumentar el número de iteraciones para mayor precisión
+  iter = 20000
+))
+```
+
+
+```{r, warning=FALSE}
+# Obtener las muestras posteriores usando as_draws_df
+posterior_draws <- as_draws_df(fit_temperature_weakinfo)
+
+# Extraer la columna correspondiente al parámetro 'b_year' y resumirla
+posterior_draws %>%
+  pull(b_year) %>%
+  aida::summarize_sample_vector()
+
+hypothesis(fit_temperature_weakinfo, "year = 0.005")
+
+hypothesis(fit_temperature_weakinfo, "year > 0")
+```
+
+
+```{r, warning=FALSE}
+hypothesis(fit_temperature_weakinfo, "year = 0.005") # No es significativo
+
+hypothesis(fit_temperature_weakinfo, "year > 0") # Es significativo
+```
+
+
+```{r, warning=FALSE}
+# Extraer únicamente las columnas relevantes del conjunto de datos
+data_ST_excerpt <- aida::data_ST %>% 
+  filter(correctness == "correct") %>% 
+  select(RT, condition)
+
+# Mostrar las primeras 5 líneas
+head(data_ST_excerpt, 5)
+
+data_ST_excerpt %>% 
+  ggplot(aes(x = condition, y = RT, color = condition, fill = condition)) +
+  geom_violin() +
+  theme(legend.position = "none")
+```
+
+```{r, warning=FALSE}
+data_ST_excerpt %>% 
+  group_by(condition) %>% 
+  summarize(mean_RT = mean(RT))
+```
+
+```{r}
+data_ST_excerpt %>% 
+  filter(condition == "incongruent") %>% 
+  pull(RT) %>% 
+  mean() -
+  data_ST_excerpt %>% 
+  filter(condition == "congruent") %>% 
+  pull(RT) %>% 
+  mean()
+
+fit_brms_ST <- brm(
+  formula = RT ~ condition,
+  data = data_ST_excerpt
+)
+
+summary(fit_brms_ST)$fixed[, c("l-95% CI", "Estimate", "u-95% CI")]
+```
+
