@@ -14,6 +14,7 @@ library(readxl)
 library(ggplot2)
 library(dplyr)
 library(magrittr)
+library(lubridate)
 
 ######################################################
 ################## Load data #########################
@@ -51,6 +52,9 @@ df$fecha_efecto <- as.Date(df$fecha_efecto, format = "%Y-%m-%d")
 df$fecha_apertura_chantier <- as.Date(df$fecha_apertura_chantier, format = "%Y-%m-%d") 
 df$fecha_inicio_cobertura <- as.Date(df$fecha_inicio_cobertura, format = "%Y-%m-%d")
 df$fecha_vencimiento <- as.Date(df$fecha_vencimiento, format = "%Y-%m-%d")
+
+# Crear una nueva variable que extraiga el trimestre
+df$fecha_efecto_trimestre <- quarter(df$fecha_efecto)
 
 # see the data type of data
 str(df)
@@ -114,10 +118,18 @@ df_no_outliers %>%
     max_tasa_prima = max(tasa_prima)
   )
 
+# df without outliers
+df <- df_no_outliers
 
 ######################################################
 ################## Graphs ############################
 ######################################################
+
+# Histograma de la variable objetivo para ver su distribución
+ggplot(df, aes(x = tasa_prima)) +
+  geom_histogram(bins = 30, fill = "skyblue", color = "black") +
+  labs(title = "Distribución", x = "Tasa de prima", y = "Frecuencia")
+
 
 ##### hist of rows by year of fecha_efecto
 ggplot(df, aes(x = fecha_efecto)) + geom_histogram(binwidth = 365)
@@ -131,13 +143,13 @@ ggplot(df, aes(x = sumas_aseguradas, y = tasa_prima)) + geom_point()
 ggplot(df, aes(x = sumas_aseguradas_scor, y = tasa_prima)) + geom_point()
 
 # Graph sumas_aseguradas and tasa_prima 
-ggplot(df, aes(x = sumas_aseguradas_scor, y = sumas_aseguradas)) + geom_point()
+ggplot(df, aes(x = sumas_aseguradas_scor, y = sumas_aseguradas)) + geom_point() + geom_smooth(method = "lm")
 
 
 
 ##### tasa_prima con variables de tiempo #####
 # Graph fecha_efecto and tasa_prima 
-ggplot(df, aes(x = fecha_efecto, y = tasa_prima)) + geom_point() + geom_smooth()
+ggplot(df, aes(x = fecha_efecto, y = tasa_prima)) + geom_point()
 
 # Graph fecha_efecto and tasa_prima, with tipo_riesgo as color
 ggplot(df, aes(x = fecha_efecto, y = tasa_prima, color = tipo_riesgo)) + geom_point()

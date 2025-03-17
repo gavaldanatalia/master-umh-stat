@@ -34,7 +34,7 @@ library(knitr)
 Cargamos la bases de datos `internet` y `ATP` disponible en el campus UMH:
 
 ```{r BDs}
-internet <- read_excel("Datasets/internet firms.xlsx")
+internet <- read_excel("/Users/jjmilla/Repositorios/master-umh-stat/master-umh-stat/Eficiencia/internet firms.xlsx")
 companies <- internet$company
 internet <- as.data.frame(internet[, 2:7])
 names(internet) <- c(
@@ -349,25 +349,25 @@ eff_scores <- function (
 
 ```{r ejercicio1, echo = TRUE, eval = TRUE}
 # scores: medida radial input
-A$rad_inp <- eff_scores (
-  tech_xmat = as.matrix(A[, 1]),
-  tech_ymat = as.matrix(A[, 2]),
-  eval_xmat = as.matrix(A[, 1]),
-  eval_ymat = as.matrix(A[, 2]),
-  convexity = TRUE, 
-  returns = "variable", 
-  measure = "rad_inp",
+A$rad_inp <- eff_scores(
+  tech_xmat = as.matrix(A[,1]),
+  tech_ymat = as.matrix(A[,2]),
+  eval_xmat = as.matrix(A[,1]),
+  eval_ymat = as.matrix(A[,2]),
+  convexity = TRUE,
+  returns = "variable",
+  measure =  "rad_inp"
 )
 
 # scores: medida radial output
-A$rad_out <- eff_scores (
-  tech_xmat = as.matrix(A[, 1]),
-  tech_ymat = as.matrix(A[, 2]),
-  eval_xmat = as.matrix(A[, 1]),
-  eval_ymat = as.matrix(A[, 2]),
-  convexity = TRUE, 
-  returns = "variable", 
-  measure = "rad_out",
+A$rad_out <- eff_scores(
+  tech_xmat = as.matrix(A[,1]),
+  tech_ymat = as.matrix(A[,2]),
+  eval_xmat = as.matrix(A[,1]),
+  eval_ymat = as.matrix(A[,2]),
+  convexity = TRUE,
+  returns = "variable",
+  measure =  "rad_out"
 )
 
 # frontera: medida radial input
@@ -420,13 +420,13 @@ rad_out <- function (
   nY <- ncol(tech_ymat)
 
   # inicializamos el vector de scores, de bechmarking y de slacks
-  scores <- matrix(nrow = eval_dmu, ncol = 1) # puntos a evaluar, tantos como dmu
-  slacks <- matrix(nrow = eval_dmu, ncol = nX + nY) # slacks
-  benchs <- matrix(nrow = eval_dmu, ncol = tech_dmu) # DMUs de referencia
+  scores <- matrix(nrow = eval_dmu, ncol = 1)
+  slacks <- matrix(nrow = eval_dmu, ncol = nX + nY)
+  benchs <- matrix(nrow = eval_dmu, ncol = tech_dmu)
 
   for (d in 1:eval_dmu) {
     # función objetivo
-    objVal <- matrix(ncol = 0, nrow = 1 + nX + nY + tech_dmu)
+    objVal <- matrix(ncol = 1 + nX + nY + tech_dmu, nrow = 1)
     objVal[1] <- 1
     
     # estructura para lpSolve
@@ -436,20 +436,20 @@ rad_out <- function (
 
     for(xi in 1:nX) {
       # slacks para inputs
-      x.slack <- rep(0, nX)
+      x.slack <- rep(0,nX)
       x.slack[xi] <- 1
-      x_slacks <- c(x.slack, rep(0, nY), rep(0, tech_dmu))
+      x_slacks <- c(x.slack, rep(0,nY))
       
-      add.constraint(lps, xt = c(0, x.slack, tech_xmat[,xi]), "=",  rhs = eval_xmat[d,xi])
+      add.constraint(lps, xt = c(0, x_slacks, tech_xmat[,xi]), "=",  rhs = eval_xmat[d,xi])
     }
     
     for(yi in 1:nY) {
       # slacks para outputs
-      y.slack <- rep(0, nY)
+      y.slack <- rep(0,nY)
       y.slack[yi] <- -1
-      y_slacks <- c(0, rep(0, nX), y.slack)
+      y_slacks <- c(rep(0,nX), y.slack)
       
-      add.constraint(lps, xt = c(-eval_ymat[d,xi], y_slacks, tech_ymat[,yi]), "=", rhs = 0)
+      add.constraint(lps, xt = c(-eval_ymat[d,yi], y_slacks, tech_ymat[,yi]), "=", rhs = 0)
     }
     
     if (returns == "variable") {
@@ -469,10 +469,10 @@ rad_out <- function (
     scores[d, ] <- get.variables(lps)[1]
     
     # slacks
-    slacks[d, ] <- get.variables(lps)[2:(1 + nX + nY)]
+    slacks[d, ] <- get.variables(lps)[2:(1+nX+nY)]
     
     # DMUs de referencia
-    benchs[d, ] <- get.variables(lps)[(2 + nX + nY):(1 + nX + nY + tech_dmu)]
+    benchs[d, ] <- get.variables(lps)[(2+nX+nY):(1+nX+nY+tech_dmu)]
   }
   
   # nombres: score, slacks, lambdas
@@ -507,36 +507,36 @@ rad_inp <- function (
   nY <- ncol(tech_ymat)
 
   # inicializamos el vector de scores, de bechmarking y de slacks
-  scores <- matrix(nrow = eval_dmu, ncol = 1) # puntos a evaluar, tantos como dmu
-  slacks <- matrix(nrow = eval_dmu, ncol = nX + nY) # slacks
-  benchs <- matrix(nrow = eval_dmu, ncol = tech_dmu) # DMUs de referencia
+  scores <- matrix(nrow = eval_dmu, ncol = 1)
+  slacks <- matrix(nrow = eval_dmu, ncol = nX + nY)
+  benchs <- matrix(nrow = eval_dmu, ncol = tech_dmu)
 
   for (d in 1:eval_dmu) {
     # función objetivo
-    objVal <- matrix(ncol = 0, nrow = 1 + nX + nY + tech_dmu)
+    objVal <- matrix(ncol = 1 + nX + nY + tech_dmu, nrow = 1)
     objVal[1] <- 1
     
     # estructura para lpSolve
     lps <- make.lp(nrow = 0, ncol = 1 + nX + nY + tech_dmu)
-    lp.control(lps, sense = "max")
+    lp.control(lps, sense = "min")
     set.objfn(lps, objVal)
 
     for(xi in 1:nX) {
       # slacks para inputs
-      x.slack <- rep(0, nX)
+      x.slack <- rep(0,nX)
       x.slack[xi] <- 1
-      x_slacks <- c(x.slack, rep(0, nY), rep(0, tech_dmu))
+      x_slacks <- c(x.slack, rep(0,nY))
       
-      add.constraint(lps, xt = c(0, x.slack, tech_xmat[,xi]), "=",  rhs = eval_xmat[d,xi])
+      add.constraint(lps, xt = c(-eval_xmat[d,xi], x_slacks, tech_xmat[,xi]), "=",  rhs = 0)
     }
     
     for(yi in 1:nY) {
       # slacks para outputs
-      y.slack <- rep(0, nY)
+      y.slack <- rep(0,nY)
       y.slack[yi] <- -1
-      y_slacks <- c(0, rep(0, nX), y.slack)
+      y_slacks <- c(rep(0,nX), y.slack)
       
-      add.constraint(lps, xt = c(-eval_ymat[d,xi], y_slacks, tech_ymat[,yi]), "=", rhs = 0)
+      add.constraint(lps, xt = c(0, y_slacks, tech_ymat[,yi]), "=", rhs = eval_ymat[d,yi])
     }
     
     if (returns == "variable") {
@@ -556,10 +556,10 @@ rad_inp <- function (
     scores[d, ] <- get.variables(lps)[1]
     
     # slacks
-    slacks[d, ] <- get.variables(lps)[2:(1 + nX + nY)]
+    slacks[d, ] <- get.variables(lps)[2:(1+nX+nY)]
     
     # DMUs de referencia
-    benchs[d, ] <- get.variables(lps)[(2 + nX + nY):(1 + nX + nY + tech_dmu)]
+    benchs[d, ] <- get.variables(lps)[(2+nX+nY):(1+nX+nY+tech_dmu)]
   }
   
   # nombres: score, slacks, lambdas
@@ -574,7 +574,15 @@ rad_inp <- function (
 # Ejercicio 3
 
 ```{r 2etapas_I}
-inp_2etapas <- ...
+inp_2etapas <- eff_scores(
+  tech_xmat = as.matrix(A[,1]),
+  tech_ymat = as.matrix(A[,2]),
+  eval_xmat = as.matrix(A[,1]),
+  eval_ymat = as.matrix(A[,2]),
+  convexity = TRUE,
+  returns = "variable",
+  measure =  "rad_inp"
+)
 
 res_inp_2etapas <- cbind (
   inp_2etapas$score,
@@ -588,7 +596,15 @@ kable(res_inp_2etapas)
 ```
 
 ```{r 2etapas_O}
-out_2etapas <- ...
+out_2etapas <- eff_scores(
+  tech_xmat = as.matrix(A[,1]),
+  tech_ymat = as.matrix(A[,2]),
+  eval_xmat = as.matrix(A[,1]),
+  eval_ymat = as.matrix(A[,2]),
+  convexity = TRUE,
+  returns = "variable",
+  measure =  "rad_out"
+)
 
 res_out_2etapas <- cbind (
   out_2etapas$score,
@@ -639,53 +655,57 @@ wam <- function (
     # Weights
     if (weights == "WAM") {
       # Weighted Additive Model
-      objVal[...] <- ...
+      objVal[1:(nX+nY)] <- 1
 
     } else if (weights == "MIP") {
       # Measure of Inefficiency Proportions
-      objVal[...] <- ...
+      objVal[1:(nX+nY)] <- c(1/eval_xmat[d,],
+                             1/eval_ymat[d,])
 
     } else if (weights == "NOR") {
       # Normalized Weighted Additive Model
-      objVal[...] <- ...
+      objVal[1:(nX+nY)] <- c(1 / apply(eval_xmat, 2, sd),
+                             1 / apply(eval_ymat, 2, sd))
 
     } else if (weights == "RAM") {
       # Range Adjusted Measure
-      xranges <- ...
-      yranges <- ...
-      objVal[...] <- ...
+      xranges <- apply(eval_xmat, 2, max) - apply(eval_xmat, 2, min)
+      yranges <- apply(eval_ymat, 2, max) - apply(eval_ymat, 2, min)
+      objVal[1:(nX+nY)] <- c(1/((nX+nY)*xranges),
+                             1/((nX+nY)*yranges))
 
     } else if (weights == "BAM") {
       # Bounded Adjusted Measure
-      p1 <- ...
-      p2 <- ...
-      objVal[...] <- ...
+      p1 <- eval_xmat[d,] - apply(eval_xmat, 2, min)
+      p2 <- apply(eval_ymat, 2, max) - eval_ymat[d,]
+      objVal[1:(nX+nY)] <- c(1/((nX+nY)*p1),
+                             1/((nX+nY)*p2))
 
     } else {
       stop(print(paste(weights, "no disponibles")))
     }
 
     # structure for lpSolve
-    lps <- make.lp(nrow = 0, ncol = ...)
-    lp.control(lps, sense = ...)
+    lps <- make.lp(nrow = 0, ncol = nX + nY + tech_dmu)
+    lp.control(lps, sense = "max")
     set.objfn(lps, objVal)
 
     # inputs
     for (xi in 1:nX) {
-      x_slack <- ...
-      x_slack[xi] <- ...
-      x_slack <- ...
+      x_slack <- rep(0,nX)
+      x_slack[xi] <- 1
+      x_slack <- c(x_slack,rep(0,nY))
 
-      add.constraint(lps, xt = ..., ..., rhs = ...)
+      add.constraint(lps, xt = c(x_slack, tech_xmat[,xi]), "=", rhs = eval_xmat[d,xi])
     }
 
     # outputs
     for (yi in 1:nY) {
-      y_slack <- ...
-      y_slack[yi] <- ...
-      y_slack <- ...
+      y_slack <- rep(0,nY)
+      y_slack[yi] <- -1
+      y_slack <- c(rep(0,nX), y_slack)
 
-      add.constraint(lps, xt = ..., ..., rhs = ...)
+      add.constraint(lps, xt = c(y_slack, tech_ymat[,yi]), "=", rhs = eval_ymat[d,yi])
     }
 
     if (returns == "variable") {
@@ -698,13 +718,13 @@ wam <- function (
     }
 
     solve(lps)
-    scores[d, ] <- ...
+    scores[d, ] <- get.objective(lps)
     
     # slacks
-    slacks[d, ] <- ...
+    slacks[d, ] <- get.variables(lps)[1:(nX+nY)]
     
     # DMUs de referencia
-    benchs[d, ] <- ...
+    benchs[d, ] <- get.variables(lps)[(1+nX+nY):(nX+nY+tech_dmu)]
   }
   
   # nombres: score, slacks, lambdas
@@ -803,11 +823,26 @@ Y_mat <- as.matrix(internet[, 5:6])
 
 # creamos una lista donde cada elemento es el data.frame devuelto por un modelo aditivo:
 additive_models <- list (
-  "WAM" = ...,
-  "MIP" = ...,
-  "NOR" = ...,
-  "RAM" = ...,
-  "BAM" = ...
+  "WAM" = eff_scores(X_mat, Y_mat, X_mat, Y_mat, 
+                     measure = "wam",
+                     weights = "WAM",
+                     rownames = companies),
+  "MIP" = eff_scores(X_mat, Y_mat, X_mat, Y_mat, 
+                     measure = "wam",
+                     weights = "MIP",
+                     rownames = companies),
+  "NOR" = eff_scores(X_mat, Y_mat, X_mat, Y_mat, 
+                     measure = "wam",
+                     weights = "NOR",
+                     rownames = companies),
+  "RAM" = eff_scores(X_mat, Y_mat, X_mat, Y_mat, 
+                     measure = "wam",
+                     weights = "RAM",
+                     rownames = companies),
+  "BAM" = eff_scores(X_mat, Y_mat, X_mat, Y_mat, 
+                     measure = "wam",
+                     weights = "BAM",
+                     rownames = companies)
   )
 
 # creamos un data.frame para almacenar los scores de eficiencia de los 5 modelos:
@@ -829,6 +864,7 @@ for (i in 1:length(additive_models)) {
 kableExtra::kbl(add_scores[c(4, 9, 13), ], booktabs = T)
 ```
 
+
 **Apartado b)**
 
 ```{r boxplot}
@@ -846,6 +882,10 @@ ggplot(add_scores_melted, aes(x = model, y = score, fill = model)) +
   ylab("Score")
 ```
 
+##### Explicación
+
+ 
+
 # Ejercicio 7
 
 ```{r ex7}
@@ -856,7 +896,10 @@ X_mat <- as.matrix(internet[, 1:4])
 Y_mat <- as.matrix(internet[, 5:6])
 
 # scores de eficiencia mediante MIP
-mip <- ...
+mip <- eff_scores(X_mat, Y_mat, X_mat, Y_mat, 
+                     measure = "wam",
+                     weights = "MIP",
+                     rownames = companies)
 
 # scores
 mip$score[c(2, 6, 10, 18), "MIP"]
@@ -867,6 +910,20 @@ round(mip$slack[c(2, 6, 10, 18), ], 2)
 # benchmarking
 round(mip$bench[c(2, 6, 10, 18), c(2, 4, 5, 6, 7, 11, 12, 14, 15, 19, 20, 21, 22)], 2)
 ```
+Interpretación:
+
+Si la DMUs es eficiente, los slacks son igual a 0. En caso contrario, los slacks son mayores que 0. En este caso, las DMUs 2, 6, 10 y 18 son eficientes.
+
+s_x3 63.99: Tengo que disminuir, para esa DMU, el tercer input en 63.99 unidades para ser eficiente.
+s_x3 508.96: Tengo que disminuir, para esa DMU, el segundo input en 508.96 unidades para ser eficiente.
+
+s_y1 0: No tengo que hacer nada con el primer output para ser eficiente.
+s_y2 138.13: Tengo que aumentar, para esa DMU, el segundo output en 138.13 unidades para ser eficiente.
+
+Landas:
+
+Si soy la DMU3 --> Me tengo que aproximar un 12% a la DMU 5, un 29% a la DMU 6, un 59% a la DMU 14.
+Si soy la DMU4 --> Me tengo que aproximar un 16% a la DMU 4, un 38% a la DMU 12, un 34% a la DMU 15, un 13% a la DMU 20.
 
 # Ejercicio 8
 
