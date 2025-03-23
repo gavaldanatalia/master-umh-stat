@@ -15,6 +15,7 @@ library(ggplot2)
 library(dplyr)
 library(magrittr)
 library(lubridate)
+library(stringr)
 
 ######################################################
 ################## Load data #########################
@@ -53,8 +54,9 @@ df$fecha_apertura_chantier <- as.Date(df$fecha_apertura_chantier, format = "%Y-%
 df$fecha_inicio_cobertura <- as.Date(df$fecha_inicio_cobertura, format = "%Y-%m-%d")
 df$fecha_vencimiento <- as.Date(df$fecha_vencimiento, format = "%Y-%m-%d")
 
-# Crear una nueva variable que extraiga el trimestre
+# Crear una nueva variable 
 df$fecha_efecto_trimestre <- quarter(df$fecha_efecto)
+df$fecha_efecto_mes <- month(df$fecha_efecto)
 
 # see the data type of data
 str(df)
@@ -157,6 +159,13 @@ ggplot(df, aes(x = fecha_efecto, y = tasa_prima, color = tipo_riesgo)) + geom_po
 
 
 ##### tasa_prima con variables categoricas #####
+# Graph tasa_prima in a boxplot by fecha_efecto_trimestre and month
+ggplot(df, aes(x = factor(fecha_efecto_trimestre), y = tasa_prima)) + geom_boxplot() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+
+ggplot(df, aes(x = factor(fecha_efecto_mes), y = tasa_prima)) + geom_boxplot() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+
 # Graph tasa_prima in a boxplot by tipo_riesgo
 ggplot(df, aes(x = tipo_riesgo, y = tasa_prima)) + geom_boxplot() +
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
@@ -165,9 +174,26 @@ ggplot(df, aes(x = tipo_riesgo, y = tasa_prima)) + geom_boxplot() +
 ggplot(df, aes(x = compania_cedente, y = tasa_prima)) + geom_boxplot() +
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
 
-# Graph fecha_efecto and tasa_prima, with compania_cedente as color
-ggplot(df, aes(x = fecha_efecto, y = tasa_prima, color = compania_cedente)) + geom_point()
 
+# Crear la nueva variable "CompaniaAgrupada" eliminando etiquetas finales como " A", " B", etc.
+data <- data %>%
+  mutate(CompaniaAgrupada = case_when(
+    str_detect(compania_cedente, regex("MAPFRE", ignore_case = TRUE)) ~ "MAPFRE",
+    str_detect(compania_cedente, regex("AXA", ignore_case = TRUE)) ~ "AXA",
+    str_detect(compania_cedente, regex("SCOR", ignore_case = TRUE)) ~ "SCOR",
+    str_detect(compania_cedente, regex("ALLIANZ", ignore_case = TRUE)) ~ "ALLIANZ",
+    str_detect(compania_cedente, regex("REALE", ignore_case = TRUE)) ~ "REALE",
+    str_detect(compania_cedente, regex("UAP", ignore_case = TRUE)) ~ "UAP",
+    str_detect(compania_cedente, regex("ZURICH", ignore_case = TRUE)) ~ "ZURICH",
+    str_detect(compania_cedente, regex("AGF", ignore_case = TRUE)) ~ "AGF",
+    # Si no se cumple ninguna condición, se mantiene el valor original
+    TRUE ~ compania_cedente
+  ))
+ggplot(data, aes(x = fecha_efecto, y = tasa_prima, color = CompaniaAgrupada)) + 
+  geom_point()
+
+# Ver una muestra para confirmar
+head(data[, c("compania_cedente", "CompaniaAgrupada")])
 
 
 
