@@ -77,7 +77,6 @@ class_balance <- function(df, columna) {
 # Class balance by column
 class_balance(df, "tipo_riesgo")
 class_balance(df, "compania_cedente")
-class_balance(df, "centro_suscripcion")
 
 ######################################################
 ################## Outliers ##########################
@@ -123,6 +122,40 @@ df_no_outliers %>%
 # df without outliers
 df <- df_no_outliers
 
+
+######################################################
+################## Agregación Compañía ###############
+######################################################
+
+# Crear la nueva variable "CompaniaAgrupada" eliminando etiquetas finales como " A", " B", etc.
+df <- df %>%
+  mutate(CompaniaAgrupada = case_when(
+    str_detect(compania_cedente, regex("MAPFRE", ignore_case = TRUE)) ~ "MAPFRE",
+    str_detect(compania_cedente, regex("AXA", ignore_case = TRUE)) ~ "AXA",
+    str_detect(compania_cedente, regex("SCOR", ignore_case = TRUE)) ~ "SCOR",
+    str_detect(compania_cedente, regex("ALLIANZ", ignore_case = TRUE)) ~ "ALLIANZ",
+    str_detect(compania_cedente, regex("REALE", ignore_case = TRUE)) ~ "REALE",
+    str_detect(compania_cedente, regex("UAP", ignore_case = TRUE)) ~ "UAP",
+    str_detect(compania_cedente, regex("ZURICH", ignore_case = TRUE)) ~ "ZURICH",
+    # Pertenecen al mismo grupo de empresas
+    str_detect(compania_cedente, regex("AGF", ignore_case = TRUE)) ~ "ALLIANZ",
+    str_detect(compania_cedente, regex("UAP", ignore_case = TRUE)) ~ "AXA",
+    str_detect(compania_cedente, regex("WINTERTHUR", ignore_case = TRUE)) ~ "AXA",
+    str_detect(compania_cedente, regex("COMMERCIAL UNION SEGUROS", ignore_case = TRUE)) ~ "AVIVA",
+    str_detect(compania_cedente, regex("ABEILLE PREVISORA", ignore_case = TRUE)) ~ "AVIVA",
+    str_detect(compania_cedente, regex("GAN", ignore_case = TRUE)) ~ "GROUPAMA SEGUROS",
+    str_detect(compania_cedente, regex("PLUS ULTRA", ignore_case = TRUE)) ~ "GROUPAMA SEGUROS",
+    str_detect(compania_cedente, regex("MMA", ignore_case = TRUE)) ~ "COVEA RISKS",
+    str_detect(compania_cedente, regex("SEGUROS BILBAO", ignore_case = TRUE)) ~ "CATALANA / OCCIDENTE",
+    str_detect(compania_cedente, regex("S.M.A.B.T.P.", ignore_case = TRUE)) ~ "ASEFA S.A.",
+    # Si no se cumple ninguna condición, se mantiene el valor original
+    TRUE ~ compania_cedente
+  ))
+
+# Vemos cómo queda el boxplot
+ggplot(df, aes(x = fecha_efecto, y = tasa_prima, color = CompaniaAgrupada)) + 
+  geom_point()
+
 ######################################################
 ################## Graphs ############################
 ######################################################
@@ -132,9 +165,11 @@ ggplot(df, aes(x = tasa_prima)) +
   geom_histogram(bins = 30, fill = "skyblue", color = "black") +
   labs(title = "Distribución", x = "Tasa de prima", y = "Frecuencia")
 
-
 ##### hist of rows by year of fecha_efecto
 ggplot(df, aes(x = fecha_efecto)) + geom_histogram(binwidth = 365)
+
+# boxplot of tasa_prima by fecha_trismestre
+ggplot(df, aes(x = factor(fecha_efecto_trimestre), y = tasa_prima)) + geom_boxplot()
 
 
 ##### tasa_prima con variables continuas #####
@@ -175,40 +210,11 @@ ggplot(df, aes(x = compania_cedente, y = tasa_prima)) + geom_boxplot() +
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
 
 
-# Crear la nueva variable "CompaniaAgrupada" eliminando etiquetas finales como " A", " B", etc.
-data <- data %>%
-  mutate(CompaniaAgrupada = case_when(
-    str_detect(compania_cedente, regex("MAPFRE", ignore_case = TRUE)) ~ "MAPFRE",
-    str_detect(compania_cedente, regex("AXA", ignore_case = TRUE)) ~ "AXA",
-    str_detect(compania_cedente, regex("SCOR", ignore_case = TRUE)) ~ "SCOR",
-    str_detect(compania_cedente, regex("ALLIANZ", ignore_case = TRUE)) ~ "ALLIANZ",
-    str_detect(compania_cedente, regex("REALE", ignore_case = TRUE)) ~ "REALE",
-    str_detect(compania_cedente, regex("UAP", ignore_case = TRUE)) ~ "UAP",
-    str_detect(compania_cedente, regex("ZURICH", ignore_case = TRUE)) ~ "ZURICH",
-    str_detect(compania_cedente, regex("AGF", ignore_case = TRUE)) ~ "AGF",
-    # Si no se cumple ninguna condición, se mantiene el valor original
-    TRUE ~ compania_cedente
-  ))
-ggplot(data, aes(x = fecha_efecto, y = tasa_prima, color = CompaniaAgrupada)) + 
-  geom_point()
-
-# Ver una muestra para confirmar
-head(data[, c("compania_cedente", "CompaniaAgrupada")])
-
-
 
 ######################################################
 ################## Notas #############################
 ######################################################
 
-# Preguntas hoy 19 de feb
-# Idea 1
-# Idea: Tratar de predecir la tasa de prima para un solicitante nuevo (en función de unas caracteristicas, predecir qué tasa de riesgo se le va a aplicar)
-# Problema supervisado, la tasa de prima es conocida para un histórico.
 
-# Consideraciones
-# ¿Quitamos los outliers? De manera que solo dejemos tasas>0 y tasas<25 aprox?
-# ¿Cómo jugamos con las clases que no están balanceadas?
-# ¿Porcentaje reasegurado? ¿Qué es? ¿sumas_aseguradas_scor / sumas_aseguradas?
 
 

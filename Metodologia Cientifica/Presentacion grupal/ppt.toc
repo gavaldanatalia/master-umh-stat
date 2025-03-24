@@ -1,0 +1,11 @@
+\beamer@sectionintoc {1}{Lugares de interés turístico}{3}{0}{1}
+\beamer@sectionintoc {2}{Restaurantes Recomendados}{6}{0}{2}
+\beamer@sectionintoc {3}{Un día en Lanzarote}{7}{0}{3}
+\beamer@sectionintoc {4}{Un día en Lanzarote}{8}{0}{4}
+\beamer@sectionintoc {5}{Un día en Lanzarote}{9}{0}{5}
+\beamer@sectionintoc {6}{Un día en Lanzarote}{10}{0}{6}
+\beamer@sectionintoc {7}{Datos curiosos de Lanzarote}{11}{0}{7}
+\beamer@sectionintoc {8}{Vida marina en Lanzarote}{12}{0}{8}
+\beamer@sectionintoc {9}{Vida marina en Lanzarote}{13}{0}{9}
+\beamer@sectionintoc {10}{Puntos de buceo}{15}{0}{10}
+\beamer@sectionintoc {11}{Puntos de buceo}{16}{0}{11}
